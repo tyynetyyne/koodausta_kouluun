@@ -3,7 +3,6 @@
 @(require scriblib/figure)
 @(require 2htdp/image)
 @(require (for-label lang/htdp-beginner))
-@(require (for-label (except-in 2htdp/image image?)))
 @(require scribble/core
            scribble/html-properties)
 
