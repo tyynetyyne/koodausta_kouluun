@@ -5,4 +5,5 @@ The manual in written in Finnish.
 2) Add to your PATH c:\Program Files\Racket (in Windows)
 3) Open CMD, go to the location of these files, run "koko.cmd" (type "koko" in command line and press enter)
 4) Manual is created to "generated" folder in html-format (includes css and javascript files)
+5) Copy image "koodausta_kouluun_logo_tosi_pieni.png" in the same folder with the generated files.
 
