@@ -1,1 +1,0 @@
-("6.1.1" ("7f945b3b3219d72977e9d1983e9762a78c198732" . "db6bdd70df6a5b64eab346e11453ac007259b032") (collects #"scribble" #"core.rkt") (collects #"racket" #"base.rkt") (collects #"racket" #"runtime-config.rkt") (collects #"scribble" #"html-properties.rkt") (collects #"scribble" #"base.rkt"))

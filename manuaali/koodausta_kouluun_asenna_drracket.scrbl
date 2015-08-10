@@ -7,7 +7,7 @@
 @(require scribble/core
            scribble/html-properties)
            
-@title{Esivalmistelut}
+@title[#:tag "esivalmistelut"]{Esivalmistelut}
 
 @margin-note{
 Jos et jostain syystä pysty heti asentamaan DrRacketiä, voit aloittaa Racket-ohjelmoinnin käyttämällä WeScheme-sivustoa @(url "http://www.wescheme.org/"). 

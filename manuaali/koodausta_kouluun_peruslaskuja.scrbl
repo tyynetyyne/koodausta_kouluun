@@ -10,7 +10,7 @@
 @(require "pr-math.rkt")
 @setup-math
 
-@title{Peruslaskuja}
+@title[#:tag "peruslaskuja"]{Peruslaskuja}
  
 Ohjelmointi on helpointa aloittaa peruslaskuilla, ja samalla tutustumme ohjelmointiympäristön, DrRacketin, käyttöön.
 

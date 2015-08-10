@@ -7,7 +7,7 @@
            scribble/html-properties)
 @(require scribble/racket)
            
-@title{Piirtotyökaluja}
+@title[#:tag "piirtotyokaluja"]{Piirtotyökaluja}
 
 Peruslaskutoimiukset sisältyvät Racket-kieleen. Kuvioiden piirtämiseen tarvitaan kuitenkin erillinen @bold{kirjasto}. 
 Kirjoita DrRacketin ylempään ikkunaan seuraava koodirivi ja paina "run" niin saat kirjaston sisältämät funktiot käyttöösi.
@@ -18,7 +18,7 @@ Kirjoita DrRacketin ylempään ikkunaan seuraava koodirivi ja paina "run" niin s
 
 @section{Peruskuviot}
 
-@subsection{Ympyrä}
+@subsection[#:tag "ympyra"]{Ympyrä}
 
 @margin-note{Voit palauttaa edellisen REPL-kutsun painamalla @italic{Ctrl + nuoli ylös}. 
 Näin pääset kokeilemaan kätevästi parametrien vaikutusta.}  
@@ -29,7 +29,7 @@ Kirjoita seuraava rivi DrRacketin REPL:iin (alempi ikkuna) ja paina @italic{<ent
 
 @(circle 50 "solid" "red")
 
-@subsection{Suorakulmio}
+@subsection[#:tag "suorakulmio"]{Suorakulmio}
 
 Suorakulmion piirtämiseen tarvitaan yksi parametri lisää. Kokeile vaihtaa "solid":in tilalle "outline".   
 
@@ -37,7 +37,7 @@ Suorakulmion piirtämiseen tarvitaan yksi parametri lisää. Kokeile vaihtaa "so
 
 @(rectangle 200 100 "solid" "blue")
 
-@subsection{Kolmio}
+@subsection[#:tag "kolmio"]{Kolmio}
 
 @margin-note{Löydät lisää piirtofunktioita täältä: @url{http://docs.racket-lang.org/teachpack/2htdpimage.html}}
 
@@ -45,13 +45,13 @@ Suorakulmion piirtämiseen tarvitaan yksi parametri lisää. Kokeile vaihtaa "so
 
 @(triangle 100 "solid" "yellow")
 
-@subsection{Tähti}
+@subsection[#:tag "tahti"]{Tähti}
 
 @racketblock[(star 75 "solid" "green")]
 
 @(star 75 "solid" "green")
 
-@section{Nimeäminen}
+@section[#:tag "nimeaminen"]{Nimeäminen}
 
 REPL:ssä kokeilemasi kuviot eivät tallennu tiedostoon. Siksi koodi kannattaa kirjoittaa DrRacketin ylempään ikkunaan eli  
 @italic{määrittelyikkunaan (definitions window)}. Määrittelyillä annetaan nimiä koodinpätkille, jotta niitä voidaan 
@@ -66,18 +66,39 @@ Tee sama suorakulmiolle:
 Huomaa, että vaikka painat "run" REPL:iin ei ilmesty mitään. YMPYRÄ ja SUORAKULMIO ovat silti olemassa ja voit kutsua testata niitä
 REPL:stä kirjoittamalla YMPYRÄ ja painamalla @italic{<enter>}.
 
-@section{Kuvioiden yhdistely}
+@section[#:tag "kuvioiden_yhdistely"]{Kuvioiden yhdistely}
 
-@(make-element
-   (make-style #f
-               (list 
-                (make-alt-tag "iframe")
-                (make-attributes
-                 `((title  . "YouTube video player")
-                   (class . "youtube-player")
-                   (type . "text/html")
-                   (width . "560")
-                   (height . "315")
-                   (src . "//www.youtube.com/embed/D417pOJ6UOA?rel=0")
-                   (frameborder . "0")))))
-   null)
+@subsection[#:tag "asettelu_paallekkain"]{Kuvien asettelu päällekkäin}
+            
+Voit yhdistää määrittelemäsi ympyrän ja suorakulmion samaan kuvaan kirjoittamalla seuraavan koodin DrRacket:in ylempään ikkunaan ja painamalla "run":
+Huom! Ensimmäisenä annettu kuva tulee päällimmäiseksi.
+
+@racketblock[(overlay YMPYRÄ SUORAKULMIO)]
+
+@(define YMPYRÄ (circle 50 "solid" "red"))
+@(define SUORAKULMIO (rectangle 200 100 "solid" "blue"))
+ 
+@(overlay YMPYRÄ SUORAKULMIO)
+
+@subsection[#:tag "asettelu_vapaasti"]{Kuvien asettelu vapaasti}
+
+Overlay asettaa kuvat päällekkäin niiden keskipisteen kohdalta. Jos haluat siirtää kuvia toistensa suhteen, käytä overlay/xy komentoa, jonka avulla voi
+määritellä kuinka monta pikseliä alempaa kuvaa siirretään x- ja y-akselien suunnassa:
+
+@racketblock[(overlay/xy YMPYRÄ 0 0 SUORAKULMIO)]
+
+@(overlay/xy YMPYRÄ 0 0 SUORAKULMIO)
+
+Tässä esimerkissä suorakulmiota on siirretty 100 pikseliä vasemmalle (x-akselin suunnassa):
+
+@racketblock[(overlay/xy YMPYRÄ 100 0 SUORAKULMIO)]
+
+@(overlay/xy YMPYRÄ 100 0 SUORAKULMIO)
+
+Tässä esimerkissä suorakulmiota on siirretty 100 pikeseliä alas (y-akselin suunnassa):
+
+@racketblock[(overlay/xy YMPYRÄ 0 100 SUORAKULMIO)]
+
+@(overlay/xy YMPYRÄ 0 100 SUORAKULMIO)
+
+Kokeile mitä tapahtuu negatiivisilla luvuilla.

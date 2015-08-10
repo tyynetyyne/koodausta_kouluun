@@ -8,7 +8,7 @@
 @(require scribble/core
            scribble/html-properties)
            
-@title{Koodausta kouluun: Aloita tästä}
+@title[#:tag "aloita_tasta" #:style 'toc]{Aloita tästä}
  
 Koodausta kouluun materiaali soveltuu ohjelmoinnin opettamiseen peruskoulun 5.- 9.luokilla. 
 
@@ -36,6 +36,9 @@ Jakson lopuksi osaat ohjelmoida mm. nämä kuvat:
 @(centered @tabular[#:sep @hspace[1]
                           (list (list SUOMENLIPPU JAPANINLIPPU AUTO))])
 
+@local-table-of-contents[#:style 'immediate-only ]
+
 @include-section["koodausta_kouluun_asenna_drracket.scrbl"]
 @include-section["koodausta_kouluun_peruslaskuja.scrbl"]
 @include-section["koodausta_kouluun_piirtotyokaluja.scrbl"]
+@include-section["koodausta_kouluun_piirtotyokalu_harjoitukset.scrbl"]
