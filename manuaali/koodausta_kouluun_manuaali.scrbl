@@ -8,7 +8,7 @@
 @(require scribble/core
            scribble/html-properties)
 
-@title[#:tag "käsikirja" #:style 'toc]{Koodausta kouluun: Käsikirja}
+@title[#:tag "kasikirja" #:style 'toc]{Koodausta kouluun: Käsikirja}
 
 @author["Tiina Partanen"]
 
@@ -24,14 +24,14 @@ Käsikirja sisältää osiot:
 @local-table-of-contents[#:style 'immediate-only ]
 
 @; ------------------------------------------------------------------------
-@include-section["koodausta_kouluun_aloita_tasta.scrbl"]
+@include-section["aloita_tasta/aloita.scrbl"]
+@include-section["fin_doc/racket_bsl.scrbl"]
 
 @verbatim{-------------------------------------------------------------------------------}
 
 @bold{Tulossa ovat:}
 
-@itemlist[@item{Racket BSL (Beginning Student Language)}
-          @item{2htdp/image}
+@itemlist[@item{2htdp/image}
           @item{Racket Turtle}
           @item{Peruspeli}
           @item{2htdp/universe}
