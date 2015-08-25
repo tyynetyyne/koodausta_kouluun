@@ -21,10 +21,10 @@ kuitenkin opetella myös vaikeampia ohjelmointikäsitteitä kuten listoja ja rek
 
 Racket Turtlella piirrettyjä kuvia:
 
-@image[#:scale 0.5 "racket_turtle1_img.png"]
-@image[#:scale 0.5 "racket_turtle2_img.png"]
-@image[#:scale 0.5 "racket_turtle3_img.png"]
-@image[#:scale 0.5 "racket_turtle4_img.png"]
+@image[#:scale 0.5 "racket_turtle/racket_turtle1_img.png"]
+@image[#:scale 0.5 "racket_turtle/racket_turtle2_img.png"]
+@image[#:scale 0.5 "racket_turtle/racket_turtle3_img.png"]
+@image[#:scale 0.5 "racket_turtle/racket_turtle4_img.png"]
                                                                            
 @local-table-of-contents[#:style 'unnumbered]
 
