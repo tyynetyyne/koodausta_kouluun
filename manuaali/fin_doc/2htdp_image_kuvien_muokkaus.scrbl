@@ -31,84 +31,61 @@
      
 @declare-exporting[fin-doc/fi-image]
 
-@declare-exporting[fin-doc/fi-image]
+@title[#:tag "2htdp_image_kuvien_muokkaus" #:style 'toc]{Kuvien muokkaus}
 
-@title[#:tag "2htdp_image_kuvioiden_muokkaus" #:style 'toc]{Kuvioiden muokkaus}
+@defproc[(rotate [asteluku reaaliluku] [k kuva]) kuva]{
 
-@defproc[(rotate [angle angle?] [image image?]) image?]{
-  Rotates @racket[image] by @racket[angle] degrees in a counter-clockwise direction.
+ @index["kuvan kiertäminen"]{Kiertää} kuvaa @racket[k] annetun määrän @racket[asteluku] verran vastapäivään.
           
-          @image-examples[(rotate 45 (ellipse 60 20 "solid" "olivedrab"))
-                          (rotate 5 (rectangle 50 50 "outline" "black"))
-                          (rotate 45
-                                  (beside/align
-                                   "center"
-                                   (rectangle 40 20 "solid" "darkseagreen")
-                                   (rectangle 20 100 "solid" "darkseagreen")))]
-          
-          See also @seclink["rotate-center"].
-          
+          @image-examples[(rotate 45 (ellipse 60 20 "solid" "purple"))
+                          (rotate 30 (triangle 40 "solid" "red"))]
 }
 
-@defproc[(scale [factor (and/c real? positive?)] [image image?]) image?]{
+@defproc[(scale [kerroin positiivinen-reaaliluku] [k kuva]) kuva]{
 
-  Scales @racket[image] by @racket[factor].
-  
-  The pen sizes are also scaled and thus draw thicker (or thinner)
-  lines than the original image, unless the pen was size 
-  @racket[0]. That pen size is treated specially to mean ``the
-  smallest available line'' and thus it always draws a one-pixel
-  wide line; this is also the case for @racket['outline] and @racket["outline"]
-  shapes that are drawn with an @racket[image-color?] instead of
-  a @racket[pen].
-  
+  Skaalaa annetun kuvan @racket[k] suuremmaksi tai pienemmäksi riippuen siitä mikä @racket[kerroin] on.
+  Jos @racket[kerroin] on suurempi kuin @racket[1], kuvan koko suurenee.
          
-  @image-examples[(scale 2 (ellipse 20 30 "solid" "blue"))
-                   (ellipse 40 60 "solid" "blue")]
-  
-  
-  
+  @image-examples[(ellipse 20 30 "solid" "blue")
+                  (scale 2 (ellipse 20 30 "solid" "blue"))]
 }
 
-@defproc[(flip-horizontal [image image?]) image?]{
-   Flips @racket[image] left to right.
+@defproc[(flip-horizontal [k kuva]) kuva]{
+
+ Tekee kuvasta @racket[k] peilikuvan (vasemmalta oikealle).
          
-         Flipping images with text is not supported (so passing @racket[flip-horizontal] an image
-         that contains a @racket[text] or @racket[text/font] image inside somewhere signals an error).
-         
-         @image-examples[(beside
-                          (rotate 30 (square 50 "solid" "red"))
-                          (flip-horizontal
-                           (rotate 30 (square 50 "solid" "blue"))))]
-}
-
-@defproc[(flip-vertical [image image?]) image?]{
-   Flips @racket[image] top to bottom.
-         
-         Flipping images with text is not supported (so passing @racket[flip-vertical] an image
-         that contains a @racket[text] or @racket[text/font] image inside somewhere signals an error).
-
-         @image-examples[(above 
-                          (star 40 "solid" "firebrick")
-                          (scale/xy 1 1/2 (flip-vertical (star 40 "solid" "gray"))))]
-}
-
-@defproc[(crop [x real?]
-               [y real?] 
-               [width (and/c real? (not/c negative?))]
-               [height (and/c real? (not/c negative?))]
-               [image image?])
-         image?]{
-
- Crops @racket[image] to the rectangle with the upper left at the point (@racket[x],@racket[y])
- and with @racket[width] and @racket[height]. 
+ Tekstiä sisältäviä (@racket[text]) kuvia ei tueta, tämä ilmenee virheilmoituksena.
  
- @image-examples[(crop 0 0 40 40 (circle 40 "solid" "chocolate"))
-                 (crop 40 60 40 60 (ellipse 80 120 "solid" "dodgerblue"))
-                 (above
-                  (beside (crop 40 40 40 40 (circle 40 "solid" "palevioletred"))
-                          (crop 0 40 40 40 (circle 40 "solid" "lightcoral")))
-                  (beside (crop 40 0 40 40 (circle 40 "solid" "lightcoral"))
-                          (crop 0 0 40 40 (circle 40 "solid" "palevioletred"))))]
-                 
+         @image-examples[(beside (square 50 "solid" "red")
+                                 (circle 25 "outline" "black"))
+                         (flip-horizontal
+                          (beside (square 50 "solid" "red")
+                                  (circle 25 "outline" "black")))]
+}
+
+@defproc[(flip-vertical [k kuva]) kuva]{
+
+ Tekee kuvasta @racket[k] peilikuvan (ylhäältä alas).
+         
+ Tekstiä sisältäviä (@racket[text]) kuvia ei tueta, tämä ilmenee virheilmoituksena.
+
+         @image-examples[(above (square 50 "solid" "red")
+                                 (circle 25 "outline" "black"))
+                         (flip-vertical
+                          (above (square 50 "solid" "red")
+                                  (circle 25 "outline" "black")))]
+}
+
+@defproc[(crop [x reaaliluku]
+               [y reaaliluku] 
+               [leveys positiivinen-reaaliluku]
+               [korkeus positiivinen-reaaliluku]
+               [k kuva])
+         kuva]{
+
+ Rajaa kuvasta @racket[k] suorakulmion sisään jäävän alueen. Alueen yläkulma sijaitsee pisteessä (@racket[x],@racket[y])
+ ja sen @racket[leveys] ja @racket[korkeus] annetaan. 
+ 
+ @image-examples[(crop 0 0 40 40 (circle 40 "solid" "red"))
+                 (crop 40 40 40 40 (circle 40 "solid" "red"))]
 }

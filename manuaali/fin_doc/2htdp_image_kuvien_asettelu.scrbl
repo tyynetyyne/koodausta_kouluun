@@ -31,57 +31,39 @@
      
 @declare-exporting[fin-doc/fi-image]
 
-@declare-exporting[fin-doc/fi-image]
+@title[#:tag "2htdp_image_kuvien_asettelu_ruudulle" #:style 'toc]{Kuvien asettelu ruudulle}
 
-@title[#:tag "2htdp_image_kuvioiden_asettelu_ruudulle" #:style 'toc]{Kuvioiden asettelu ruudulle}
+Kuvien asettelua ruudulle tarvitaan, kun tehdään animaatioita tai pelejä käyttämällä @italic{2htdp/universe}-kirjastoa.
+@defproc*[([(empty-scene [leveys positiivinen-reaaliluku]
+                         [korkeus positiivinen-reaaliluku])
+            kuva]
+            [(empty-scene [leveys positiivinen-reaaliluku]
+                          [korkeus positiivinen-reaaliluku]
+                          [väri image-color?])
+            kuva])]{
 
-Placing images into scenes is particularly useful when building worlds
-and universes using @racket[2htdp/universe].
-
-@defproc*[([(empty-scene [width (and/c real? (not/c negative?))]
-                         [height (and/c real? (not/c negative?))])
-            image?]
-            [(empty-scene [width (and/c real? (not/c negative?))]
-                          [height (and/c real? (not/c negative?))]
-                          [color image-color?])
-            image?])]{
-
-Creates an empty scene, i.e., a white rectangle with a black outline.
-
-@image-examples[(empty-scene 160 90)]
-
-The three-argument version creates a rectangle of the specified color with
-a black outline. 
+ Luo valkoisen mustareunaisen ruudun, jonka @racket[leveys] ja @racket[korkeus] annetaan.
+ Kolmantena argumenttina voidaan antaa ruudun @racket[väri].
+ 
+@image-examples[(empty-scene 160 90)(empty-scene 160 90 "black")]
 }
 
-@defproc[(place-image [image image?] [x real?] [y real?] [scene image?]) image?]{
+@defproc[(place-image [k1 kuva] [x reaaliluku] [y reaaliluku] [k2 kuva]) kuva]{
 
- Places @racket[image] onto @racket[scene] with its center at the coordinates 
- (@racket[x],@racket[y]) and crops the resulting image so that it has the 
- same size as @racket[scene]. The coordinates are relative to the top-left
- of @racket[scene].
+ Sijoittaa kuvan @racket[k1] pisteeseen (@racket[x],@racket[y]) kuvan @racket[k2] päälle. 
+ Koordinaatit ilmoitetaan suhteessa kuvan @racket[k2] vasempaan yläkulmaan. @racket[place-image] palauttaa aina
+ saman kokoisen kuvan kuin kuva @racket[k2] eli sen ulkopuolelle jäävät kuvan @racket[k1] osat leikkautuvat pois.
  
  @image-examples[(place-image 
-                  (triangle 32 "solid" "red")
-                  24 24
-                  (rectangle 48 48 "solid" "gray"))
-                 
+                  (circle 20 "solid" "red")
+                  0 0
+                  (empty-scene 150 100))
                  (place-image 
-                  (triangle 64 "solid" "red")
-                  24 24
-                  (rectangle 48 48 "solid" "gray"))
-                 
-                 (place-image
-                  (circle 4 "solid" "white")
-                  18 20
-                  (place-image
-                   (circle 4 "solid" "white")
-                   0 6
-                   (place-image
-                    (circle 4 "solid" "white")
-                    14 2
-                    (place-image
-                     (circle 4 "solid" "white")
-                     8 14
-                     (rectangle 24 24 "solid" "goldenrod")))))]
+                  (circle 20 "solid" "red")
+                  0 50
+                  (empty-scene 150 100))
+                 (place-image 
+                  (circle 20 "solid" "red")
+                  75 50
+                  (empty-scene 150 100))]
 }

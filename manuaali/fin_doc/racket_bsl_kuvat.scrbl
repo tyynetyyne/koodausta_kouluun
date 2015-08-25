@@ -19,9 +19,9 @@
      (define *bsl
        (bsl+-eval
         (require 2htdp/image)
-        (define c1 (circle 10 "solid" "green"))
-        (define c2 (circle 10 "solid" "red"))
-        (define c3 (circle 10 "solid" "green"))
+        (define kuva1 (circle 10 "solid" "green"))
+        (define kuva2 (circle 10 "solid" "red"))
+        (define kuva3 (circle 10 "solid" "green"))
         (define zero 0)
         
         (define one (list 1))
@@ -39,11 +39,11 @@
      (set! bsl (lambda () *bsl))
      *bsl))
 
-  @defproc[(image? [x ei-tyyppivaatimuksia]) boolean?]{
+  @defproc[(image? [x ei-tyyppivaatimuksia]) totuusarvo]{
                                         Tutkii, onko @racket[x] tyyppiä kuva. 
-                                        @interaction[#:eval (bsl) c1 (image? c1)]
+                                        @interaction[#:eval (bsl) kuva1 (image? kuva1)]
                                         }
-  @defproc[(image=? [i kuva][j kuva]) boolean?]{
+  @defproc[(image=? [k1 kuva][k2 kuva]) totuusarvo]{
                                                   Tutkii, ovatko kaksi kuvaa samat. 
-                                                  @interaction[#:eval (bsl) c2 (image=? c1 c2) c3 (image=? c1 c3)]
+                                                  @interaction[#:eval (bsl) kuva2 (image=? kuva1 kuva2) kuva3 (image=? kuva1 kuva3)]
                                                   }

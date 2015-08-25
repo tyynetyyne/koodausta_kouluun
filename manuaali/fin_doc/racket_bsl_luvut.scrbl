@@ -62,28 +62,28 @@
 
 @section[#:style 'unnumbered #:tag "vertailuoperaattorit"]{Vertailuoperaattorit}
 
-@defproc[(= [x luku][y luku][z luku] ...) boolean?]{
+@defproc[(= [x luku][y luku][z luku] ...) totuusarvo]{
  Palauttaa @racket[#true], jos annetut luvut ovat yhtäsuuria, muuten @racket[#false].
  @interaction[#:eval (bsl) (= 42 42.0)(= 42 42.0 42.01)]
 }
-@defproc[(< [x reaaliluku][y reaaliluku][z reaaliluku] ...) boolean?]{
- Vertailee (reaali)lukuja toisiinsa @italic{pienempi kuin}-operaation avulla.
+@defproc[(< [x reaaliluku][y reaaliluku][z reaaliluku] ...) totuusarvo]{
+ Vertailee reaalilukuja toisiinsa @italic{pienempi kuin}-operaattorin avulla.
  Palauttaa @racket[#true], jos annetut luvut ovat suuruusjärjestyksessä (pienin ensin), muuten @racket[#false].
  
  @interaction[#:eval (bsl) (< 5 10) (< 0 5 10)(< 5 0 10)]
 }
-@defproc[(> [x reaaliluku][y reaaliluku][z reaaliluku] ...) boolean?]{
-Vertailee (reaali)lukuja toisiinsa @italic{suurempi kuin}-operaation avulla.
+@defproc[(> [x reaaliluku][y reaaliluku][z reaaliluku] ...) totuusarvo]{
+Vertailee reaalilukuja toisiinsa @italic{suurempi kuin}-operaattorin avulla.
 Palauttaa @racket[#true], jos annetut luvut ovat suuruusjärjestyksessä (suurin ensin), muuten @racket[#false].
  
  @interaction[#:eval (bsl) (> 10 5) (> 10 5 0)(> 10 0 5)]   
 }
-@defproc[(<= [x reaaliluku][y reaaliluku][z reaaliluku] ...) boolean?]{
-Vertailee (reaali)lukuja toisiinsa @italic{pienempi tai yhtäsuuri kuin}-operaation avulla.
+@defproc[(<= [x reaaliluku][y reaaliluku][z reaaliluku] ...) totuusarvo]{
+Vertailee reaalilukuja toisiinsa @italic{pienempi tai yhtäsuuri kuin}-operaattorin avulla.
 @interaction[#:eval (bsl) (<= 5 10)(<= 5 5.0)]
 }
-@defproc[(>= [x reaaliluku][y reaaliluku][z reaaliluku] ...) boolean?]{
- Vertailee (reaali)lukuja toisiinsa @italic{suurempi tai yhtäsuuri kuin}-operaation avulla.
+@defproc[(>= [x reaaliluku][y reaaliluku][z reaaliluku] ...) totuusarvo]{
+ Vertailee reaalilukuja toisiinsa @italic{suurempi tai yhtäsuuri kuin}-operaattorin avulla.
  @interaction[#:eval (bsl) (>= 10 5)(>= 10 10.0)]
 }
 
@@ -147,29 +147,34 @@ Vertailee (reaali)lukuja toisiinsa @italic{pienempi tai yhtäsuuri kuin}-operaat
 
 @section[#:style 'unnumbered #:tag "predikaatit_lukuvuille"]{Predikaatit}  
 
-@defproc[(number? [n ei-tyyppivaatimusta]) boolean?]{
+@defproc[(number? [n ei-tyyppivaatimusta]) totuusarvo]{
  Palauttaa @racket[#true], jos argumentti on luku, muuten @racket[#false]. 
  @interaction[#:eval (bsl) (number? "hello world") (number? 42)] 
 }
 
-@defproc[(integer? [x ei-tyyppivaatimusta]) boolean?]{
+@defproc[(integer? [x ei-tyyppivaatimusta]) totuusarvo]{
  Palauttaa @racket[#true], jos argumentti on kokonaisluku, muuten @racket[#false].
  @interaction[#:eval (bsl) (integer? (sqrt 2))]
 }
-@defproc[(zero? [x luku]) boolean?]{
+@defproc[(zero? [x luku]) totuusarvo]{
  Palauttaa @racket[#true], jos argumentti on nolla, muuten @racket[#false].
  @interaction[#:eval (bsl) (zero? 0)(zero? 2)(zero? 0.0)]
 }
 
-@defproc[(odd? [x kokonaisluku]) boolean?]{
+@defproc[(odd? [x kokonaisluku]) totuusarvo]{
  Palauttaa @racket[#true], jos argumentti on pariton kokonaisluku, muuten @racket[#false]. 
  @interaction[#:eval (bsl) (odd? 1)(odd? 2)(odd? 1.0)]
 }
 
-@defproc[(even? [x kokonaisluku]) boolean?]{
+@defproc[(even? [x kokonaisluku]) totuusarvo]{
   Palauttaa @racket[#true], jos argumentti on parillinen kokonaisluku, muuten @racket[#false]. 
  @interaction[#:eval (bsl) (even? 2) (even? 1)(even? 2.0)]
 }
+@defproc[(positive? [x luku]) totuusarvo]{
+Palauttaa @racket[#true], jos argumentti on suurempi kuin nolla.}
+
+@defproc[(negative? [x luku]) totuusarvo]{
+ Palauttaa @racket[#true], jos argumentti on pienempi kuin nolla.}
 
 @section[#:style 'unnumbered #:tag "tyyppimuunnokset"]{Tyyppimuunnokset}
 

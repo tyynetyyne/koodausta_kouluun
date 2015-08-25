@@ -32,281 +32,208 @@
 
 @title[#:tag "peruskuviot" #:style 'toc]{Peruskuviot}
 
+@local-table-of-contents[#:style 'immediate-only ]
+
+@(define YMPYRÄ (circle 25 "solid" "aqua"))
+@(define SUORAKULMIO (rectangle 100 50 "solid" "slateblue"))
+@(define ELLIPSI (ellipse 100 50 "solid" "turquoise"))
+@(define TÄHTI (star 50 "solid" "violet"))
+@(define MONI  (regular-polygon 60 3 "solid" "tomato"))
+@(define MONI2  (regular-polygon 45 5 "solid" "maroon"))
+@(define TÄHTI2  (radial-star 10 35 30 "solid" "springgreen"))
+
+@(centered @tabular[#:sep @hspace[1]
+                         (list (list YMPYRÄ TÄHTI SUORAKULMIO TÄHTI2 MONI ELLIPSI MONI2 ))])
+
 @section[#:style 'unnumbered #:tag "nelikulmiot"]{Nelikulmiot}
 
-@defproc*[([(square [side-len (and/c real? (not/c negative?))]
-                    [mode mode?]
-                    [color image-color?])
-            image?]
-           [(square [side-len (and/c real? (not/c negative?))]
-                    [outline-mode (or/c 'outline "outline")]
-                    [pen-or-color (or/c pen? image-color?)])
-            image?])]{
+@defproc[(square [sivun-pituus positiivinen-reaaliluku]
+                   [tyyli mode?]
+                   [väri image-color?])
+            kuva]{
 
- Constructs a square.
+ Luo halutun kokoisen, tyyppisen ja värisen @index["neliö"]{neliö}n.
 
- 
- @image-examples[(square 40 "solid" "slateblue")
-                 (square 50 "outline" "darkmagenta")]
-
+ @image-examples[(square 70 "solid" "slateblue")
+                 (square 80 "outline" "turquoise")]
 }
 
-@defproc*[([(rectangle [width (and/c real? (not/c negative?))]
-                       [height (and/c real? (not/c negative?))]
-                       [mode mode?]
-                       [color image-color?])
-            image?]
-           [(rectangle [width (and/c real? (not/c negative?))]
-                       [height (and/c real? (not/c negative?))]
-                       [outline-mode (or/c 'outline "outline")] 
-                       [pen-or-color (or/c pen? image-color?)])
-            image?])]{
-  Constructs a rectangle with the given width, height, mode, and color.
+@defproc[(rectangle [leveys positiivinen-reaaliluku]
+                       [korkeus positiivinen-reaaliluku]
+                       [tyyli mode?]
+                       [väri image-color?])
+            kuva]{
+
+ Luo halutun kokoisen, tyyppisen ja värisen @index["suorakulmio"]{suorakulmio}n.
   
-  @image-examples[(rectangle 40 20 "outline" "black")
-                  (rectangle 20 40 "solid" "blue")]
+  @image-examples[(rectangle 80 100 "solid" "violet")
+                  (rectangle 100 80 "outline" "maroon")]
 }
 
-@defproc*[([(rhombus [side-length (and/c real? (not/c negative?))]
-                     [angle angle?]
-                     [mode mode?]
-                     [color image-color?])
-            image?]
-           [(rhombus [side-length (and/c real? (not/c negative?))]
-                     [angle angle?]
-                     [outline-mode (or/c 'outline "outline")]
-                     [pen-or-color (or/c pen? image-color?)])
-            image?])]{
-                 
-Constructs a four sided polygon with all equal sides and thus where opposite angles are equal to each
-other. The top and bottom pair of angles is @racket[angle]
-and the left and right are @racket[(- 180 angle)].
+@defproc[(rhombus [sivun-pituus positiivinen-reaaliluku]
+                     [kulma reaaliluku]
+                     [tyyli mode?]
+                     [väri image-color?])
+            kuva]{
 
-@image-examples[(rhombus 40 45 "solid" "magenta")
-                (rhombus 80 150 "solid" "mediumpurple")]
+Luo @index["neljäkäs"]{neljäkkään} eli @italic{suunnikkaan}, jonka kaikki sivut ovat yhtä pitkiä (ja vastakkaiset kulmat yhtäsuuria). Annettu @racket[kulma] määrittelee
+    ylimmän (ja alimman) kulman suuruuden.
+
+@image-examples[(rhombus 60 50 "solid" "purple")
+                (rhombus 80 150 "solid" "pink")]
 }
 
 @section[#:style 'unnumbered #:tag "kolmiot"]{Kolmiot}
 
-@defproc*[([(triangle [side-length (and/c real? (not/c negative?))] 
-                      [mode mode?]
-                      [color image-color?])
-            image?]
-           [(triangle [side-length (and/c real? (not/c negative?))] 
-                      [outline-mode (or/c 'outline "outline")]
-                      [pen-or-color (or/c pen? image-color?)])
-            image?])]{
+@defproc[(triangle [sivun-pituus positiivinen-reaaliluku] 
+                      [tyyli mode?]
+                      [väri image-color?])
+            kuva]{
 
-   Constructs a upward-pointing equilateral triangle. 
-  The @racket[side-length] argument 
-  determines the 
-  length of the side of the triangle.
+ Luo kannallaan seisovan @index["tasasivuinen kolmio"]{tasasivuisen kolmion}, jonka @racket[sivun-pituus] on annettu.
   
-    @image-examples[(triangle 40 "solid" "tan")]
+    @image-examples[(triangle 90 "solid" "springgreen")]
 
 }
 
-@defproc*[([(right-triangle [side-length1 (and/c real? (not/c negative?))]
-                            [side-length2 (and/c real? (not/c negative?))]
-                            [mode mode?]
-                            [color image-color?])
-            image?]
-           [(right-triangle [side-length1 (and/c real? (not/c negative?))]
-                            [side-length2 (and/c real? (not/c negative?))]
-                            [outline-mode (or/c 'outline "outline")]
-                            [pen-or-color (or/c pen? image-color?)])
-            image?])]{
-                 
-  Constructs a triangle with a right angle where the two sides adjacent
-  to the right angle have lengths @racket[side-length1] and @racket[side-length2].
-  
-  @image-examples[(right-triangle 36 48 "solid" "black")]
+@defproc[(right-triangle [kateetin1-pituus positiivinen-reaaliluku]
+                            [kateetin2-pituus positiivinen-reaaliluku]
+                            [tyyli mode?]
+                            [väri image-color?])
+            kuva]{
+
+ Luo @index["suorakulmainen kolmio"]{suorakulmaisen kolmio}n, jonka kateettien pituudet ovat @racket[kateetin1-pituus] ja @racket[kateetin2-pituus].
+                                                            
+  @image-examples[(right-triangle 80 120 "solid" "turquoise")]
 }
 
-@defproc*[([(isosceles-triangle [side-length (and/c real? (not/c negative?))] 
-                                [angle angle?]
-                                [mode mode?]
-                                [color image-color?])
-            image?]
-           [(isosceles-triangle [side-length (and/c real? (not/c negative?))] 
-                                [angle angle?]
-                                [outline-mode (or/c 'outline "outline")]
-                                [pen-or-color (or/c pen? image-color?)])
-            image?])]{
+@defproc[(isosceles-triangle [kyljen-pituus positiivinen-reaaliluku] 
+                                [kantakulma reaaliluku]
+                                [tyyli mode?]
+                                [väri image-color?])
+            kuva]{
 
- Creates a triangle with two equal-length sides, of length @racket[side-length]
- where the angle between those sides is @racket[angle]. The third
- leg is straight, horizontally. If the angle is less than 
- @racket[180], then the triangle will point up and if the @racket[angle]
- is more, then the triangle will point down. 
+ Luo @index["tasakylkinen kolmio"]{tasakylkisen kolmion}, jonka @racket[kyljen-pituus] ja @racket[kantakulma] on annettu.                   
+ Jos @racket[kantakulma] on pienempi kuin @racket[180], kolmio seisoo kannallaan, muuten se seisoo kärjellään.
  
- @image-examples[(isosceles-triangle 200 170 "solid" "seagreen")
-                 (isosceles-triangle 60 30 "solid" "aquamarine")
-                 (isosceles-triangle 60 330 "solid" "lightseagreen")]
+ @image-examples[(isosceles-triangle 110 45 "solid" "tomato")]
 }
 
 
 @section[#:style 'unnumbered #:tag "monikulmiot"]{Monikulmiot}
 
-@defproc*[([(regular-polygon [side-length (and/c real? (not/c negative?))] 
-                             [side-count side-count?]
-                             [mode mode?]
-                             [color image-color?])
-            image?]
-           [(regular-polygon [side-length (and/c real? (not/c negative?))] 
-                             [side-count side-count?]
-                             [outline-mode (or/c 'outline "outline")]
-                             [pen-or-color (or/c pen? image-color?)])
-            image?])]{
-  Constructs a regular polygon with @racket[side-count] sides.
+@defproc[(regular-polygon [sivun-pituus positiivinen-reaaliluku] 
+                             [sivujen-määrä kokonaisluku-3-tai-suurempi]
+                             [tyyli mode?]
+                             [väri image-color?])
+            kuva]{
+                    
+  Luo @index["säännöllinen monikulmio"]{säännöllisen monikulmion}, jonka @racket[sivujen-määrä] on annettu.
+  @racket[sivujen-määrä]:n pitää olla minimissään 3.
 
-  @image-examples[(regular-polygon 50 3 "outline" "red")
-                  (regular-polygon 40 4 "outline" "blue")
-                  (regular-polygon 20 8 "solid" "red")]
+  @image-examples[(regular-polygon 80 3 "solid" "aqua")
+                  (regular-polygon 70 4 "solid" "slateblue")
+                  (regular-polygon 40 8 "outline" "maroon")]
 }
 
+@defproc[(star [sivun-pituus positiivinen-reaaliluku] 
+                  [tyyli mode?]
+                  [väri image-color?])
+            kuva]{
 
-@defproc*[([(star [side-length (and/c real? (not/c negative?))] 
-                  [mode mode?]
-                  [color image-color?])
-            image?]
-           [(star [side-length (and/c real? (not/c negative?))] 
-                  [outline-mode (or/c 'outline "outline")]
-                  [color (or/c pen? image-color?)])
-            image?])]{
-  Constructs a star with five points. The @racket[side-length] argument 
-  determines the side length of the enclosing pentagon.
+Luo viisisakaraisen @index["tähti"]{tähden}, jonka sisään piirretyn viisikulmion @racket[sivun-pituus] on annettu.
 
-  @image-examples[(star 40 "solid" "gray")]
+  @image-examples[(star 70 "solid" "tomato")]
   
 }
 
-@defproc*[([(radial-star [point-count (and/c integer? (>=/c 2))]
-                         [inner-radius (and/c real? (not/c negative?))]
-                         [outer-radius (and/c real? (not/c negative?))]
-                         [mode mode?]
-                         [color image-color?])
-            image?]
-           [(radial-star [point-count (and/c integer? (>=/c 2))]
-                         [inner-radius (and/c real? (not/c negative?))]
-                         [outer-radius (and/c real? (not/c negative?))]
-                         [outline-mode (or/c 'outline "outline")]
-                         [pen-or-color (or/c pen? image-color?)])
-            image?])]{
+@defproc[(radial-star [sakaramäärä kokonaisluku-suurempi-kuin-2]
+                         [sisäsäde positiivinen-reaaliluku]
+                         [ulkosäde positiivinen-reaaliluku]
+                         [tyyli mode?]
+                         [väri image-color?])
+            kuva]{
 
-Constructs a star-like polygon where the star is specified by two radii and a number of points. 
-The first radius determines where the points begin, the second determines where they end, and
-the @racket[point-count] argument determines how many points the star has.
+Luo tähdenmuotoisen monikulmion, joka määritellään kahden säteen ja @racket[sakaramäärä]:n avulla.                      
+@racket[sisäsäde] määrittelee etäisyyden, josta sakara lähtee ja @racket[ulkosäde] etäisyyden, johon sakara päättyy. 
+@racket[sakaramäärä] määrittelee sakaroiden kokonaismäärän.
 
-@image-examples[(radial-star 8 8 64 "solid" "darkslategray")
-                (radial-star 32 30 40 "outline" "black")]
+@image-examples[(radial-star 8 8 64 "solid" "slateblue")
+                (radial-star 32 40 60 "outline" "springgreen")]
 
 }
 
 @section[#:style 'unnumbered #:tag "ympyrat_ja_ellipsit"]{Ympyrät ja ellipsit}
 
-@defproc*[([(circle [radius (and/c real? (not/c negative?))]
-                    [mode mode?]
-                    [color image-color?])
-            image?]
-           [(circle [radius (and/c real? (not/c negative?))]
-                    [outline-mode (or/c 'outline "outline")]
-                    [pen-or-color (or/c pen? image-color?)])
-            image?])]{
-  Constructs a circle with the given radius, mode, and color.
+@defproc[(circle [säde positiivinen-reaaliluku]
+                    [tyyli mode?]
+                    [väri image-color?])
+            kuva]{
+                    
+  Luo @index["ympyrä"]{ympyrän}, jonka @racket[säde], @racket[tyyli] ja @racket[väri] on annettu.
   
-   @image-examples[(circle 30 "outline" "red")
-                   (circle 20 "solid" "blue")
-                   (circle 20 100 "blue")]
+   @image-examples[(circle 50 "solid" "violet")
+                   (circle 40 100 "violet")]
 
 }
 
-@defproc*[([(ellipse [width (and/c real? (not/c negative?))]
-                     [height (and/c real? (not/c negative?))]
-                     [mode mode?] 
-                     [color image-color?])
-            image?]
-           [(ellipse [width (and/c real? (not/c negative?))]
-                     [height (and/c real? (not/c negative?))]
-                     [mode (or/c 'outline "outline")] 
-                     [pen-or-color (or/c image-color? pen?)])
-            image?])]{
-  Constructs an ellipse with the given width, height, mode, and color.
+@defproc[(ellipse [leveys positiivinen-reaaliluku]
+                     [korkeus positiivinen-reaaliluku]
+                     [tyyli mode?] 
+                     [väri image-color?])
+            kuva]{
+
+  Luo @index["ellipsi"]{ellipsin}, jonka @racket[leveys], @racket[korkeus], @racket[tyyli] ja @racket[väri] on annettu.                   
   
-  @image-examples[(ellipse 60 30 "outline" "black")
-                  (ellipse 30 60 "solid" "blue")
-                  (ellipse 30 60 100 "blue")] 
+  @image-examples[(ellipse 110 60 "outline" "slateblue")
+                  (ellipse 40 90 "solid" "maroon")] 
 }
 
 @section[#:style 'unnumbered #:tag "muut"]{Muut kuviot}
 
-@defproc[(add-line [image image?]
-                   [x1 real?] [y1 real?]
-                   [x2 real?] [y2 real?]
-                   [pen-or-color (or/c pen? image-color?)])
-         image?]{
+@defproc[(add-line [tausta kuva]
+                   [x1 reaaliluku] [y1 reaaliluku]
+                   [x2 reaaliluku] [y2 reaaliluku]
+                   [väri image-color?])
+         kuva]{
 
-Adds a line to the image @racket[image], starting from the point (@racket[x1],@racket[y1])
-  and going to the point (@racket[x2],@racket[y2]).
-  Unlike @racket[scene+line], if the line passes outside of @racket[image], the image
-  gets larger to accommodate the line.
+  Luo @index["viivan piirtäminen"]{viivan} @racket[tausta]-kuvan päälle, lähtien pisteestä (@racket[x1], @racket[y1])
+  ja päättyen pisteeseen (@racket[x2], @racket[y2]).
+  Jos viiva menee @racket[tausta]-kuvan reunojen ulkopuolelle, kuvan kokoa kasvatetaan automaattisesti niin että viiva mahtuu
+  kokonaisuudessaan mukaan.
   
-  @image-examples[(add-line (ellipse 40 40 "outline" "maroon")
-                            0 40 40 0 "maroon")
-                  (add-line (rectangle 40 40 "solid" "gray")
-                            -10 50 50 -10 "maroon")
-                 (add-line
-                   (rectangle 100 100 "solid" "darkolivegreen")
-                   25 25 75 75 
-                   (make-pen "goldenrod" 30 "solid" "round" "round"))]
+  @image-examples[(add-line (circle 40 "outline" "tomato")
+                            0 80 80 0 "maroon")
+                  (add-line (square 60 "solid" "aqua")
+                            -30 30 90 30 "slateblue")]
 }
 
-@defproc[(text [string string?] [font-size (and/c integer? (<=/c 1 255))] [color image-color?])
-         image?]{
-                
-  Constructs an image that draws the given string, using the font size and color.
+@defproc[(text [teksti merkkijono] [fontin-koko kokonaisluku-välillä-1-255] [väri image-color?])
+         kuva]{
+
+ Muuntaa annetun merkkijonon @racket[teksti] @index["merkkijono kuvaksi"]{kuvaksi} käyttämällä annettua
+ @racket[fontin-koko]:a ja @racket[väri]:ä.
                  
-  @image-examples[(text "Hello" 24 "olive")
-                  (text "Goodbye" 36 "indigo")]
-  
-  The text size is measured in pixels, not points, so passing @racket[24]
-  to @racket[text] should result in an image whose height is @racket[24]
-  (which might not be the case if the size were measured in points).
-  @image-examples[(image-height (text "Hello" 24 "olive"))]
-  
+  @image-examples[(text "Moro" 40 "slateblue")
+                  (text "Terve" 36 "springgreen")]
+
+  Huom! @racket[fontin-koko] tarkoittaa tässä pikseleitä (ei pisteitä). Jos annat @racket[40]
+  argumenttina @racket[text]-funktiolle, lopputuloksena on kuva jonka korkeus on @racket[40] pikseliä. 
 }
 
-@defthing[empty-image image?]{
-  The empty image. Its width and height are both zero and it does not draw at all.
+@defthing[empty-image kuva]{
+
+ @index["tyhjä kuva"]{Tyhjä kuva}. Tämän kuvan leveys ja korkeus ovat nollia eikä se piirry millään tavalla. Jos
+ lisäät @racket[empty-image]:n toiseen kuvaan, saat alkuperäisen kuvan.
+
+ @italic{Huom!} Tämä toiminto puuttuu WeSchemestä.}
   
   @image-examples[(image-width empty-image)
                   (equal? (above empty-image
                                  (rectangle 10 10 "solid" "red"))
                           (beside empty-image
                                   (rectangle 10 10 "solid" "red")))]
-  
-  
-  Combining an image with @racket[empty-image] produces the
-  original image (as shown in the above example).  
-}
 
-@section[#:style 'unnumbered #:tag "lisätietoa"]{Lisätietoa}
-
-     Note that when the @racket[mode] is @racket['outline] or @racket["outline"], the shape
-     may draw outside of its bounding box and thus parts of the image may disappear
-     when it is cropped. See @secref["nitty-gritty"] (in the @seclink["image-guide"])
-     for a more careful explanation of the ramifications of this fact.
-
-     If the @racket[_mode] argument is @racket['outline] or @racket["outline"], then the last
-     argument can be a @racket[pen] struct or an @racket[image-color?], but if the @racket[_mode]
-     is @racket['solid] or @racket["solid"], then the last argument must be an
-     @racket[image-color?].}))
-
-     Some shapes (notably those with @racket['outline] or @racket["outline"] as
-          the @racket[_mode] argument) draw outside of their bounding boxes and thus
-          cropping them may remove part of them (often the lower-left and lower-right
-          edges). See @secref["nitty-gritty"] (in the @seclink["image-guide"])
-          for a more careful discussion of this issue.
 
 
 

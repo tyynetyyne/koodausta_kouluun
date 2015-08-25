@@ -9,30 +9,17 @@
            scribble/html-properties)
 @(require scribble/eval)
 
-@declare-exporting[fin-doc/fi-image]
-
-@title[#:tag "2htdp_image" #:style 'toc]{2htdp/image}
+@title[#:tag "2htdp_image" #:style 'toc]{Kuvat - 2htdp/image}
 
 @defmodule[2htdp/image]
 
-The image teachpack provides a number of basic image construction
-functions, along with combinators for building more complex images out of
-existing images. Basic images include various polygons, ellipses and
-circles, and text, as well as bitmaps.@margin-note*{In the context of this
-documentation, a @defterm{bitmap} denotes a special form of
-@racket[image?], namely a collection of pixels associated with an image. It
-does not refer to the @racket[bitmap%] class. Typically such image-bitmaps
-come about via the @onscreen{Insert Image...} menu item in DrRacket}
-Existing images can be rotated, scaled, flipped, and overlaid on top of each other.
+Kuvienpiirtokirjasto @italic{2htdp/image} tarjoaa funktioita peruskuvioiden piirtämiseen, muokkaamiseen
+sekä yhdistelyyn isommiksi kuviksi. Peruskuviot voivat olla erilaisia monikulmioita, ellipsejä, ympyröitä tai tekstiä.
+Kirjaston avulla voidaan käsitellä myös @italic{bitmap}-kuvia (jpg, png). Valmiita kuvia voidaan kiertää, skaalata,
+kääntää pelikuvaksi sekä asetella päällekkäin. 
 
-In some situations images are rendered into bitmaps (e.g. when being shown in
-the DrRacket Interactions window) In order to avoid bad performance
-penalties, the rendering process limits the area of the images to
-about 25,000,000 pixels (which requires about 100 MB of storage).
-
-Tässä osiossa esitellään tärkeimmät 2htdp/image - kirjaston toiminnot. Täydellinen kuvaus löytyy osoitteesta:
+Tässä osiossa esitellään tärkeimmät @italic{2htdp/image}-kirjaston toiminnot. Täydellinen kuvaus löytyy osoitteesta:
 @url{http://docs.racket-lang.org/teachpack/2htdpimage.html}
-
     
 @include-section{2htdp_image_peruskuviot.scrbl}
 @include-section{2htdp_image_kuvien_yhdistely.scrbl}
@@ -41,3 +28,33 @@ Tässä osiossa esitellään tärkeimmät 2htdp/image - kirjaston toiminnot. Tä
 @include-section{2htdp_image_kuvien_ominaisuudet.scrbl}
 @include-section{2htdp_image_bmp_kaytto.scrbl}
 @include-section{2htdp_image_varit.scrbl}
+
+@(define VÄRI1 "violet")
+@(define VÄRI2 "slateblue")
+@(define VÄRI3 "aqua")
+
+@(define K1-LEHTI (rhombus 80 15 "solid" VÄRI1))
+@(define K1-LEHDET2 (beside K1-LEHTI K1-LEHTI))
+@(define K1-LEHDET1 (rotate 90 K1-LEHDET2))
+@(define K1-KUKKA (overlay K1-LEHDET1 K1-LEHDET2))
+@(define K1-KUKKA2  (overlay (circle 10 "solid" "white") K1-KUKKA (rotate 45 K1-KUKKA)))
+
+@(define K2-LEHTI (overlay/xy (beside (circle 15 "solid" VÄRI2 ) 
+                                  (overlay/xy (rotate 30 (rhombus 80 15 "solid" VÄRI3)) 0 0 
+                                              (rotate -30 (rhombus 50 20 "solid" "white"))))
+                          -50 60
+                          (radial-star 5 4 50 "solid" "gold")))
+@(define K2-LEHDET (beside K2-LEHTI (flip-horizontal K2-LEHTI)))
+@(define K2-LEHDYKÄT (above (flip-vertical K2-LEHDET) K2-LEHDET)) 
+@(define K2-TIMANTTI (rhombus 50 20 "solid" "white"))
+@(define K2-PEILAUSKUVA (overlay K2-TIMANTTI K2-LEHDYKÄT))
+
+@(define K3-LEHTI (ellipse 200 50 "solid" VÄRI1))
+@(define K3-LEHDET2 (beside K3-LEHTI K3-LEHTI))
+@(define K3-LEHDET1 (rotate 90 K3-LEHDET2))
+@(define K3-KUKKA (overlay K3-LEHDET1 K3-LEHDET2))
+@(define K3-VALMIS (scale 0.4 (overlay (circle 25 "solid" "white") K3-KUKKA (rotate 45 K3-KUKKA))))
+
+@(centered @tabular[#:sep @hspace[1]
+                          (list (list K1-KUKKA2 K2-PEILAUSKUVA K3-VALMIS))])
+

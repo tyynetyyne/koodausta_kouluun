@@ -34,7 +34,8 @@
          bitmap/url
          bitmap/file   ; not supported by WeScheme 
          image-color?
-         color
+         make-color
+         color?
          mode?
          )
          

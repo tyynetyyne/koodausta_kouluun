@@ -105,31 +105,32 @@ Näitä ei kirjoiteta sulkujen sisään.
 
 @subsection[#:style 'unnumbered #:tag "peruslausekkeet"]{Peruslausekkeet}
 
+@defform[(if ehto tosihaara epätosihaara)]{
+
+   Jos @racket[if]-lausekkeen @racket[ehto]-lauseke evaluoituu arvoksi @racket[#true],
+   @racket[if]-lauseke palauttaa @racket[tosihaara]-lausekkeen arvon. Jos @racket[ehto]-lauseke evaluoituu arvoksi  
+   @racket[#false], @racket[if]-lauseke palauttaa @racket[epätosihaara]-lausekkeen arvon.
+
+   Jos @racket[ehto]-lauseke ei palauta @racket[#true] tai  
+   @racket[#false], @racket[if] ilmoittaa virheestä.}
+
 @defform*[#:literals (else)
            ((cond [ehto seuraus] ...)
             (cond [ehto seuraus]
                    ...
                   [else seuraus]))]{
 
-    Valitsee @racket[seuraus]-lausekkeen @racket[ehto]-lausekkeen avulla.  
-    @racket[cond]-lausekkeen ensimmäinen @racket[ehto]-lauseke, joka evaluoituu arvoksi @racket[#true], osoittaa sen @racket[seuraus]-lausekkeen, jonka arvo
+    @racket[cond]-lauseketta evaluoidaan @racket[ehto]-lauseke kerrallaan. Ensimmäinen @racket[ehto]-lauseke,
+    joka evaluoituu arvoksi @racket[#true], osoittaa sen @racket[seuraus]-lausekkeen, jonka arvo
     palautetaan koko @racket[cond]-lausekkeen arvona.
 
-    Jos yksikään @racket[ehto] ei tuota arvoa @racket[#true],
-    koko @racket[cond]-lausekkeen arvo on  @racket[else]-haarassa oleva @racket[seuraus]-lauseke.
-    Jos @racket[else]-haaraa puuttuu, @racket[cond] ilmoittaa virheestä. Jos @racket[ehto]-lauseke palauttaa jotain muuta kuin  
-    @racket[#true] tai @racket[#false], @racket[cond] ilmoittaa virheestä.
+    Jos yksikään @racket[ehto]-lauseke ei tuota arvoa @racket[#true],
+    koko @racket[cond]-lausekkeen arvo on @racket[else]-haarassa oleva @racket[seuraus]-lauseke.
+    Jos @racket[else]-haara puuttuu, @racket[cond] ilmoittaa virheestä. Jos @racket[ehto]-lauseke palauttaa jotain
+    muuta kuin @racket[#true] tai @racket[#false], @racket[cond] ilmoittaa virheestä.
     
-     @defidform/inline[else] voi esiintyä vain @racket[cond]:in sisällä.}
+    @defidform/inline[else] voi esiintyä vain @racket[cond]:in sisällä.}
 
-@defform[(if ehto niin muuten)]{
-
-   Jos @racket[ehto]-lauseke palauttaa @racket[#true],
-   @racket[if] evaluoituu @racket[niin]-lausekkeeksi. Jos @racket[ehto]-lauseke palauttaa 
-   @racket[#false], @racket[if] evaluoituu @racket[muuten]-lausekkeeksi.
-
-   Jos @racket[ehto]-lauseke ei palauta @racket[#true] tai  
-   @racket[#false], @racket[if] ilmoittaa virheestä.}
 
 @defform[(and lauseke lauseke lauseke ...)]{
 
@@ -176,7 +177,7 @@ suosittelemme, että testaat ohjelmasi käyttämällä @racket[check-expect]:iä
 
  @defform[(check-within lauseke odotusarvo poikkeama)]{
 
-  Tarkistaa onko arvo, joka saadaan evaluoimalla @racket[lauseke] lähempänä @racket[odotusarvo]a kuin sallittu @racket[poikkeama].
+  Tarkistaa onko arvo, joka saadaan evaluoimalla @racket[lauseke] lähempänä @racket[odotusarvo]:a kuin sallittu @racket[poikkeama].
 
 @interaction[#:eval (bsl)
 

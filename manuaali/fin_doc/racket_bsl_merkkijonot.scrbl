@@ -49,11 +49,11 @@
 }
 
 @defproc[(substring [s merkkijono][i luonnollinen-luku][j luonnollinen-luku]) merkkijono]{
- Irrottaa merkkijonosta @racket[s] lyhyemmän merkkijonon, joka alkaa @racket[i]:stä ja loppuu @racket[j]:hin (tai merkkijonon loppuun asti, jos
- @racket[j]:tä ei anneta). 
+ Irrottaa merkkijonosta @racket[s] lyhyemmän merkkijonon, joka alkaa @racket[i]:stä ja loppuu @racket[j]:hin
+ (tai merkkijonon loppuun asti, jos @racket[j]:tä ei anneta). Merkkijonon indeksointi alkaa nollasta.
  @interaction[#:eval (bsl) (substring "Mitä kuuluu?" 1 5) (substring "Mitä kuuluu?" 4)]}
 
-@defproc[(string=? [s merkkijono][t merkkijono][x merkkijono] ...) boolean?]{
+@defproc[(string=? [s merkkijono][t merkkijono][x merkkijono] ...) totuusarvo]{
  Tutkii, ovatko merkkijonot samat (merkki merkiltä).
  @interaction[#:eval (bsl) (string=? "hei" "hou") (string=? "Moro" "Moro")]
 }
@@ -63,7 +63,7 @@ Muuntaa merkkijonon luvuksi, palauttaa @racket[#false] jos se on mahdotonta.
  @interaction[#:eval (bsl) (string->number "-2.03") (string->number "kissa")]
 } 
 
-@defproc[(string? [x ei-tyyppivaatimusta]) boolean?]{
+@defproc[(string? [x ei-tyyppivaatimusta]) totuusarvo]{
  Tutkii, onko @racket[x] tyyppiä merkkijono. 
  @interaction[#:eval (bsl) (string? "No, onko se?") (string? 42)]
 }

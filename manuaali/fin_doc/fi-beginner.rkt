@@ -33,6 +33,8 @@
          odd?
          even?
          zero?
+         positive?
+         negative?
          number->string
          current-seconds
          boolean?
@@ -64,6 +66,9 @@
          posn-y
          equal?
          eqv?
+         true
+         false
+         empty
          )
          
          

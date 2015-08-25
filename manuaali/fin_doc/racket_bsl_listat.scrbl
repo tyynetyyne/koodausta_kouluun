@@ -39,13 +39,13 @@
      *bsl))
 
 @defproc[(list [x ei-tyyppivaatimusta] ... ) cons?]{
- Luo listan, joka sisältää sille annetut argumentit. Lista muodostuu ns. cons-soluista, joissa on aina vasen ja oikea
- alkio. Listan viimeisen cons-solun oikean puoleinen alkio on aina @racket['()], eli tyhjä lista, joka voidaan merkitä myös @racket[empty].
+ Luo listan, joka sisältää sille annetut argumentit. Lista muodostuu ns. @list{cons}-soluista, joissa on aina vasen ja oikea
+ alkio. Listan viimeisen cons-solun oikean puoleinen alkio on aina @racket['()].
  @interaction[#:eval (bsl-eval) (list 1 2 3)]
 }
 
 @defproc[(cons [x ei-tyyppivaatimusta][y cons?]) cons?]{
- Yhdistää @racket[x]:n listaan @racket[y], joka voi olla myös tyhjä lista @racket['()].
+ Yhdistää @racket[x]:n listaan @racket[y], joka voi olla myös tyhjä lista @racket[empty] eli @racket['()].
  @interaction[#:eval (bsl-eval) (cons 1 (list 2 3)) (cons "a" empty)]
 }
 
@@ -69,11 +69,11 @@
 }
 
 @defproc[(list-ref [x cons?][i luonnollinen-luku]) ei-tyyppivaatimusta]{
- Palauttaa @racket[i]:n osoittaman alkion listasta @racket[x].
- @interaction[#:eval (bsl) v (list-ref v 9)]
+ Palauttaa @racket[i]:n osoittaman alkion listasta @racket[x]. Listan indeksointi alkaa nollasta.
+ @interaction[#:eval (bsl) v (list-ref v 9)(list-ref v 0)]
 }
 
-@defproc[(member? [x ei-tyyppivaatimusta][l cons?]) boolean?]{
+@defproc[(member? [x ei-tyyppivaatimusta][l cons?]) totuusarvo]{
  Tutkii, onko @racket[x] mukana listassa (vertailu tehdään käyttämällä @racket[equal?]).
  @interaction[#:eval (bsl) x (member? "hei" x)]
 }
@@ -83,12 +83,18 @@
  @interaction[#:eval (bsl) x (remove "hei" x) z (remove "hei" z)]
 }
 
-@defproc[(cons? [x ei-tyyppivaatimusta]) boolean?]{
- Tutkii, onko @racket[x] rakenteeltaan tyyppiä lista. 
+@defproc[(cons? [x ei-tyyppivaatimusta]) totuusarvo]{
+ Tutkii, onko @racket[x] rakenteeltaan lista tai puu, eli koostuuko se ns. @italic{cons}-soluista, joissa on aina vasen ja oikea
+ alkio. 
  @interaction[#:eval (bsl-eval) (cons? (cons 1 '())) (cons? 42)]
 }
 
-@defproc[(empty? [x ei-tyyppivaatimusta]) boolean?]{
+@defproc[(empty? [x ei-tyyppivaatimusta]) totuusarvo]{
  Tutkii, onko @racket[x] tyhjä lista @racket['()].
  @interaction[#:eval (bsl) (empty? empty) (empty? '()) (empty? (cons 2 '())) (empty? 42)]
 }
+
+ @defthing[empty cons?]{
+ Vaihtoehtoinen tapa ilmaista @racket['()] eli tyhjä lista.}
+
+ @interaction[#:eval (bsl) empty]

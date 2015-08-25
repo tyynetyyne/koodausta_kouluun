@@ -32,41 +32,40 @@
 
 @title[#:tag "varit" #:style 'toc]{Värit}
 
-@defproc[(image-color? [x any/c]) boolean?]{
+@defproc[(image-color? [x ei-tyyppivaatimusta]) totuusarvo]{
 
-  Determines if @racket[x] represents a color. Strings, symbols,
-  and @racket[color] structs are allowed as colors.
+  Tutkii, onko @racket[x] merkkijono (tai symboli) joka vastaa jotakin väriä.
+  Väri voi olla myös @racket[make-color]:lla tehty tietue.
 
-  For example,
-  @racket["magenta"], @racket["black"], @racket['orange], and @racket['purple]
-  are allowed. Colors are not case-sensitive, so 
-  @racket["Magenta"], @racket["Black"], @racket['Orange], and @racket['Purple]
-  are also allowed, and are the same colors as in the previous sentence.
-  If a string or symbol color name is not recognized, black is used in its place.
+  Esimerkiksi:
+  @racket["magenta"], @racket["black"], @racket['orange], ja @racket['purple]
+  sallittuja värejä. Värin nimessä sallitaan myös isot kirjaimet, eli   
+  @racket["MAGENTA"], @racket["Black"], @racket['oRange], ja @racket['PurpLE]
+  ovat sallittuja värejä.
   
-  The complete list of colors is the same as the colors allowed in
-  @racket[color-database<%>], plus the color @racket["transparent"], a transparent
-  color.
-
+  Jos merkkijonoa tai symbolia ei tunnisteta väriksi, värinä käytetään mustaa.
+  
+  Voit katso värin nimen @link["http://docs.racket-lang.org/draw/color-database___.html"]{värilistasta}.
+  Lisäksi väriksi hyväksytään myös @racket["transparent"].
 }
 
-@defstruct[color ([red (and/c natural-number/c (<=/c 255))]
-                  [green (and/c natural-number/c (<=/c 255))]
-                  [blue (and/c natural-number/c (<=/c 255))]
-                  [alpha (and/c natural-number/c (<=/c 255))])]{
-  The @racket[color] struct defines a color with @racket[red], 
-      @racket[green], @racket[blue], and @racket[alpha] components
-      that range from @racket[0] to @racket[255]. 
+@defproc[(make-color [red luonnollinen-luku-välillä-0-255]
+                     [green luonnollinen-luku-välillä-0-255]
+                     [blue luonnollinen-luku-välillä-0-255]) color?]{
+
+ Luo tietueen, joka kuvaa uutta väriä, jonka @racket[red], @racket[green] ja @racket[blue]
+ arvot on annettu. Kaikkien argumenttien arvot on oltava välillä @racket[0] - @racket[255]. 
       
-    The @racket[red], @racket[green], and @racket[blue] fields
-      combine to make a color, with the higher values meaning more of the given color. 
-      For example, @racket[(make-color 255 0 0)] makes a
-      bright red color and @racket[(make-color 255 0 255)] makes a bright purple.
-    
-      The @racket[alpha] field controls the transparency of the color. A value of @racket[255] means
-      that the color is opaque and @racket[0] means the color is fully transparent.
-      
-  The constructor, @racket[make-color], also accepts only three arguments, in which case
-  the three arguments are used for the @racket[red], @racket[green], and @racket[blue] fields, and the
-  @racket[alpha] field defaults to @racket[255].
-}
+ Mitä suurempi arvo argumenteilla @racket[red], @racket[green], ja @racket[blue] on, sitä enemmän kyseistä väriä otetaan mukaan
+ uuden värin luomiseen. Esimerkiksi @racket[(make-color 255 0 0)] luo kirkkaan punaisen värin ja
+ @racket[(make-color 255 0 255)] aikaansaa violetin värin.
+
+ @racket[make-color]:lle voi antaa myös neljännen argumentin @racket[alpha]. Se kuvaa värin läpinäkyvyyttä:
+ arvolla @racket[255] vastaa täysin peittävä väriä ja @racket[0] täysin läpinäkyvä. Jos @racket[alpha]:lle
+ ei anneta arvoa, sen on @racket[255].
+ }
+
+@defproc[(color? [x ei-tyyppivaatimusta]) totuusarvo]{
+
+ Tutkii onko annettu argumentti @racket[x] tietue, jonka on tehty käyttämällä @racket[make-color]:ia.
+}                                                    

@@ -38,20 +38,33 @@
      (set! bsl (lambda () *bsl))
      *bsl))
 
-  @defproc[(boolean? [x ei-tyyppivaatimusta]) boolean?]{
+  @defproc[(boolean? [x ei-tyyppivaatimusta]) totuusarvo]{
                                           Tutkii, onko @racket[x] tyyppiä totuusarvo (@racket[#true] tai @racket[#false])
                                           @interaction[#:eval (bsl) (boolean? 42) (boolean? #false)]
                                           }
-  @defproc[(boolean=? [x boolean?][y boolean?]) boolean?]{
+  @defproc[(boolean=? [x totuusarvo][y totuusarvo]) totuusarvo]{
                                                           Tutkii ovatko kaksi totuusarvoa samat.
                                                           @interaction[#:eval (bsl) (boolean=? #true #false)
                                                                        (boolean=? #false #false)]
                                                           }
-  @defproc[(false? [x ei-tyyppivaatimusta]) boolean?]{
+  @defproc[(false? [x ei-tyyppivaatimusta]) totuusarvo]{
                                         Tutkii onko @racket[x] tyyppiä totuusarvo ja sen arvo @racket[#false].
                                         @interaction[#:eval (bsl) (false? #false)]
                                         }
-  @defproc[(not [x boolean?]) boolean?]{
+  @defproc[(not [x totuusarvo]) totuusarvo]{
                                                        Kääntää totuusarvon päinvastaiseksi.
                                                        @interaction[#:eval (bsl) (not #false)]
                                                        }
+
+@defthing[true totuusarvo]{
+ Vaihtoehtoinen tapa ilmaista @racket[#true] ja @racket[#t].
+ WeScheme palauttaa totuusarvot aina tässä muodossa (ilman @litchar{#} merkkiä).}
+
+ @interaction[#:eval (bsl) true]
+
+ @defthing[false totuusarvo]{
+ Vaihtoehtoinen tapa ilmaista @racket[#false] ja @racket[#f].
+ WeScheme palauttaa totuusarvot aina tässä muodossa (ilman @litchar{#} merkkiä).}
+
+ @interaction[#:eval (bsl) false]
+

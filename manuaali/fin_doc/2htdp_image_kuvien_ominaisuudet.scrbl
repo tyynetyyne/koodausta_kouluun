@@ -31,41 +31,34 @@
      
 @declare-exporting[fin-doc/fi-image]
 
-@declare-exporting[fin-doc/fi-image]
-
 @title[#:tag "2htdp_image_kuvan_ominaisuudet" #:style 'toc]{Kuvan ominaisuudet}
 
-@defproc[(image-width [i image?]) (and/c integer? (not/c negative?) exact?)]{
-  Returns the width of @racket[i].
+@defproc[(image-width [k kuva]) positiivinen-kokonaisluku]{
 
-  @image-examples[(image-width (ellipse 30 40 "solid" "orange"))
-                  (image-width (circle 30 "solid" "orange"))
-                  (image-width (beside (circle 20 "solid" "orange")
-                                       (circle 20 "solid" "purple")))
-                  (image-width (rectangle 0 10 "solid" "purple"))]
+  Palauttaa kuvan @racket[k] @index["kuvan leveys"]{leveyden} pikseleissä.
+
+  @image-examples[(image-width (circle 15 "solid" "red"))
+                  (image-width (beside (square 20 "solid" "red")
+                                       (triangle 20 "solid" "red")))]
 }
 
-@defproc[(image-height [i image?]) (and/c integer? (not/c negative?) exact?)]{
-  Returns the height of @racket[i].
+@defproc[(image-height [k kuva]) positiivinen-kokonaisluku]{
+
+  Palauttaa kuvan @racket[k] @index["kuvan korkeus"]{korkeuden} pikseleissä.
   
-  @image-examples[(image-height (ellipse 30 40 "solid" "orange"))
-                  (image-height (circle 30 "solid" "orange"))
-                  (image-height (overlay (circle 20 "solid" "orange")
-                                         (circle 30 "solid" "purple")))
-                  (image-height (rectangle 10 0 "solid" "purple"))]
+  @image-examples[(image-height (triangle 20 "solid" "red"))
+                  (image-height (above (square 20 "solid" "red")
+                                       (square 30 "solid" "red")))]
   }
 
-@defproc[(mode? [x any/c]) boolean?]{
- Determines if @racket[x] is a mode suitable for
- constructing images. 
+@defproc[(mode? [x ei-tyyppivaatimusta]) totuusarvo]{
+ Tutkii onko @racket[x] kuvalle sopiva @index["kuvan tyyppi"]{tyyppi}. 
  
- It can be one of
- @racket['solid], @racket["solid"], @racket['outline],
- or @racket["outline"], indicating if the shape is
- filled in or not.
+ Sallittuja tyyppejä ovat:
+ @racket["solid"] (myös @racket['solid]) tai @racket["outline"] (myös @racket['outline]).
+ Näillä osoitetaan täytetäänkö kuvio värillä @racket[solid] vai piirretäänkö pelkkä reunaviiva @racket[outline].
  
- It can also be an integer between @racket[0] and @racket[255] (inclusive)
- indicating the transparency of the image. The integer @racket[255] is
- fully opaque, and is the same as @racket["solid"] (or @racket['solid]).
- The integer @racket[0] means fully transparent.
+ Kuvan tyyppi voi olla myös kokonaisluku välillä @racket[0] - @racket[255] (mukaanlukien välin päätepisteet).
+ Tämä arvo kuvaa kuvan läpinäkyvyyttä. Arvo @racket[255] tarkoittaa läpinäkymätöntä kuvaa eli samaa kuin 
+ @racket["solid"]. Arvo @racket[0] tarkoittaa täysin läpinäkyvää kuvaa.
 }

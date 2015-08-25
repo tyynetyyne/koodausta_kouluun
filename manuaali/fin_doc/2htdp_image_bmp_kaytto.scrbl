@@ -32,19 +32,18 @@
 
 @title[#:tag "bitmapit" #:style 'toc]{Bitmapit}
 
-@defproc[(bitmap/url [url string?]) image?]{
-  Goes out on the web and downloads the image at @racket[url].
+@defproc[(bitmap/url [url merkkijono]) kuva]{
 
-  Downloading the image happens each time this function is called, so
-  you may find it simpler to download the image once with a browser 
-  and then paste it into your program or download it and use @racket[bitmap].
+  Lataa netistä kuvan osoitteesta @racket[url].
+
+  Kuva ladataan jokakerta, kun tätä funktiota kutsutaan, joten voi olla parempi ladata kuva käsin
+  ja liittää se suoraan ohjelmakoodiin tallentamalla se ensin levylle ja käyttämällä funktiota @racket[bitmap/file].
 }
 
-@defproc[(bitmap/file [ps path-string?]) image?]{
-  Loads the image from @racket[ps].
+@defproc[(bitmap/file [tiedoston-sijainti merkkijono]) kuva]{
 
-  If @racket[ps] is a relative path, the file is relative to
-  the current directory. (When running in DrRacket, the current
-  directory is set to the place where the definitions window is
-  saved, but in general this can be an arbitrary directory.)
+  Lataa kuvan annetusta polusta @racket[tiedoston-sijainti].
+
+  Jos @racket[tiedoston-sijainti] on suhteellinen polku, nykyinen sijainti määritellään siksi hakemistoksi, johon @italic{.rkt} tiedosto
+  on tallennettu. 
 }

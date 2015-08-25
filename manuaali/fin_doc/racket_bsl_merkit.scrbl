@@ -37,11 +37,11 @@
      (set! bsl (lambda () *bsl))
      *bsl))
 
-@defproc[(char? [x any/c]) boolean?]{
+@defproc[(char? [x any/c]) totuusarvo]{
                                        Determines whether a value is a character.
                                        @interaction[#:eval (bsl) (char? "a") (char? #\a)]
                                        }
-@defproc[(char=? [c char][d char][e char] ...) boolean?]{
+@defproc[(char=? [c char][d char][e char] ...) totuusarvo]{
                                                            Determines whether the characters are equal.
                                                            @interaction[#:eval (bsl) (char=? #\b #\a)]
                                                            }

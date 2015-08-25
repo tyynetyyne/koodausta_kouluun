@@ -38,11 +38,11 @@
      (set! bsl (lambda () *bsl))
      *bsl))
 
-  @defproc[(symbol? [x ei-tyyppivaatimusta]) boolean?]{
+  @defproc[(symbol? [x ei-tyyppivaatimusta]) totuusarvo]{
                                          Tutkii, onko @racket[x] tyyppiä symboli.
                                          @interaction[#:eval (bsl) (symbol? 'a) (symbol? 3)]
                                          }
-  @defproc[(symbol=? [x symbol][y symbol]) boolean?]{
+  @defproc[(symbol=? [x symboli][y symboli]) totuusarvo]{
                                                      Tutkii ovatko kaksi symbolia samat.
                                                      @interaction[#:eval (bsl) (symbol=? 'a 'a)(symbol=? 'a 'b)]
                                                      }

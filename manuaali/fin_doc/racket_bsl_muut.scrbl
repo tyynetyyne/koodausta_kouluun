@@ -38,12 +38,12 @@
      (set! bsl (lambda () *bsl))
      *bsl))
 
-   @defproc[(equal? [x ei-tyyppivaatimusta][y ei-tyyppivaatimusta]) boolean?]{
-Tutkii, ovatko kaksi arvoa rakenteellisesti samat, yksittäiset kentät vertaillaan eqv? predikaatin avulla.
+   @defproc[(equal? [x ei-tyyppivaatimusta][y ei-tyyppivaatimusta]) totuusarvo]{
+Tutkii, ovatko kaksi arvoa rakenteellisesti samat, yksittäiset kentät vertaillaan @racket[eqv?] predikaatin avulla.
                                                                    @interaction[#:eval (bsl) (equal? (make-posn 1 2) (make-posn (- 2 1) (+ 1 1)))]
                                                                    }
 
- @defproc[(eqv? [x ei-tyyppivaatimusta][y ei-tyyppivaatimusta]) boolean?]{
+ @defproc[(eqv? [x ei-tyyppivaatimusta][y ei-tyyppivaatimusta]) totuusarvo]{
                                                Tutkii, ovatko kaksi arvoa samat jokaisen funktion kannalta. 
                                                @interaction[#:eval (bsl) (eqv? 1 1.0) (eqv? 1 (+ 1 0))]
                                                }
