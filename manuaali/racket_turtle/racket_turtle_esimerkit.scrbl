@@ -22,22 +22,6 @@
        (bsl+-eval
         (require 2htdp/image)
         (require teachpacks/racket-turtle)
-        (define c1 (circle 10 "solid" "green"))
-        
-        (define zero 0)
-        
-        (define one (list 1))
-        
-        (define q (make-posn "bye" 2))
-        (define p (make-posn 2 -3))
-        
-        (define a (list (list 'a 22) (list 'b 8) (list 'c 70)))
-        (define v (list 1 2 3 4 5 6 7 8 9 'A))
-        (define w (list (list (list (list "bye") 3) #true) 42))
-        (define z (list (list (list (list 'a 'b) 2 3) ) (list #false #true) "world"))
-        (define y (list (list (list 1 2 3) #false "world")))
-        (define x (list 2 "hello" #true))
-        (define z (list 2 "hello" #true "hello"))
         (define neliö
                (list (forward 100)
                      (turn-left 90)
@@ -245,7 +229,7 @@ jättää myös alas.
 
 @section[#:tag "racket_turtle_kynan_paksuuden_ja_viivan_tyylin_vaihtaminen"]{Piirtoviivan paksuuden ja tyylin vaihtaminen}
 
-Viivan tyylin voi vaihtaa @racket[change-pen-style] komennolla ja viivan paksuuden @racket[change-pen-style] komennolla.
+Viivan tyylin voi vaihtaa @racket[change-pen-style] komennolla ja viivan paksuuden @racket[change-pen-size] komennolla.
 
 @italic{Huom!} Tämä ei toimin WeSchemessä.
 

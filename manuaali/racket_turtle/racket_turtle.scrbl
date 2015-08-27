@@ -34,4 +34,3 @@ Racket Turtlella piirrettyjä kuvia:
 @include-section["racket_turtle_esimerkit.scrbl"]
 @include-section["racket_turtle_esimerkit_rekursio.scrbl"]
 
-
