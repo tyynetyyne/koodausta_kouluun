@@ -15,6 +15,8 @@
 
 @defmodule[teachpacks/racket-turtle]
 
+@margin-note{@italic{WeScheme}:ssä kirjasto on eri: @racket[(require wescheme/Engb0r37Kg)]}
+
 Tässä osassa esitellään Racket Turtle - kirjasto, jonka avulla voi piirtää turtle-grafiikkaa ja tehdä monipuolisia
 taideteoksia. Racket Turtle on helppo ohjelmoida tekemään kuvioita, ja se soveltuu aivan aloittelijoillekin. Sen avulla voidaan
 kuitenkin opetella myös vaikeampia ohjelmointikäsitteitä kuten listoja ja rekursiota.

@@ -15,103 +15,6 @@
 
 @title[#:tag "racket_turtle_esimerkkeja"]{Racket Turtle esimerkkejä}
 
-@(begin
-   (require scribble/manual scribble/eval fin-doc/sl-eval)
-   (define (bsl)
-    (define *bsl
-       (bsl+-eval
-        (require 2htdp/image)
-        (require teachpacks/racket-turtle)
-        (define neliö
-               (list (forward 100)
-                     (turn-left 90)
-                     (forward 100)
-                     (turn-left 90)
-                     (forward 100)
-                     (turn-left 90)
-                     (forward 100)))
-        (define sivu
-          (list (forward 100)
-                (turn-left 90)))             
-        (define toisto-neliö
-          (repeat 4 sivu))
-        (define siirry
-               (list (pen-up)
-                     (turn-right 90)
-                     (forward 100) 
-                     (pen-down) 
-                     (change-color "red")))
-        (define kaksi-neliötä 
-          (list neliö 
-                siirry 
-                neliö))
-        (define (muuttuva-sivu x) 
-          (list (forward x) 
-                (turn-left 90)))
-        (define (muuttuva-neliö x) 
-          (repeat 4 (muuttuva-sivu x)))
-       (define koordinaatti-neliö
-         (list (set-origin)
-               (go-to 100 0)
-               (go-to 100 100)
-               (go-to 0 100)
-               (go-to 0 0)))
-       (define peilaus-neliö
-         (list (mirror-x-on) (mirror-y-on)
-               neliö))
-       (define LEIMASIN (circle 5 "solid" "red"))
-       (define leimasin-neliö
-         (list (stamper-on LEIMASIN)
-               (pen-up)
-               neliö))
-       (define suora-koordinaatistossa 
-         (list (set-bg-grid 20 20 "pink")
-               (pen-up)
-               (go-to 0 0)
-               (stamper-on (circle 5 "solid" "blue"))
-               (pen-down)
-               (go-to 40 40)
-               (go-to 80 80)
-               (go-to 120 120)
-               (go-to 160 160)
-               (stamper-off)
-               (go-to 500 500)))
-       (define LEIMASIMET 
-         (list (circle 10 "solid" "red")
-               (star 10 "solid" "blue")
-               (circle 10 "solid" "green")
-               (star 10 "solid" "yellow")
-               (circle 10 "solid" "black")))
-         (define suora-leimasimilla
-           (list (pen-up)
-                 (go-to-origin)
-                 (turn-right 45)
-                 (stamper-on LEIMASIMET)
-                 (repeat 8 (forward 50))))
-         (define erikoinen-kynä-neliö
-           (list (change-pen-size 5)
-                 (change-pen-style "dot") 
-                 neliö))
-         (define neliö-taustakuvan-päällä
-           (list (change-bg-color "black")
-                 (set-bg-image (circle 100 "solid" "gold"))
-                 neliö))
-         (define SATEENKAARI (list "red" "blue" "green" "yellow" "purple"))
-         (define sateenkaari-viiva
-           (list (pen-up)
-                 (go-to 0 0)
-                 (turn-right 45)
-                 (pen-down)
-                 (change-color SATEENKAARI)
-                 (change-pen-size 10)
-                 (hide-turtle)
-                 (repeat 8 (forward 40))
-                 (show-turtle)
-                 (repeat 8 (forward 40))))
-         ))
-     (set! bsl (lambda () *bsl))
-     *bsl))
-
 @section[#:tag "racket_turtle_nelio"]{Perusneliön piirtäminen}
 
 Jotta neliö voidaan piirtää, pitää ensin määritellä (@racket[define]) lista, jossa tarvittavat komennot ovat,
@@ -128,8 +31,11 @@ komentolista.
                      (turn-left 90)
                      (forward 100)))]
 
-@interaction[#:eval (bsl)
-             (draw neliö)]
+@;@interaction[#:eval (bsl)(draw neliö)]
+
+@racketblock[(draw neliö)]
+
+@image["racket_turtle/racket_turtle_pict_2.png"]
 
 @section[#:tag "racket_turtle_nelio_toistorakenteen_avulla"]{Neliön piirtäminen toistorakenteen avulla}
 
@@ -142,8 +48,11 @@ Annamme sille nimen @italic{sivu} ja toistetaan sitä 4 kertaa @racket[repeat]:i
 @racketblock[(define toisto-neliö
                (repeat 4 sivu))]
 
-@interaction[#:eval (bsl)
-             (draw toisto-neliö)]
+@;@interaction[#:eval (bsl)(draw toisto-neliö)]
+
+@racketblock[(draw toisto-neliö)]
+
+@image["racket_turtle/racket_turtle_pict_3.png"]
 
 @section[#:tag "racket_turtle_kaksi_neliota"]{Kahden neliön piirtäminen samaan kuvaan}
 
@@ -162,8 +71,11 @@ jonka avulla Turtle siirtyy uuteen kohtaan ruudulla ja vaihtaa kynän värin pun
                      siirry 
                      neliö))]
 
-@interaction[#:eval (bsl) 
-             (draw kaksi-neliötä)]
+@;@interaction[#:eval (bsl) (draw kaksi-neliötä)]
+
+@racketblock[(draw kaksi-neliötä)]
+
+@image["racket_turtle/racket_turtle_pict_4.png"]
 
 @section[#:tag "racket_turtle_nelio_funktion_avulla"]{Neliön piirtäminen funktion avulla}
 
@@ -178,8 +90,11 @@ Muuttuja @racket{x} kuvaa siis sivun pituutta. Lopuksi kutsumme määriteltyä f
 @racketblock[(define (muuttuva-neliö x) 
                (repeat 4 (muuttuva-sivu x)))]
              
-@interaction[#:eval (bsl)
-             (draw (muuttuva-neliö 30))]
+@;@interaction[#:eval (bsl)(draw (muuttuva-neliö 30))]
+
+@racketblock[(draw (muuttuva-neliö 30))]
+
+@image["racket_turtle/racket_turtle_pict_5.png"]
 
 @section[#:tag "racket_turtle_koordinaatti_nelio"]{Neliön piirtäminen koordinaattien avulla}
 
@@ -194,8 +109,11 @@ määrittely olisi helpompaa asetamme ensin kuvan origon lähtöpisteeseen @rack
         (go-to 0 100)
         (go-to 0 0)))]
 
-@interaction[#:eval (bsl)
-             (draw koordinaatti-neliö)]
+@;@interaction[#:eval (bsl) (draw koordinaatti-neliö)]
+
+@racketblock[(draw koordinaatti-neliö)]
+
+@image["racket_turtle/racket_turtle_pict_6.png"]
 
 @section[#:tag "racket_turtle_nelion_peilaaminen"]{Neliön peilaaminen pisteen suhteen}
 
@@ -208,7 +126,11 @@ suoritettu (tässä esimerkissä kuvion lähtöpiste).
    (list (mirror-x-on) (mirror-y-on)
          neliö))]
 
-@interaction[#:eval (bsl)(draw peilaus-neliö)]
+@;@interaction[#:eval (bsl)(draw peilaus-neliö)]
+
+@racketblock[(draw peilaus-neliö)]
+
+@image["racket_turtle/racket_turtle_pict_7.png"]
 
 @section[#:tag "racket_turtle_nelio_leimasimella"]{Neliön piirtäminen leimasintoiminnon avulla}
 
@@ -225,7 +147,11 @@ jättää myös alas.
         (pen-up)
         neliö))]
 
-@interaction[#:eval (bsl)(draw leimasin-neliö)]
+@;@interaction[#:eval (bsl)(draw leimasin-neliö)]
+
+@racketblock[(draw leimasin-neliö)]
+
+@image["racket_turtle/racket_turtle_pict_8.png"]
 
 @section[#:tag "racket_turtle_kynan_paksuuden_ja_viivan_tyylin_vaihtaminen"]{Piirtoviivan paksuuden ja tyylin vaihtaminen}
 
@@ -239,7 +165,11 @@ Viivan tyylin voi vaihtaa @racket[change-pen-style] komennolla ja viivan paksuud
         (change-pen-style "dot") 
         neliö))]
 
-@interaction[#:eval (bsl)(draw erikoinen-kynä-neliö)]
+@;@interaction[#:eval (bsl)(draw erikoinen-kynä-neliö)]
+
+@racketblock[(draw erikoinen-kynä-neliö)]
+
+@image["racket_turtle/racket_turtle_pict_9.png"]
 
 @section[#:tag "racket_turtle_suoran_piirtäminen_taustaruudukon_paalle"]{Suoran piirtäminen taustaruudukon päälle}
 
@@ -262,7 +192,11 @@ komennolla suoralla sijaitsevien pisteiden kautta. Lopuksi leimasin toiminto ote
         (stamper-off)
         (go-to 500 500)))]
 
-@interaction[#:eval (bsl)(draw suora-koordinaatistossa)]
+@;@interaction[#:eval (bsl)(draw suora-koordinaatistossa)]
+
+@racketblock[(draw suora-koordinaatistossa)]
+
+@image["racket_turtle/racket_turtle_pict_10.png"]
 
 @section[#:tag "racket_turtle_useamman_leimasimen_kayttaminen"]{Pisteiden piirtäminen useamman eri leimasimen kanssa}
 
@@ -283,7 +217,11 @@ Siirrymme origoon @racket[go-to-origin] komennolla ja piirrämme suoran, jolla o
          (stamper-on LEIMASIMET)
          (repeat 8 (forward 50))))]
 
-@interaction[#:eval (bsl)(draw suora-leimasimilla)]
+@;@interaction[#:eval (bsl)(draw suora-leimasimilla)]
+
+@racketblock[(draw suora-leimasimilla)]
+
+@image["racket_turtle/racket_turtle_pict_11.png"]
 
 @section[#:tag "racket_turtle_nelio_taustakuvan_paalle"]{Kuvan koon ja taustavärin muuttaminen sekä taustakuvan asettaminen}
 
@@ -298,7 +236,11 @@ ettei nopeutta haluta vaihtaa).
         (set-bg-image (circle 100 "solid" "gold"))
         neliö))]
 
-@interaction[#:eval (bsl)(draw-custom neliö-taustakuvan-päällä 400 250 0)]
+@;@interaction[#:eval (bsl)(draw-custom neliö-taustakuvan-päällä 400 250 0)]
+
+@racketblock[(draw-custom neliö-taustakuvan-päällä 400 250 0)]
+
+@image["racket_turtle/racket_turtle_pict_12.png"]
 
 @section[#:tag "racket_turtle_sateenkaaren_varit"]{Viiva, jossa kynän väri muuttuu koko ajan}
 
@@ -321,4 +263,8 @@ animaation nopeutta on hidastettu (@racket[draw-custom]:in viimeinen argumentti)
         (show-turtle)
         (repeat 8 (forward 40))))]
 
-@interaction[#:eval (bsl)(draw-custom sateenkaari-viiva 500 500 0.5)]
+@;@interaction[#:eval (bsl)(draw-custom sateenkaari-viiva 500 500 0.5)]
+
+@racketblock[(draw-custom sateenkaari-viiva 500 500 0.5)]
+
+@image["racket_turtle/racket_turtle_pict_13.png"]
