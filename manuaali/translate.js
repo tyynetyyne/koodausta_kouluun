@@ -5,7 +5,8 @@ var translations = {
 	"syntax" : "syntaksi",
 	"prev" : "taakse",
 	"next" : "eteen",
-	"up" : "ylös"
+	"up" : "ylös",
+	"Examples" : "Esimerkit"
 }
 
 var translate_class_names = ["tocsubtitle",
