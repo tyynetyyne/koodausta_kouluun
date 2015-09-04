@@ -9,21 +9,25 @@
 
 @title[#:tag "piirtotyokaluja"]{Piirtotyökaluja}
 
-Peruslaskutoimiukset sisältyvät Racket-kieleen. Kuvioiden piirtämiseen tarvitaan kuitenkin erillinen @bold{kirjasto}. 
-Kirjoita DrRacketin ylempään ikkunaan seuraava koodirivi ja paina "run" niin saat kirjaston sisältämät funktiot käyttöösi.
+Peruslaskutoimitukset sisältyvät Racket-kieleen. Kuvioiden piirtämiseen tarvitaan kuitenkin erillinen @bold{kirjasto}. 
+Kirjoita DrRacketin @bold{määrittelyikkunaan} seuraava koodirivi ja paina "run" niin saat kirjaston
+sisältämät funktiot käyttöösi.
 
-@margin-note{Jos käytät WeScheme-sivustoa, voit hypätä suoraan kohtaan Peruskuviot.} 
+@margin-note{Määrittelyikkuna on DrRacket:issä joko ylhäällä tai vasemmalla riippuen siitä käytetäänkö
+ @italic{Vertical} vai @italic{Horizontal layout}:ia. Ikkunoiden asettelun voi muuttaa
+ valikosta @italic{View->Use Horizontal layout}. Määrittelyikkuna on WeScheme:ssä aina vasemmalla.}
 
 @racketblock[(require 2htdp/image)]
 
-@section{Peruskuviot}
+@italic{Huom!}
+Jos käytät WeScheme-sivustoa jätä tämä rivi pois koodistasi (kuvien piirtofunktiot on sisäänrakennettuna
+WeScheme:een).
+
+@section{Peruskuviot} 
 
 @subsection[#:tag "ympyra"]{Ympyrä}
-
-@margin-note{Voit palauttaa edellisen REPL-kutsun painamalla @italic{Ctrl + nuoli ylös}. 
-Näin pääset kokeilemaan kätevästi parametrien vaikutusta.}  
              
-Kirjoita seuraava rivi DrRacketin REPL:iin (alempi ikkuna) ja paina @italic{<enter>}. Kokeile muuttaa ympyrän kokoa ja väriä.
+Kirjoita seuraava rivi DrRacketin interaktioikkunaan ja paina @italic{<enter>}. Kokeile muuttaa ympyrän kokoa ja väriä.
 
 @racketblock[(circle 50 "solid" "red")]
 
@@ -31,7 +35,11 @@ Kirjoita seuraava rivi DrRacketin REPL:iin (alempi ikkuna) ja paina @italic{<ent
 
 @subsection[#:tag "suorakulmio"]{Suorakulmio}
 
-Suorakulmion piirtämiseen tarvitaan yksi parametri lisää. Kokeile vaihtaa "solid":in tilalle "outline".   
+Suorakulmion piirtämiseen tarvitaan yksi argumentti lisää. Kokeile vaihtaa @racket["solid"]:in tilalle
+@racket["outline"].
+
+@margin-note{Interaktioikkunassa edellisen koodirivin voi palauttaa muokattavaksi painamalla
+ @italic{Ctrl + nuoli ylös}. Näin pääset kokeilemaan miten eri argumentit vaikuttavat funktion paluuarvoon.}  
 
 @racketblock[(rectangle 200 100 "solid" "blue")]
 
@@ -39,7 +47,7 @@ Suorakulmion piirtämiseen tarvitaan yksi parametri lisää. Kokeile vaihtaa "so
 
 @subsection[#:tag "kolmio"]{Kolmio}
 
-@margin-note{Löydät lisää piirtofunktioita täältä: @url{http://docs.racket-lang.org/teachpack/2htdpimage.html}}
+@margin-note{Löydät lisää piirtofunktioita täältä: @url{http://racket.koodiaapinen.fi/manuaali/2htdp_image.html}}
 
 @racketblock[(triangle 100 "solid" "yellow")]
 
@@ -53,9 +61,14 @@ Suorakulmion piirtämiseen tarvitaan yksi parametri lisää. Kokeile vaihtaa "so
 
 @section[#:tag "nimeaminen"]{Nimeäminen}
 
-REPL:ssä kokeilemasi kuviot eivät tallennu tiedostoon. Siksi koodi kannattaa kirjoittaa DrRacketin ylempään ikkunaan eli  
-@italic{määrittelyikkunaan (definitions window)}. Määrittelyillä annetaan nimiä koodinpätkille, jotta niitä voidaan 
-uudelleenkäyttää myöhemmin. Anna nyt piirtämillesi ympyrälle nimi "YMPYRÄ" kirjoittamalla seuraava koodi ylempään ikkunaan ja painamalal "run":
+Interaktioikkunassa kokeilemasi koodi ei tallennu tiedostoon. Siksi se kannattaa kirjoittaa DrRacketin
+toiseen ikkunaan eli @italic{määrittelyikkunaan (definitions window)}. Määrittelyillä annetaan nimiä
+koodinpätkille, jotta niitä voidaan uudelleenkäyttää myöhemmin. Anna nyt piirtämillesi ympyrälle nimi
+"YMPYRÄ" kirjoittamalla seuraava koodi määrittelyikkunaan ja painamalal "run":
+
+@margin-note{Määrittelyikkuna on DrRacket:issä joko ylhäällä tai vasemmalla riippuen siitä käytetäänkö
+ @italic{Vertical} vai @italic{Horizontal layout}:ia. Ikkunoiden asettelun voi muuttaa
+ valikosta @italic{View->Use Horizontal layout. Määrittelyikkuna on WeScheme:ssä aina vasemmalla.}}
 
 @racketblock[(define YMPYRÄ (circle 50 "solid" "red"))]
 
@@ -63,15 +76,15 @@ Tee sama suorakulmiolle:
 
 @racketblock[(define SUORAKULMIO (rectangle 200 100 "solid" "blue"))]
 
-Huomaa, että vaikka painat "run" REPL:iin ei ilmesty mitään. YMPYRÄ ja SUORAKULMIO ovat silti olemassa ja voit kutsua testata niitä
-REPL:stä kirjoittamalla YMPYRÄ ja painamalla @italic{<enter>}.
+Huomaa, että vaikka painat "run" interaktioikkunaan ei ilmesty mitään. YMPYRÄ ja SUORAKULMIO ovat silti olemassa
+ja voit testata niitä interaktioikkunassa kirjoittamalla YMPYRÄ ja painamalla @italic{<enter>}.
 
 @section[#:tag "kuvioiden_yhdistely"]{Kuvioiden yhdistely}
 
 @subsection[#:tag "asettelu_paallekkain"]{Kuvien asettelu päällekkäin}
             
-Voit yhdistää määrittelemäsi ympyrän ja suorakulmion samaan kuvaan kirjoittamalla seuraavan koodin DrRacket:in ylempään ikkunaan ja painamalla "run":
-Huom! Ensimmäisenä annettu kuva tulee päällimmäiseksi.
+Voit yhdistää määrittelemäsi ympyrän ja suorakulmion samaan kuvaan kirjoittamalla seuraavan koodin DrRacket:in
+määrittelyikkunaan ja painamalla "run": Huom! Ensimmäisenä annettu kuva tulee päällimmäiseksi.
 
 @racketblock[(overlay YMPYRÄ SUORAKULMIO)]
 
@@ -82,8 +95,9 @@ Huom! Ensimmäisenä annettu kuva tulee päällimmäiseksi.
 
 @subsection[#:tag "asettelu_vapaasti"]{Kuvien asettelu vapaasti}
 
-Overlay asettaa kuvat päällekkäin niiden keskipisteen kohdalta. Jos haluat siirtää kuvia toistensa suhteen, käytä overlay/xy komentoa, jonka avulla voi
-määritellä kuinka monta pikseliä alempaa kuvaa siirretään x- ja y-akselien suunnassa:
+Overlay asettaa kuvat päällekkäin niiden keskipisteen kohdalta. Jos haluat siirtää kuvia toistensa suhteen,
+käytä overlay/xy funktiota, jonka avulla voi määritellä kuinka monta pikseliä alempaa kuvaa siirretään x- ja
+y-akselien suunnassa:
 
 @racketblock[(overlay/xy YMPYRÄ 0 0 SUORAKULMIO)]
 
@@ -95,7 +109,7 @@ Tässä esimerkissä suorakulmiota on siirretty 100 pikseliä vasemmalle (x-akse
 
 @(overlay/xy YMPYRÄ 100 0 SUORAKULMIO)
 
-Tässä esimerkissä suorakulmiota on siirretty 100 pikeseliä alas (y-akselin suunnassa):
+Tässä esimerkissä suorakulmiota on siirretty 100 pikseliä alas (y-akselin suunnassa):
 
 @racketblock[(overlay/xy YMPYRÄ 0 100 SUORAKULMIO)]
 

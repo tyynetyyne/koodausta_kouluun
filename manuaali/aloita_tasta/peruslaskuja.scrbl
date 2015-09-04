@@ -16,7 +16,12 @@ Ohjelmointi on helpointa aloittaa peruslaskuilla, ja samalla tutustumme ohjelmoi
 
 @section{Yhteen-, vähennys-, kerto- ja jakolasku}
 
-DrRacketissä on kaksi ikkunaa, kirjoita alempaan ikkunaan eli REPL:iin seurava Racket-lauseke ja paina @italic{<enter>}. 
+Kirjoita DrRacketin @bold{interaktioikkunaan} eli siihen ikkunaan, jossa on @litchar{>} prompti),
+seuraava Racket-lauseke ja paina @italic{<enter>}.
+
+@margin-note{Ínteraktioikkuna on DrRacket:issä joko alhaalla tai oikealla riippuen siitä käytetäänkö
+ @italic{Vertical} vai @italic{Horizontal layout}:ia. Ikkunoiden asettelun voi muuttaa
+ valikosta @italic{View->Use Horizontal layout}. Interaktioikkuna on WeScheme:ssä aina oikealla.}
 
 @racketblock[(+ 1 2)]
 
@@ -27,10 +32,10 @@ Kokeile myös näitä:
              (/ 20 5)
              (+ 1 2 3 4 5 6 7 8 9)]
 
-Esimerkeistä voi huomata kaksi Racket-kielen perussääntöä: 
-@itemlist[@item{kaikki Racket-lausekkeet alkavat ja loppuvat sulkuihin}
-          @item{ensimmäisen sulkumerkin jälkeen kerrotaan "mitä tehdään", eli kirjoitetaan kutsuttavan @bold{funktion} nimi, 
-                sen jälkeen annetaan funktion @bold{parametrit}}]
+Esimerkeistä voi huomata Racket-kielen perussäännöt: 
+@itemlist[@item{kaikki Racket-funktiokutsut alkavat ja loppuvat sulkuihin}
+          @item{ensimmäisen sulkumerkin jälkeen kerrotaan "mitä tehdään", eli kirjoitetaan kutsuttavan
+           @bold{funktion} nimi, sen jälkeen annetaan funktion @bold{argumentit}}]
 
 @section{Yhdistettyjä laskutoimituksia}
 
