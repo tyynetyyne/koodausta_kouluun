@@ -1,8 +1,11 @@
 
 var translations = {
     "On this page:" : "Tällä sivulla:",
-    "procedure" : "proseduuri",
-	"syntax" : "syntaksi"
+    "procedure" : "funktio",
+	"syntax" : "syntaksi",
+	"prev" : "taakse",
+	"next" : "eteen",
+	"up" : "ylös"
 }
 
 var translate_class_names = ["tocsubtitle",

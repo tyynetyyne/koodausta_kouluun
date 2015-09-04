@@ -9,7 +9,11 @@
            scribble/html-properties)
 @(require scribble/pdf-render)
 
-@title[#:tag "kasikirja" #:style 'toc]{Koodarin käsikirja}
+@(define finnish-style
+     (make-style "finnish"
+                 (list (make-js-addition "translate.js"))))
+
+@title[#:tag "kasikirja" #:style finnish-style]{Koodarin käsikirja}
 
 Tämä käsikirja on tarkoitettu käytettäväksi ohjelmoinnin opetuksessa hakuteoksena.
 Se käsittää kaikki osa-alueet, joita Koodausta kouluun oppilaan tehtävissä tarvitaan ja
