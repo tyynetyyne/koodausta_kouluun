@@ -1,0 +1,116 @@
+#lang scribble/manual
+@(require scriblib/figure)
+@(require 2htdp/image)
+@(require (for-label fin-doc/fi-beginner))
+@(require (for-label fin-doc/fi-image))
+@(require scribble/core
+           scribble/html-properties)
+@(require scribble/racket)
+@(require fin-doc/pr-math)
+@setup-math
+
+@title[#:tag "racket_alkeet"]{Racket alkeet}
+
+@section[#:tag "peruslaskut_ja_laskujarjestys"]{Peruslaskut ja laskujärjestys}
+
+@subsection[#:tag "racket_alkeet_harjoitus_1"]{Harjoitus 1}
+
+Harjoitellaan kirjoittamaan Racket-kielen lausekkeita.
+
+Lataa harjoitustiedosto tästä:
+
+@tabular[#:sep @hspace[1]
+                          (list (list @image[#:scale 0.3 "drracket.png"]
+                                      @italic{@link["http://tinyurl.com/nvuxjuc"]{Peruslaskut (DrRacket)}})
+                                (list @image[#:scale 0.22 "wescheme.png"]
+                                      @italic{@link["http://www.wescheme.org/view?publicId=282iMPmxjV"]{Peruslaskut (WeScheme)}}))]
+                                
+@margin-note{Jos käytät WeScheme:ä ja haluat tallentaa työsi, tarvitset Google-tunnukset.
+Kirjaudu ENSIN sisään @link["http://www.wescheme.org"]{WeScheme}:en, ja tule vasta
+jälkeen avaamaan tehtävälinkki.}
+
+Tässä harjoituksessa tarvitset seuraavia Racket-kielen funktioita:
+
+@tabular[#:style 'boxed #:sep @hspace[3]
+                          (list (list @racket[+] @racket[-] @racket[*]
+                                      @racket[/] @racket[floor]))]
+
+Tehtävätiedosto sisältää nämä laskutehtävät:
+
+@bold{Tehtävä 1}
+@tabular[#:style 'boxed 
+         #:row-properties (list 'border)
+        
+                          (list (list "a)" @math-disp{38+45})
+                                (list "b)" @math-disp{53-28})
+                                (list "c)" @math-disp{{73} \cdot {109}})
+                                (list "d)" @math-disp{99:4}))]
+
+
+@bold{Tehtävä 2}
+@tabular[#:style 'boxed
+         #:row-properties (list 'border)
+      
+                          (list (list "a)" @math-disp{18 - 5 + 7})
+                                (list "b)" @math-disp{53 + 15 : 3})
+                                (list "c)" @math-disp{47 \cdot 8 - 16})
+                                (list "d)" @math-disp{20 : 5 \cdot 32}))]
+
+@bold{Tehtävä 3}
+@tabular[#:style 'boxed 
+         #:row-properties (list 'border)
+                          (list (list "a)" @math-disp{\frac{85-32}{12}})
+                                (list "b)" @math-disp{\frac{207}{4 \cdot 11}})
+                                (list "c)" @math-disp{(34 + 16) \cdot (60 : 3)})
+                                (list "d)" @math-disp{280 - 6 \cdot (3 + 7)}))]
+
+@subsection[#:tag "racket_alkeet_harjoitus_2"]{Harjoitus 2}
+
+Harjoitellaan kirjoittamaan Racket-kielen lausekkeita kuvista.
+
+Lataa harjoitustiedosto tästä:
+
+@tabular[#:sep @hspace[1]
+                          (list (list @image[#:scale 0.3 "drracket.png"]
+                                      @italic{@link["http://tinyurl.com/qaxumeb"]{Lausekkeita kuvista (DrRacket)}})
+                                (list @image[#:scale 0.22 "wescheme.png"]
+                                      @italic{@link["http://www.wescheme.org/view?publicId=T2pyQpMYvy"]{Lausekkeita kuvista (WeScheme)}}))]
+                                
+@margin-note{Jos käytät WeScheme:ä ja haluat tallentaa työsi, tarvitset Google-tunnukset.
+Kirjaudu ENSIN sisään @link["http://www.wescheme.org"]{WeScheme}:en, ja tule vasta
+jälkeen avaamaan tehtävälinkki.}
+
+Tässä harjoituksessa tarvitset seuraavia Racket-kielen funktioita:
+
+@tabular[#:style 'boxed #:sep @hspace[3]
+                          (list (list @racket[+] @racket[-] @racket[*]
+                                      @racket[/] @racket[floor]))]
+
+Tehtävätiedosto sisältää nämä tehtävät ja kuvat:
+
+@bold{Lausekkeet kuvista}
+@tabular[#:style 'boxed 
+         #:row-properties (list 'border)
+        
+                          (list (list "Tee Racket-lauseke, joka laskee kuinka monta mustaa neliötä
+ kuvassa on." @image["kuvat/vaakaraidat.jpg"])
+                                (list "Tee Racket-lauseke, joka laskee kunka monta pikku neliötä
+ rubiikinkuution sivuilla on."  @image["kuvat/rubikinkuutio.jpg"])
+                                (list "Tee Racket-lauseke, joka laskee kuinka monta merkkiä oheisessa
+ koodissa on." @image["kuvat/koodi.jpg"])
+                                (list "Tee Racket-lauseke, joka laskee montako harmaata kuusikulmiota kuvassa
+ on." @image["kuvat/mustavalkokuusikulmiot.jpg"])
+(list "Tee Racket-lauseke, joka laskee kuinka paksu musta rengas on, jos ympyrän
+ halkaisija on 100cm." @image["kuvat/mustavalkoympyra.jpg"])
+(list "Tee Racket-lauseke, joka laskee montako kuvan näköistä elementtiä
+ raadaan rakennettua, jos pikkulaattoja (kuusikulmiot) on käytössä 10 000."
+ @image["kuvat/kuusikulmiot2.png"])
+(list " Tee Racket-lauseke, joka laskee montako kuvan näköistä taulua(50cm * 50cm)
+ mahtuu seinälle, jonka korkeus 2,5m ja leveys 6,0m. Tee vielä Racket-lauseke joka selvittää montako ei-valkoista kolmiota seinälle
+ tuli." @image["kuvat/kolmiot.jpg"])
+
+                                )]
+
+
+
+@;@section[#:tag "peruskuvat_ja_kuvien_yhdistely"]{Peruskuvat ja kuvien yhdistely}
