@@ -264,6 +264,23 @@ Esim. funktio ”positive?” ottaa syötteeksi luvun, joten sen arvojoukko on @
              (positive? 2.5)
              (positive? -2)]
 
+@section[#:style 'unnumbered]{paketti} 
+@margin-note{package}	
+
+Racket-kirjastot paketoidaan paketteihin, joita voi ladata ja asentaa omalle koneelleen. @index["paketin asentaminen"]{Paketin asennus}
+aloitetaan avaamalla DrRacket:issä @italic{File -> Package Manager}. Avautuvaan ikkunaan kirjoitetaan
+asennettavan paketin nimi esim. @bold{teachpacks} ja painetaan @italic{<enter>}. Jos nettiyhteys on kunnossa, paketti asentuu automaattisesti ja ikkunan voi sulkea kun näkyviin tulee teksti
+@italic{--- post installing collections ---}. Tämän jälkeen paketin kirjastot voi ottaa käyttöö @racket[require]-komennolla.
+@margin-note{DrRacket:in asennuksessa on mukana monta pakettia, esim. 2htdp/image ja 2htdp/universe kirjastot tulevan sen mukana
+             automaattisesti eikä niitä tarvitse erikseen asentaa.}
+
+@image[#:scale 0.8 "sanasto/asenna_paketti2.png"]
+
+@italic{Huom!} WeScheme:ssä ei ole @italic{Package Manager}:ia. Laajennuskirjastot otetaan siinä käyttöön
+suoraan @racket[require]-komennolla. Huomaa, että WeScheme-kirjastoilla on eri nimet kuin vastaavalla
+DrRacket-kirjastoilla (WeScheme-kirjaston nimi on muotoa wescheme/xxxxxxxxxxxx). Kaikkia kirjastoja ei ole
+myöskään saatavilla WeScheme:lle.
+
 @section[#:style 'unnumbered]{parametri} 
 @margin-note{parameter}	
 
