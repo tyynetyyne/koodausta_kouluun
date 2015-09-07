@@ -183,7 +183,7 @@ Palauttaa @racket[#true], jos argumentti on suurempi kuin nolla.}
  @interaction[#:eval (bsl) (number->string 42)(number->string (sqrt 2))]
 }
 
-@section[#:style 'unnumbered #:tag "aikafunktioit"]{Aikafunktiot}  
+@section[#:style 'unnumbered #:tag "aikafunktiot"]{Aikafunktiot}  
 
 @defproc[(current-seconds) kokonaisluku]{
  Palauttaa ajan, joka on kulunut jostakin (ennalta määritellystä) alkupäivämäärästä alkaen. Aika annetaan sekunteina. 

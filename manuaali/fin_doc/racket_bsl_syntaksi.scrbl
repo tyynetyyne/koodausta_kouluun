@@ -160,16 +160,16 @@ suosittelemme, että testaat ohjelmasi käyttämällä @racket[check-expect]:iä
    Tarkistaa, että @racket[lauseke] evaluoituu @racket[odotusarvo]:ksi.
                    
 @;%
-@(begin
-#reader scribble/comment-reader
-(racketblock
+@;@(begin
+@;#reader scribble/comment-reader
+@;(racketblock
   
-(check-expect (summa 4 7) 11)
-(check-expect (summa -10 4) -6)
+@;(check-expect (summa 4 7) 11)
+@;(check-expect (summa -10 4) -6)
 
-(define (summa a b)
-  (+ a b))
-))
+@;(define (summa a b)
+@;  (+ a b))
+@;))
 @;%
  @racket[check-expect]-lausekkeet sijoitetaan tyypillisesti ennen testattavaa funktiota. Niiden avulla kerrotaan
  miten funktiota kuuluu käyttää, ja miten se toimii. Jos @racket[lauseke] tai @racket[odotusarvo] tuottaa epätarkan arvon, testaamiseen tulee käyttää 
