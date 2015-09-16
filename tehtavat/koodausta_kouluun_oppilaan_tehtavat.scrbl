@@ -21,10 +21,11 @@ löydät uutta kivaa koodattavaa.
 
 
 
-@tabular[(list (list @local-table-of-contents[#:style 'immediate-only ]
-                     @centered[@image["tehtavat.png" #:scale 0.4]]))]
+@tabular[(list (list @local-table-of-contents[#:style 'unnumbered ]
+                     @centered[@image["tehtavat.png" #:scale 0.3]]))]
 
 @; ------------------------------------------------------------------------
+
 @include-section["racket_alkeet.scrbl"]
 
 @index-section[]
