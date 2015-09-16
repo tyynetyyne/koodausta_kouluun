@@ -25,7 +25,7 @@ Jakson lopuksi osaat ohjelmoida mm. nämä kuvat:
 
 @(define POHJA2 (rectangle 165 110  "outline" "black"))
 @(define POHJA3 (rectangle 166 111  "outline" "black"))
-@(define VAIHE1 (overlay (circle 36 "solid" "red") POHJA2)) 
+@(define VAIHE1 (overlay (circle 33 "solid" "red") POHJA2)) 
 @(define JAPANINLIPPU (overlay/xy VAIHE1 0 0 POHJA3))
 
 @(define RENGAS (circle 20 "solid" "black"))
