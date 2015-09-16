@@ -88,9 +88,16 @@ Esim. funktio ”positive?” palauttaa arvon, joka on tyyppiä totuusarvo, jote
 Toiminto DrRacketissä, jonka avulla voidaan evaluoida koodia lauseke-lausekkeelta ja nähdä evaluoinnin välivaiheet
 erillisessä ikkunassa.
 
-@italic{Huom!} WeScheme:ssä ei ole tätä toimintoa.
+@margin-note[@italic{Huom!} " WeScheme:ssä ei ole tätä toimintoa."]
 
-@image["sanasto/stepper_img.png" #:scale 0.5 ]
+Stepper käynnistetään DrRacket:in oikeasta yläkulmasta painamalla @italic{Step}-nappia.
+
+@image["sanasto/stepper_start.png"  #:scale 0.8]
+
+Stepper-ikkunan vasemmalla puolella näkyy kulloinkin evaluoitavana oleva lauseke vihreänä, ja oikealla puolella evaluoinnin tulos violettina.
+Seuraava askel evaluoidaan, kun käyttäjä painaa @italic{Step}-nappia.
+
+@image["sanasto/stepper_img.png" #:scale 0.6 ]
 
 @section[#:style 'unnumbered]{BSL} 
 @margin-note{Beginning Student Language}	
@@ -169,6 +176,7 @@ Interaktioikkunassa näytetään myös määrittelyikkunassa ajetun koodin tuott
 Interaktioikkuna sijaitsee joko alhaalla tai oikealla, riippuen käytetyistä asetuksista. 
 
 @image["sanasto/interaktioikkuna.png" #:scale 0.5 ]
+@image["sanasto/interaktioikkuna_ala.png" #:scale 0.515 ]
 
 @section[#:style 'unnumbered]{kirjasto} 
 @margin-note{library}	
@@ -250,6 +258,7 @@ tai painamalla @italic{Crtl+r}.
 Määrittelyikkuna sijaitsee joko ylhäällä tai vasemmalla, riippuen käytetyistä asetuksista. 
 
 @image["sanasto/maarittelyikkuna.png" #:scale 0.5 ]
+@image["sanasto/maarittelyikkuna_yla.png" #:scale 0.51 ]
 
 @section[#:style 'unnumbered]{määrittelyjoukko} 
 @margin-note{domain}	
