@@ -132,7 +132,7 @@ Näitä ei kirjoiteta sulkujen sisään.
     @defidform/inline[else] voi esiintyä vain @racket[cond]:in sisällä.}
 
 
-@defform[(and lauseke lauseke lauseke ...)]{
+@defform[(and lauseke lauseke ...)]{
 
     Jos jokainen @racket[lauseke] evaluoituu @racket[#true]:ksi,  koko lausekkeen arvo on  
     @racket[#true]. Jos yksikin @racket[lauseke] on @racket[#false], @racket[and]
