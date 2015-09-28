@@ -4,12 +4,12 @@
 @(require scriblib/figure)
 @(require 2htdp/image)
 @(require (for-label fin-doc/fi-beginner))
-@(require (for-label fin-doc/fi-image)))
+@(require (for-label fin-doc/fi-image))
 @(require scribble/core
            scribble/html-properties)
 @(require scribble/eval)
 
-@title[#:tag "2htdp_image" #:style 'toc]{Kuvat - 2htdp/image}
+@title[#:tag "kuvat_2htdp_image" #:style 'toc]{Kuvat - 2htdp/image}
 
 @defmodule[2htdp/image]
 
