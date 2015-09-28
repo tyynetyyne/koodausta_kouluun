@@ -5,6 +5,7 @@
 @(require 2htdp/image)
 @(require (for-label fin-doc/fi-beginner))
 @(require (for-label fin-doc/fi-image))
+@(require (for-label fin-doc/fi-universe))
 @(require scribble/core
            scribble/html-properties)
 @(require scribble/pdf-render)
@@ -32,6 +33,7 @@ Käsikirja sisältää osiot:
 @include-section["fin_doc/racket_bsl.scrbl"]
 @include-section["fin_doc/2htdp_image.scrbl"]
 @include-section["racket_turtle/racket_turtle.scrbl"]
+@include-section["fin_doc/2htdp_universe.scrbl"]
 @include-section["sanasto/koodausta_kouluun_sanasto.scrbl"]
 
 
@@ -39,6 +41,5 @@ Käsikirja sisältää osiot:
 
 @bold{Tulossa ovat:}
 
-@itemlist[@item{Animaatiot - 2htdp/universe}
-          @item{Pelit - Peruspeli}]
+@itemlist[@item{Peruspeli}]
 @index-section[]
