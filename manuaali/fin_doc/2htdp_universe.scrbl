@@ -32,3 +32,5 @@ Täydellinen kuvaus löytyy osoitteesta:
 @include-section{2htdp_universe_animaatiot.scrbl}
 @include-section{2htdp_universe_interaktiiviset_ohjelmat.scrbl}
 
+@centered[@image[#:scale 0.6 "fin_doc/my_packman.png"]]
+
