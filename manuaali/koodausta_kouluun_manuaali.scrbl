@@ -34,6 +34,7 @@ Käsikirja sisältää osiot:
 @include-section["fin_doc/2htdp_image.scrbl"]
 @include-section["racket_turtle/racket_turtle.scrbl"]
 @include-section["fin_doc/2htdp_universe.scrbl"]
+@include-section["display_read/display_read.scrbl"]
 @include-section["sanasto/koodausta_kouluun_sanasto.scrbl"]
 
 
