@@ -9,7 +9,7 @@
            scribble/html-properties)
 @(require scribble/eval)
 
-@title[#:tag "kuvat_2htdp_image" #:style 'toc]{Kuvat - 2htdp/image}
+@title[#:tag "2htdp_image" #:style 'toc]{Kuvat - 2htdp/image}
 
 @defmodule[2htdp/image]
 
