@@ -18,7 +18,7 @@
 @margin-note{Jotta Display-Read toimii DrRacket:ssa, sinun pitää asentaa @bold{teachpacks} paketti.
  Katso asennusohjeet @link["sanasto.html#(part._paketti)"]{täältä}.
  @italic{WeScheme}:ssä ei tarvitse asentaa pakettia mutta kirjastolla on eri nimi:
- @racket[(require wescheme/5q4VfTdrep)]}
+ @racket[(require wescheme/fH1ca78qBw)]}
 
 Tässä osassa esitellään Display-Read -kirjasto, jonka avulla voi pyytää käyttäjää antamaan merkkijonon tai valitsemaan lukuja, merkkijonoja tai
 kuvia. Kirjaston avulla voi myös esittää käyttäjälle ohjelman tulokset (luku, merkkijono tai kuva). Kirjaston avulla voi ohjelmoida yksinkertaisia
