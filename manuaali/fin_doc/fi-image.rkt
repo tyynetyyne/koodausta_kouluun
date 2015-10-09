@@ -17,7 +17,7 @@
          ellipse
          add-line
          text
-         ;empty-image (not supported by WeScheme)
+         empty-image 
          overlay
          beside
          above
@@ -29,6 +29,7 @@
          flip-horizontal
          flip-vertical
          crop
+         frame
          image-width
          image-height
          bitmap/url

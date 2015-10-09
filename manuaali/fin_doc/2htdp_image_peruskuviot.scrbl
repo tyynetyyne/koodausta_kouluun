@@ -80,7 +80,7 @@ Luo @index["neljäkäs"]{neljäkkään} eli @italic{suunnikkaan}, jonka kaikki s
     ylimmän (ja alimman) kulman suuruuden.
 
 @image-examples[(rhombus 60 50 "solid" "purple")
-                (rhombus 80 150 "solid" "pink")]
+                (rhombus 80 150 "outline" "magenta")]
 }
 
 @section[#:style 'unnumbered #:tag "kolmiot"]{Kolmiot}
@@ -93,6 +93,7 @@ Luo @index["neljäkäs"]{neljäkkään} eli @italic{suunnikkaan}, jonka kaikki s
  Luo kannallaan seisovan @index["tasasivuinen kolmio"]{tasasivuisen kolmion}, jonka @racket[sivun-pituus] on annettu.
   
     @image-examples[(triangle 90 "solid" "springgreen")]
+ @image-examples[(triangle 70 "outline" "tomato")]
 
 }
 
@@ -105,6 +106,8 @@ Luo @index["neljäkäs"]{neljäkkään} eli @italic{suunnikkaan}, jonka kaikki s
  Luo @index["suorakulmainen kolmio"]{suorakulmaisen kolmio}n, jonka kateettien pituudet ovat @racket[kateetin1-pituus] ja @racket[kateetin2-pituus].
                                                             
   @image-examples[(right-triangle 80 120 "solid" "turquoise")]
+   @image-examples[(right-triangle 120 80 "outline" "slateblue")]
+
 }
 
 @defproc[(isosceles-triangle [kyljen-pituus positiivinen-reaaliluku] 
@@ -173,7 +176,7 @@ Luo tähdenmuotoisen monikulmion, joka määritellään kahden säteen ja @racke
   Luo @index["ympyrä"]{ympyrän}, jonka @racket[säde], @racket[tyyli] ja @racket[väri] on annettu.
   
    @image-examples[(circle 50 "solid" "violet")
-                   (circle 40 100 "violet")]
+                   (circle 40 "outline" "tomato")]
 
 }
 
@@ -225,14 +228,12 @@ Luo tähdenmuotoisen monikulmion, joka määritellään kahden säteen ja @racke
 
  @index["tyhjä kuva"]{Tyhjä kuva}. Tämän kuvan leveys ja korkeus ovat nollia eikä se piirry millään tavalla. Jos
  lisäät @racket[empty-image]:n toiseen kuvaan, saat alkuperäisen kuvan.
-
- @italic{Huom!} Tämä toiminto puuttuu WeSchemestä.}
   
   @image-examples[(image-width empty-image)
                   (equal? (above empty-image
                                  (rectangle 10 10 "solid" "red"))
                           (beside empty-image
-                                  (rectangle 10 10 "solid" "red")))]
+                                  (rectangle 10 10 "solid" "red")))]}
 
 
 

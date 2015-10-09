@@ -89,3 +89,23 @@
  @image-examples[(crop 0 0 40 40 (circle 40 "solid" "red"))
                  (crop 40 40 40 40 (circle 40 "solid" "red"))]
 }
+
+@defproc[(frame [k kuva]) kuva]{
+ Palautaa kuvan, joka on täysin samanlainen kuin kuva @racket[k], mutta siihen sille on lisätty 
+ yhden pikselin levyinen musta reuna.
+  
+  @image-examples[(frame (ellipse 40 40 "solid" "pink"))]
+
+  Tämän funktion avulla voidaan debugata yhdistettyjä kuvia, eli nähdä missä kohtaa yksittäinen kuva loppuu. 
+    
+  @image-examples[(beside
+                   (ellipse 20 70 "solid" "lightsteelblue")
+                   (frame (ellipse 20 50 "solid" "mediumslateblue"))
+                   (ellipse 20 30 "solid" "slateblue")
+                   (ellipse 20 10 "solid" "navy"))]
+}
+
+@;@defproc[(center-pinhole [image image?]) image?]{
+@;  Creates a pinhole in @racket[image] at its center.
+@;  @image-examples[(center-pinhole (rectangle 40 20 "solid" "red"))
+@;                  (rotate 30 (center-pinhole (rectangle 40 20 "solid" "orange")))]}
