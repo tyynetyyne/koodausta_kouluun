@@ -32,6 +32,24 @@
 
 @title[#:tag "varit" #:style 'toc]{Värit}
 
+@defproc[(image-color? [x ei-tyyppivaatimusta]) totuusarvo]{
+
+  Tutkii, onko @racket[x] merkkijono (tai symboli) joka vastaa jotakin väriä.
+  Väri voi olla myös @racket[make-color]:lla tehty tietue.
+
+  Esimerkiksi:
+  @racket["magenta"], @racket["black"], @racket['orange], ja @racket['purple]
+  sallittuja värejä. Värin nimessä sallitaan myös isot kirjaimet, eli   
+  @racket["MAGENTA"], @racket["Black"], @racket['oRange], ja @racket['PurpLE]
+  ovat sallittuja värejä.
+  
+  Jos merkkijonoa tai symbolia ei tunnisteta väriksi, värinä käytetään mustaa.
+  
+  Voit katsoa värin nimen @link["http://racket.koodiaapinen.fi/manuaali/varilista.html"]{värilistasta}. Näiden lisäksi väriksi hyväksytään myös @racket["transparent"].
+}
+
+@include-section["2htdp_image_varilista.scrbl"]
+
 @defproc[(make-color [red luonnollinen-luku-välillä-0-255]
                      [green luonnollinen-luku-välillä-0-255]
                      [blue luonnollinen-luku-välillä-0-255]) color?]{
@@ -52,21 +70,3 @@
 
  Tutkii onko annettu argumentti @racket[x] tietue, jonka on tehty käyttämällä @racket[make-color]:ia.
 }
-
-@defproc[(image-color? [x ei-tyyppivaatimusta]) totuusarvo]{
-
-  Tutkii, onko @racket[x] merkkijono (tai symboli) joka vastaa jotakin väriä.
-  Väri voi olla myös @racket[make-color]:lla tehty tietue.
-
-  Esimerkiksi:
-  @racket["magenta"], @racket["black"], @racket['orange], ja @racket['purple]
-  sallittuja värejä. Värin nimessä sallitaan myös isot kirjaimet, eli   
-  @racket["MAGENTA"], @racket["Black"], @racket['oRange], ja @racket['PurpLE]
-  ovat sallittuja värejä.
-  
-  Jos merkkijonoa tai symbolia ei tunnisteta väriksi, värinä käytetään mustaa.
-  
-  Voit katsoa värin nimen @link["http://racket.koodiaapinen.fi/manuaali/varilista.html"]{värilistasta}. Näiden lisäksi väriksi hyväksytään myös @racket["transparent"].
-}
-
-@include-section["2htdp_image_varilista.scrbl"]
