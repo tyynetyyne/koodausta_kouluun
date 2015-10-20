@@ -4,7 +4,7 @@
 @(require (for-label fin-doc/fi-beginner))
 @(require (for-label fin-doc/fi-image))
 @(require scribble/core
-           scribble/html-properties)
+          scribble/html-properties)
 @(require scribble/racket)
 @(require fin-doc/pr-math)
 @setup-math
@@ -19,15 +19,15 @@ ja paina @italic{run}. Nyt voit tutustua interaktioikkunassa siihen miten perusk
 Katso käsikirjasta ohjeet ja kokeile näitä:
 
 @tabular[#:style 'boxed #:sep @hspace[3]
-                          (list (list @racket[circle] @racket[rectangle]
-                                      @racket[triangle] @racket[star] @racket[ellipse]))]
+         (list (list @racket[circle] @racket[rectangle]
+                     @racket[triangle] @racket[star] @racket[ellipse]))]
 
 Tallenna nyt kaksi em. kokeilemaasi kuviota määrittelyikkunaan. Tutustu sitten siihen miten kaksi tai useampi kuva yhdistetään
 yhdeksi kuvaksi. Kokeile yhdistää aikaisemmin tekemäsi kuvat nyt määrittellyikkunassa käyttäen näitä funktioita:
 
 @tabular[#:style 'boxed #:sep @hspace[3]
-                          (list (list @racket[overlay] @racket[beside] @racket[above]
-                                      @racket[overlay/xy]))]
+         (list (list @racket[overlay] @racket[beside] @racket[above]
+                     @racket[overlay/xy]))]
 
 
 @section[#:tag "racket_alkeet_peruskuviot_1"]{Yksinkertaiset kuvat}
@@ -38,10 +38,11 @@ Koodaa em. funktioiden avulla seuraavat tehtävät:
 
 @tabular[#:style 'boxed 
          #:row-properties (list 'border)
-        
-                          (list (list "Koodaa Japanin lippu." @image["kuvat/japaninlippu.png"])
-                                (list "Koodaa Suomen lippu. "  @image["kuvat/suomenlippu.png"])
-                                (list "Koodaa auto." @image["kuvat/auto.png"]))]
+         #:column-properties '(left center)
+         
+         (list (list "Koodaa Japanin lippu." @image["kuvat/japaninlippu.png"])
+               (list "Koodaa Suomen lippu. "  @image["kuvat/suomenlippu.png"])
+               (list "Koodaa auto." @image["kuvat/auto.png"]))]
 
 @margin-note[@link["http://www.slideshare.net/TiinaPartanen/racket-alkeet-2-oppitunti"]{Opettajan diat.}]
 
@@ -54,7 +55,7 @@ Jos teit edellisen tehtävän auton huomasit, että jouduit kirjoittamaan kaksi 
 opettelemme käyttämään @italic{muuttujaa}, johon tallennamme kuvan. Seuraava koodi tallentaa @italic{RENGAS} nimiseen muuttujaan mustan
 ympyrän:
 
-@racketblock[(define RENGAS (circle 25 "solid" "red"))]
+@racketblock[(define RENGAS (circle 25 "solid" "black"))]
 
 Nyt riittää, että koodiin kirjoittaa @racket[RENGAS], joka kerta kun haluaa mustan ympyrän. Esim. kaksi RENGASTA
 vierekkäin samassa kuvassa olisi:
@@ -67,8 +68,8 @@ Kuvia voi myös skaalata pienemmiksi tai suuremmiksi, kiertää tietyn asteluvun
 näihin kuvanmuokkausfunktioihin käsikirjan avulla. Käytä itse nimeämiäsi kuvioitasi ja testaa funktioita niillä.
 
 @tabular[#:style 'boxed #:sep @hspace[3]
-                          (list (list @racket[scale] @racket[rotate] @racket[flip-horizontal]
-                                      @racket[flip-vertical] @racket[crop]))]
+         (list (list @racket[scale] @racket[rotate] @racket[flip-horizontal]
+                     @racket[flip-vertical] @racket[crop]))]
 
 Koodaa em. funktioiden avulla seuraavat tehtävät:
 
@@ -76,8 +77,9 @@ Koodaa em. funktioiden avulla seuraavat tehtävät:
 
 @tabular[#:style 'boxed 
          #:row-properties (list 'border)
-        
-                          (list (list "Koodaa kukka." @image["kuvat/kukka.png"])
-                                (list "Koodaa neliö ympyrän osista."  @image["kuvat/nelio_ympyrasta.png"])
-                                (list "Koodaa pikseligrafiikkaa esim. tämä ukkeli tai suunnittele oma pikselikuva!" @image["kuvat/ukko.png"]))]
+         #:column-properties '(left center)
+         
+         (list (list "Koodaa kukka." @image["kuvat/kukka.png"])
+               (list "Koodaa neliö ympyrän osista."  @image["kuvat/nelio_ympyrasta.png"])
+               (list "Koodaa pikseligrafiikkaa esim. tämä ukkeli tai suunnittele oma pikselikuva!" @image["kuvat/ukko.png"]))]
 

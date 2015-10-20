@@ -12,9 +12,9 @@
 @title[#:tag "oppilaan_tehtavat" #:style 'toc]{Oppilaan tehtävät}
 Näillä sivuilta löytyy Koodausta kouluun - materiaalin oppilaan tehtävät.
 
-Jos et ole koodannut Racket-kielellä aikaisemmin, aloita Racket-alkeet osiosta.
-Kun alkeet ovat hallussa, voit tehdä muita oppitunteja siinä järjestyksessä kun
-itse haluat.
+Jos et ole koodannut Racket-kielellä aikaisemmin, aloita Racket-alkeet oppitunneista.
+Kun alkeet ovat hallussa, voit tehdä Racket-perusteet oppitunteja siinä järjestyksessä, kun
+itse haluat. Kun perusteet ovat hallussa voitkin siirtyä Racket-jatkon oppitunneille (tulossa myöhemmin). 
 
 Tehtävät täydentyvät koko ajan, joten vieraile sivuilla ahkerasti, joka kerralla
 löydät uutta kivaa koodattavaa.
@@ -27,5 +27,7 @@ löydät uutta kivaa koodattavaa.
 @; ------------------------------------------------------------------------
 
 @include-section["racket_alkeet.scrbl"]
+
+@include-section["racket_perusteet.scrbl"]
 
 @index-section[]
