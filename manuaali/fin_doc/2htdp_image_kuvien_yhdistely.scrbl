@@ -65,7 +65,9 @@
 
   Luo kuvan asettamalla kuvan @racket[k1] kuvan @racket[k2] @index["kuvien asettelu vapaasti"]{päälle}.
   Kuvat ovat aluksi linjattu niin, että niiden vasemmat yläkulmat ovat päällekkäin, sitten 
-  kuvaa @racket[i2] siirretään oikealle @racket[x] pikselin verran ja alas @racket[y] pikselin verran.
+  kuvaa @racket[k2] siirretään sivusuunnassa @racket[x] pikselin verran ja pystysuunnassa @racket[y] pikselin verran.
+  Positiivinen @racket[x] siirtää kuvaa oikealle, negatiivinen vasemmalle. Positiivinen @racket[y] siirtää kuvaa alaspäin,
+  negatiivinen ylöspäin. 
   
   @image-examples[(overlay/xy (circle 15 "solid" "red")
                               0 0

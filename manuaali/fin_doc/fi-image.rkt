@@ -15,6 +15,7 @@
          radial-star
          circle
          ellipse
+         rhombus
          add-line
          text
          empty-image 
