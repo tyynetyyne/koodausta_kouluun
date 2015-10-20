@@ -9,6 +9,7 @@
 @(require scribble/core
           scribble/html-properties)
 @(require scribble/eval)
+@(require scribble/manual)
 
 @title[#:tag "sanasto"]{Sanasto}
 
@@ -163,6 +164,102 @@ annetaan @racket[4] toisessa @racket[50]
 
 @interaction[#:eval (bsl) (neliön-pinta-ala 4)
                     (neliön-pinta-ala 50)]
+
+@section[#:style 'unnumbered]{funktion suunnitteluportaat} 
+@margin-note{"how to design functions" design recipe}	
+
+Järjestelmällinen tapa suunnitella ja ohjelmoida funktio. Koska funktion suunnittelu on aloittelevalle ohjelmoijalle varsin
+vaikeasti hahmotettavissa oleva asia, seuraamalla funktion suunnitteluportaita ongelma jakautuu pienempiin, 
+yksinkertaisiin askelmiin eli ei yritetä hypätä katolle yhdellä (mahdottomalla) loikalla.
+
+@image["sanasto/funktion_suunnitteluportaat.png"  #:scale 0.7]
+
+Tässä esimerkissä seuraamme funktion suunnitteluportaita ja määrittelemme funktion @racket[ympyrä], joka piirtää eri värisiä ympyröitä.
+
+@bold{0. askelma:}
+Kirjoita funktion tarkoitus kommenttiriville:
+
+@#reader scribble/comment-reader
+
+   (racketblock
+     ;;; piirtää eri värisiä ympyröitä, kun säde on annettu
+   )
+
+@bold{1. askelma:}
+Esittele funktio eli keksi sille kuvaava nimi (tässä @racket[ympyrä]), listaa tiedot joita se käyttää (tietotyypit) sekä päätä mitä funktiosi palauttaa (tietotyyppi). 
+
+@#reader scribble/comment-reader
+
+   (racketblock
+     ;;; piirtää eri värisiä ympyröitä, kun säde on annettu
+     ;;; ympyrä : Luku Väri -> Kuva
+   )
+
+@bold{2. askelma:}
+Kirjoita funktion runko eli @italic{stub}. Nimeä funktion parametrit kuvaavilla nimillä. Jotta koodin voi ajaa, tämän tyhmänkin funktion on palautettava
+jotain oikean tyyppistä mutta "tyhmää" (tässä @racket[empty-image]).
+
+@#reader scribble/comment-reader
+
+   (racketblock
+     ;;; piirtää eri värisiä ympyröitä, kun säde on annettu
+     ;;; ympyrä : Luku Väri -> Kuva
+(define (ympyrä säde väri)
+   empty-image)  ;stub
+   )
+
+Menetelmän nerokkuus piilee siinä, että ensin ohjelmoidaan esimerkkejä siitä miten funktion pitäisi toimia
+eri argumenttien arvoilla, joten asiaa lähestytään konkretian kautta. Vasta tämän jälkeen asia yleistetään eli yksittäinen ratkaisu muutetaan
+yleiseksi käyttämällä konkreettisten arvojen tilalla parametrien nimiä (abstraktio). 
+
+@bold{3. askelma:}
+Kirjoita esimerkkejä/testejä siitä miten funktiosi pitäisi toimia.
+
+@#reader scribble/comment-reader
+
+   (racketblock
+     ;;; piirtää eri värisiä ympyröitä, kun säde on annettu
+     ;;; ympyrä : Luku Väri -> Kuva
+(define (ympyrä säde väri)
+   empty-image)  ;stub
+
+(check-expect (ympyrä 10 "red")
+              (circle 10 "solid" "red"))
+
+(check-expect (ympyrä 5 "blue")
+              (circle 5 "solid" "blue"))
+
+)
+
+Nyt paina @italic{run}, niin huomaat, että @racket[check-expect] lausekkeet toimivat testeinä. Ne ilmoittavat, että @racket[ympyrä]-funktio ei toimi
+kuten sen pitäisi (eikä se tietenkään toimi, koska se on vasta "tyhmä" @italic{stub}.
+
+@image["sanasto/stub_testi.png" #:scale 0.7]
+
+@bold{4. askelma:}
+Korvaa "tyhmä" @italic{stub} funktion toteutuksella. Usein voit kopioida yhden esimerkin/testin ja vaihtaa vakioiden tilalle parametrien nimet (tässä
+@racket[säde] ja @racket[väri]).
+
+@#reader scribble/comment-reader
+
+   (racketblock
+     ;;; piirtää eri värisiä ympyröitä, kun säde on annettu
+     ;;; ympyrä : Luku Väri -> Kuva
+(define (ympyrä säde väri)
+   (circle säde "solid" väri))   ; ok
+
+(check-expect (ympyrä 10 "red")
+              (circle 10 "solid" "red"))
+
+(check-expect (ympyrä 5 "blue")
+              (circle 5 "solid" "blue"))
+
+)
+Lopuksi paina @italic{run} niin näet toimiiko tekemäsi funktio suunnitellulla tavalla. Jos se toimi näet interaktioikkunassa tekstin:
+
+@margin-note{WeScheme ei ilmoita mitään, jos testit toimivat ok.}	
+
+@image["sanasto/test_passed.png" #:scale 0.7]
 
 @section[#:style 'unnumbered]{interaktioikkuna} 
 @margin-note{interactions window}	
