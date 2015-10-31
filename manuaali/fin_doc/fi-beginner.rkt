@@ -27,7 +27,13 @@
          pi
          floor
          ceiling
-         ;round
+         round
+         sin
+         cos
+         tan
+         asin
+         acos
+         atan
          number?
          integer?
          odd?
@@ -46,6 +52,7 @@
          substring
          string=?
          string->number
+         exact->inexact
          string?
          cons
          list
