@@ -21,6 +21,7 @@
      (define *bsl
        (bsl+-eval
         (require 2htdp/image)
+        (require math)
         (define c1 (circle 10 "solid" "green"))
         
         (define zero 0)
@@ -73,14 +74,14 @@
  @interaction[#:eval (bsl) (< 5 10) (< 0 5 10)(< 5 0 10)]
 }
 @defproc[(> [x reaaliluku][y reaaliluku][z reaaliluku] ...) totuusarvo]{
-Vertailee reaalilukuja toisiinsa @italic{suurempi kuin}-operaattorin avulla.
-Palauttaa @racket[#true], jos annetut luvut ovat suuruusjärjestyksessä (suurin ensin), muuten @racket[#false].
+ Vertailee reaalilukuja toisiinsa @italic{suurempi kuin}-operaattorin avulla.
+ Palauttaa @racket[#true], jos annetut luvut ovat suuruusjärjestyksessä (suurin ensin), muuten @racket[#false].
  
  @interaction[#:eval (bsl) (> 10 5) (> 10 5 0)(> 10 0 5)]   
 }
 @defproc[(<= [x reaaliluku][y reaaliluku][z reaaliluku] ...) totuusarvo]{
-Vertailee reaalilukuja toisiinsa @italic{pienempi tai yhtäsuuri kuin}-operaattorin avulla.
-@interaction[#:eval (bsl) (<= 5 10)(<= 5 5.0)]
+ Vertailee reaalilukuja toisiinsa @italic{pienempi tai yhtäsuuri kuin}-operaattorin avulla.
+ @interaction[#:eval (bsl) (<= 5 10)(<= 5 5.0)]
 }
 @defproc[(>= [x reaaliluku][y reaaliluku][z reaaliluku] ...) totuusarvo]{
  Vertailee reaalilukuja toisiinsa @italic{suurempi tai yhtäsuuri kuin}-operaattorin avulla.
@@ -94,11 +95,11 @@ Vertailee reaalilukuja toisiinsa @italic{pienempi tai yhtäsuuri kuin}-operaatto
  @interaction[#:eval (bsl) (sqr 3)(sqr -5)]
 }
 @defproc[(sqrt [x luku]) luku]{
-  Laskee luvun @racket[x] @index["neliöjuuri"]{neliöjuuren}.
+ Laskee luvun @racket[x] @index["neliöjuuri"]{neliöjuuren}.
  @interaction[#:eval (bsl) (sqrt 9) (sqrt 2)]
 }
 @defproc[(abs [x reaaliluku]) reaaliluku]{
-  Palauttaa luvun @racket[x] @index["itseisarvo"]{itseisarvon}.
+ Palauttaa luvun @racket[x] @index["itseisarvo"]{itseisarvon}.
  @interaction[#:eval (bsl) (abs -12)(abs 2)]
 }
 
@@ -112,7 +113,7 @@ Vertailee reaalilukuja toisiinsa @italic{pienempi tai yhtäsuuri kuin}-operaatto
  @interaction[#:eval (bsl) (max 3 2 8 7 2 9 0)]
 }
 @defproc[(min [x reaaliluku][y reaaliluku] ...) reaaliluku]{
-  Määrittelee pienimmän luvun eli @index["minimi"]@italic{minimin}.
+ Määrittelee pienimmän luvun eli @index["minimi"]@italic{minimin}.
  @interaction[#:eval (bsl) (min 3 2 8 7 2 9 0)]
 }
 @defproc[(random [x luonnollinen-luku]) luonnollinen-luku]{
@@ -134,6 +135,56 @@ Vertailee reaalilukuja toisiinsa @italic{pienempi tai yhtäsuuri kuin}-operaatto
  }
 }
 
+@section[#:style 'unnumbered #:tag "trigonometria"]{Trigonometria}  
+
+Huomaa, että nämä trigonometriset funktiot käyttävät radiaaneja. Jos haluat käyttää asteita,
+sinun pitää muuntaa asteet radiaaneiksi @racket[degrees->radians]-funktiolla (@racket[sin], @racket[cos], @racket[tan]):
+
+@margin-note{Miksi radiaanit? Tietokoneet laskevat trigonometriset funktiot tarkemmin radiaaneissa,
+ joten käytä niitä aina kuin voit.}
+
+@interaction[#:eval (bsl) (sin (degrees->radians 60))]
+
+Samoin radiaanit pitää muuttaa asteiksi @racket[radians->degrees]-funktiolla (@racket[asin], @racket[acos], @racket[atan]):
+@interaction[#:eval (bsl) (radians->degrees(asin 0.5))]
+
+Nämä muunnosfunktiot on määritelty math-kirjastossa, joten ota se käyttöön ensin:
+@racket[(require math)]
+
+@margin-note{Muunnosfunktiot saat käyttöösi WeScheme:ssä @racket[(require wescheme/sSdQeEG3nL)]. @italic{Huom!} Tämä ei ole koko math-kirjasto.}
+
+@defproc[(sin [x luku]) luku]{
+ Laskee luvun @racket[x] @index["sini"]{sinin} arvon (@racket[x] annetaan radiaaneina).
+ @interaction[#:eval (bsl) (sin pi)]
+ @interaction[#:eval (bsl) (sin (degrees->radians 60))]
+}
+@defproc[(cos [x luku]) luku]{
+ Laskee luvun @racket[x] @index["kosini"]{kosinin} arvon (@racket[x] annetaan radiaaneina).
+ @interaction[#:eval (bsl) (cos pi)]
+ @interaction[#:eval (bsl) (cos (degrees->radians 60))]
+ 
+}
+@defproc[(tan [x luku]) luku]{
+ Laskee luvun @racket[x] @index["tangentti"]{tangentin} arvon (@racket[x] annetaan radiaaneina).
+ @interaction[#:eval (bsl) (tan pi)]
+ @interaction[#:eval (bsl) (tan (degrees->radians 60))]
+}
+@defproc[(asin [x luku]) luku]{
+ Laskee arkussinin (sinin käänteisfunktion) arvon annetulla luvulla @racket[x].
+ @interaction[#:eval (bsl) (asin 0)]
+ @interaction[#:eval (bsl) (radians->degrees (asin 1/2))]
+ 
+}
+@defproc[(acos [x luku]) luku]{
+ Laskee arkuskosinin (kosinin käänteisfunktion) arvon annetulla luvulla @racket[x]. 
+ @interaction[#:eval (bsl) (acos 0)]
+ @interaction[#:eval (bsl) (radians->degrees (acos 2/3))]
+}
+@defproc[(atan [x luku]) luku]{
+ Laskee arkustangentin (tangentin käänteisfunktion) arvon annetulla luvulla @racket[x].
+ @interaction[#:eval (bsl) (atan 0) (atan 0.5)]
+ @interaction[#:eval (bsl) (radians->degrees (atan 0.5))]
+}
 @section[#:style 'unnumbered #:tag "pyoristaminen"]{Pyöristäminen}  
 
 @defproc[(floor [x reaaliluku]) kokonaisluku]{
@@ -143,6 +194,16 @@ Vertailee reaalilukuja toisiinsa @italic{pienempi tai yhtäsuuri kuin}-operaatto
 @defproc[(ceiling [x reaaliluku]) kokonaisluku]{
  Palauttaa reaalilukua @racket[x] lähimpänä olevan suuremman kokonaisluvun.
  @interaction[#:eval (bsl) (ceiling 12.3)]
+}
+
+@defproc[(round [x reaaliluku]) kokonaisluku]{
+ Pyöristää reaaliluvun lähimpään kokonaisluvuksi (puolivälissä olevat luvut pyöristetään parilliseen lukuun). Katso myös 
+ @racket[floor] ja @racket[ceiling].
+ @margin-note[@italic{Tämä pyöristystapa on yleinen tietotekniikassa. Sillä pyritään minimoidaan useamman tekijän
+                pyöristämisestä aiheutuva pyöristysvirhe (eng. bias).}]
+ @interaction[#:eval (bsl) (round 12.3)]
+ @interaction[#:eval (bsl) (round 12.5)]
+ @interaction[#:eval (bsl) (round 0.5)]
 }
 
 @section[#:style 'unnumbered #:tag "predikaatit_lukuvuille"]{Predikaatit}  
@@ -167,11 +228,11 @@ Vertailee reaalilukuja toisiinsa @italic{pienempi tai yhtäsuuri kuin}-operaatto
 }
 
 @defproc[(even? [x kokonaisluku]) totuusarvo]{
-  Palauttaa @racket[#true], jos argumentti on parillinen kokonaisluku, muuten @racket[#false]. 
+ Palauttaa @racket[#true], jos argumentti on parillinen kokonaisluku, muuten @racket[#false]. 
  @interaction[#:eval (bsl) (even? 2) (even? 1)(even? 2.0)]
 }
 @defproc[(positive? [x luku]) totuusarvo]{
-Palauttaa @racket[#true], jos argumentti on suurempi kuin nolla.}
+ Palauttaa @racket[#true], jos argumentti on suurempi kuin nolla.}
 
 @defproc[(negative? [x luku]) totuusarvo]{
  Palauttaa @racket[#true], jos argumentti on pienempi kuin nolla.}
@@ -181,6 +242,11 @@ Palauttaa @racket[#true], jos argumentti on suurempi kuin nolla.}
 @defproc[(number->string [x luku]) merkkijono]{
  Muuntaa luvun merkkijonoksi.
  @interaction[#:eval (bsl) (number->string 42)(number->string (sqrt 2))]
+}
+
+@defproc[(exact->inexact [x luku]) luku]{
+ Muuttaa tarkan arvon likiarvoksi. 
+ @interaction[#:eval (bsl) (exact->inexact 3/4)]
 }
 
 @section[#:style 'unnumbered #:tag "aikafunktiot"]{Aikafunktiot}  
