@@ -15,7 +15,17 @@ Jotta voit piirtää kuvia, ota käyttöön kuvien piirtokirjasto. Kirjoita mä�
 
 @racketblock[(require 2htdp/image)]
 
-ja paina @italic{run}. Nyt voit tutustua interaktioikkunassa siihen miten peruskuvioita piirretään.
+Voit myös avata tästä tiedoston, jossa tämä vaihe on valmiina:
+
+@tabular[#:sep @hspace[1]
+         (list (list @image[#:scale 0.3 "drracket.png"]
+                     @italic{@link["http://tinyurl.com/pmqzvon"]{Peruskuvat (DrRacket)}})
+               (list @image[#:scale 0.22 "wescheme.png"]
+                     @italic{@link["http://www.wescheme.org/"]{Peruskuvat (WeScheme)}}))]
+
+Ota kirjasto käyttöön painamalla @italic{run}.
+
+Nyt voit tutustua interaktioikkunassa siihen miten peruskuvioita piirretään.
 Katso käsikirjasta ohjeet ja kokeile näitä:
 
 @tabular[#:style 'boxed #:sep @hspace[3]

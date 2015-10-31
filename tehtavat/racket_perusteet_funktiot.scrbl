@@ -60,7 +60,7 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 
 @tabular[#:style 'boxed #:sep @hspace[3]
          (list (list @racket[+] @racket[-] @racket[*]
-                     @racket[/] @racket[check-expect]))]
+                     @racket[/] @racket[sqr] @racket[check-expect]))]
 
 @section[#:tag "racket_perusteet_pinta-alafunktioita_B"]{Pinta-alatehtävät B}
 
@@ -85,9 +85,9 @@ Täydennä funktion kuvauksen puuttuvat tiedot (...). Tee myös esimerkkejä/tes
 
 @italic{Huom!} Tehtävässä tarvitset piin arvoa. Racket-kielessä se on vakio nimeltä @racket[pi].
 
-@margin-note{Koska piin arvo on päättymätön, tulokset ovat aina likiarvoja (epätarkkoja). DrRacket varoittaa epätarkoista arvoista 
-lisäämällä luvun eteen @litchar{#i}-merkinnän. Samasta syystä emme voi käyttää @racket[check-expect]-testiä vaan epätarkoille tuloksille
-tarkoitettua @racket[check-within]-testiä.}
+@margin-note{Koska piin arvo on päättymätön desimaaliluku, tulokset ovat aina likiarvoja (epätarkkoja). DrRacket varoittaa epätarkoista arvoista 
+ lisäämällä luvun eteen @litchar{#i}-merkinnän. Samasta syystä emme voi käyttää @racket[check-expect]-testiä vaan epätarkoille tuloksille
+ tarkoitettua @racket[check-within]-testiä.}
 
 @tabular[#:style 'boxed 
          #:row-properties (list 'border)
@@ -100,11 +100,11 @@ tarkoitettua @racket[check-within]-testiä.}
 
 @margin-note[@link["http://www.slideshare.net/TiinaPartanen/racket-alkeet-3-oppitunti"]{Opettajan diat.}]
 
-Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
+Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita ja vakioita:
 
 @tabular[#:style 'boxed #:sep @hspace[3]
          (list (list @racket[+] @racket[-] @racket[*]
-                     @racket[/] @racket[sqr] @racket[check-within]))]
+                     @racket[/] @racket[sqr] @racket[check-within] @racket[pi]))]
 
 
 @section[#:tag "racket_perusteet_kuvafunktioita"]{Kuvafunktioita}
@@ -170,12 +170,16 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 
 @tabular[#:style 'boxed #:sep @hspace[3]
          (list (list @racket[+] @racket[-] @racket[*]
-                     @racket[/] )
-               (list @racket[rectangle]
-                     @racket[circle]
-                     @racket[beside]
-                     @racket[above])
-                (list     @racket[overlay]
-                          @racket[overlay/xy]
-                          @racket[rotate]
-                          @racket[check-expect]))]
+                     @racket[/] 
+                     @racket[rectangle])
+               (list 
+                @racket[circle]
+                @racket[beside]
+                @racket[above]
+                @racket[overlay]
+                @racket[overlay/xy])
+               (list         @racket[rotate]
+                             @racket[number->string]
+                             @racket[text]
+                             @racket[image-width]
+                             @racket[check-expect]))]

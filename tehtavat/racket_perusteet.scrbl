@@ -12,4 +12,5 @@
 @title[#:tag "racket_perusteet"]{Racket perusteet}
 
 @include-section{racket_perusteet_funktiot.scrbl}
+@include-section{racket_perusteet_ehtolauseet.scrbl}
 
