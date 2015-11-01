@@ -26,59 +26,30 @@
 
 @title[#:tag "perusteet_totuusarvot_ja_ehtolauseet"]{Totuusarvot ja ehtolauseet}
 
-Jotta voimme tehdä oikeinta ohjelmia, meidän täytyy pystyä tekemään haarautuvaa koodia. Tähän asti
+Jotta voimme tehdä oikeita ohjelmia, meidän täytyy pystyä tekemään haarautuvaa koodia. Tähän asti
 kaikki koodi on suoritettu alusta loppuun, hyppäämättä minkään vaihtoehdon yli. Suoritettava vaihtoehto
-päätellään sellaisten lausekkeiden avulla, jotka palauttavat totuusarvoja.
+päätellään sellaisten lausekkeiden avulla, jotka palauttavat
+@link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._totuusarvo%29"]{totuusarvoja}.
+Tällaisia funktioita kutsutaan 
+@link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._predikaatti%29"]{predikaateiksi}.
+Myös 
+@link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._vertailuoperaattorit%29"]{vertailuoperaattorit}
+ovat predikaatteja, koska ne palauttavat totuusarvoja.
 
-Totuusarvoja on kaksi: tosi (@racket[#true]) ja epätosi (@racket[#false]). Vertailemalla lukuja toisiinsa
-vertailuoperaattoreiden: @racket[<], @racket[>], @racket[<=], @racket[>=] ja @racket[=] avulla, saamme aikaan
-totuusarvoja. Voimme siis testata onko muuttujan a arvo pienempi, suurempi tai yhtäsuuri kuin 5.
+Yksinkertaisin tapa saada koodihaarautumaan on
+@link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._ehtolause%29"]{ehtolause} eli @racket[if]-lause.
+Se toimii niin, että jos asetettu ehto on tosi suoritetaan @italic{tosihaara}:n koodi. Jos ehto on epätosi, suoritetaan
+@italic{epätosihaara}:n koodi.
 
- @interaction[#:eval (bsl) (< a 5)(> a 5)(= a 5)]
+Jos haarautumisvaihtoehtoja halutaan enemmän kuin kaksi, kannattaa käyttää
+@link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._valintalause%29"]{valintalausetta} eli
+@racket[cond]-lausetta. Siinä voidaan antaa monta ehtoa, ja lopuksi @racket[else]-haara, joka palautetaan jos
+mikään varsinaisista ehdoista ei toteutunut.
 
-Voimme verrata toisiinsa myös muita kuin lukuja. Jos haluamme tietää ovatko kaiksi merkkijonoa samat, vertaamme niitä
-toisiinsa @racket[string=?]-funktion avulla. Kaksi kuvaa ovat samat, jos @racket[image=?]-funktio palauttaa @racket[#true].
-
-@interaction[#:eval (bsl) (string=? b "koira")(string=? b "kissa")]
-@interaction[#:eval (bsl) (image=? c (circle 30 "solid" "blue"))(image=? c (circle 20 "solid" "red"))]
-
-Totuusarvoja tuottavat myös funktiot, jotka testaavat muuttujien tyyppiä. Näiden funktioiden avulla voidaan varmistaa, että
-saadut argumentit ovat oikean tyyppisiä.
-
-@interaction[#:eval (bsl) (number? a) (string? b) (image? c)]
-
-Yksinkertaisin tapa saada koodihaarautumaan on ehtolause eli if-lause. Se toimii niin, että jos
-asetettu ehto on tosi suoritetaan @italic{tosihaara}:n koodi. Jos ehto on epätosi, suoritetaan
-@italic{epätosihaara}:n koodi. Jos siis haluat tutkia esim. lämpötilaa, joka on tallennettu muuttujaan @racket[t]
-voisit tehdä seuraavanlaisen ehtolauseen:
-
-@racketblock[(if (> t 25)
-                 "Hellepäivä"
-                 "Tavallinen päivä")]
-
-Jos taas muuttujassa m on merkkijono, voisit tehdä if-lauseen:
-@racketblock[(if (string=? m "kissa")
-                 "Miau!"
-                 "Hau!")]
-
-Jos haarautumisvaihtoehtoja halutaan enemmän kuin kaksi, kannattaa käyttää valintalausetta @racket[cond]. Siinä voidaan
-antaa monta ehtoa, ja lopuksi jos mikään ehto ei toteutunut @racket[else]-haara. Lämpötilaesimerkki @racket[cond]:in avulla
-olisi:
-
-@racketblock[(cond [(>= t 25) "Hellepäivä"]
-                   [(< 10 t 25) "Kesäpäivä"]
-                   [(<= 0 t 10) "Syksyinen/keväinen päivä"]
-                   [else "Talvipäivä"])]
-
-Ehtoja voidaan myös yhdistellä @racket[and]:in ja @racket[or]:in avulla tai ottaa totuusarvon käänteinen arvo @racket[not]:in
-avulla. Jos esim. jos emme ole varmoja saatujen argumenttien tyypeistä on turvallisempaa testata niiden tyyppi ennen
-vertailuoperaatiota:
-
-@racketblock[(cond [(and (number? t)(< t 0)) "negatiivinen"]
-                   [(and (number? t)(> t 0)) "positiivinen"]
-                   [(and (number? t)(= t 0)) "nolla"]
-                   [else "ei ole luku"])]
-
+Ehtoja voidaan myös yhdistellä
+@link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._.Boolean_operaattorit%29"]{Boolean operaattoreilla} 
+joita ovat @racket[and], @racket[or] ja @racket[not].
+ 
 Voit harjoitella ehto- ja valintalauseita seuraavien tehtävien avulla.
 
 @section[#:tag "racket_perusteet_ehtolauseet_kolmiotehtavat_A"]{Kolmiotehtävät A}
@@ -101,9 +72,9 @@ Tehtävätiedosto sisältää nämä laskutehtävät:
 
 @tabular[#:style 'boxed
          #:row-properties (list 'border)
-         #:column-properties '(left left)       
+         #:column-properties '(center left)       
          (list (list "Tehtävä 1" "Kirjoita funktio, joka ottaa sisäänsä kaksi kolmion kulmaa ja palauttaa
-kolmannen kulman suuruuden. Jos tehtävä on mahdoton funktio palauttaa \" ei ole kolmio\".")
+kolmannen kulman suuruuden. Jos tehtävä on mahdoton funktio palauttaa \"ei ole kolmio\".")
                (list "Tehtävä 2" "Kirjoita funktio, joka ottaa sisäänsä kolmion sivujen pituudet ja palauttaa kolmion tyypin:
 \"tasasivuinen kolmio\", \"tasakylkinen kolmio\", \"kolmio\" tai \"ei ole kolmio\"."))]
                
@@ -142,8 +113,6 @@ kolmiota se palauttaa \"ei ole suorakulmainen kolmio\"." )
                (list "Tehtävä 2" "Kirjoita funktio, joka tutkii kolmion sivujen pituuksien avulla onko kyseessä suorakulmainen kolmio.
 Käytä avuksesi Pythagoraan lausetta. Huomaa, että sivujen pituudet saa antaa missä järjestyksessä tahansa ja
 ohjelman pitää huomata myös se, jos annetut sivut eivät muodosta kolmiota. Palauta tässä tapauksessa \"ei ole kolmio\"." ))]
-
-@margin-note[@link["http://www.slideshare.net/TiinaPartanen/racket-alkeet-4-oppitunti"]{Opettajan diat.}]
 
 Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 
@@ -202,7 +171,9 @@ montako desimaalia luvussa on. Käytä apunasi edellä tekemääsi pyöristä-fu
 Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 
 @tabular[#:style 'boxed #:sep @hspace[3]
-         (list (list @racket[+] @racket[-] @racket[*] @racket[/] @racket[check-expect] @racket[if] @racket[integer?]))]
+         (list (list @racket[+] @racket[-] @racket[*] @racket[/] @racket[check-expect] @racket[if] @racket[integer?] @racket[floor] @racket[ceiling]))]
+
+@margin-note[@link["http://www.slideshare.net/TiinaPartanen/racket-alkeet-4-oppitunti"]{Opettajan diat.}]
 
 @section[#:tag "racket_perusteet_kuvia_ehtolauseiden_avulla"]{Kuvia ehtolauseiden avulla}
 

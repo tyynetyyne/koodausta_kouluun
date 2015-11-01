@@ -26,12 +26,12 @@
      *bsl))
 
 
-@title[#:tag "perusteet_sovelluksia_display_readin_avulla"]{Funktiot ja ehtolauseet: sovelluksia display-read:in avulla}
+@title[#:tag "perusteet_sovelluksia_display_readin_avulla"]{Sovelluksia B (display-read)}
 
 Funktioita, ehto- ja valintalauseita sekä käyttäjän kanssa kommunikointia voi harjoitella myös
-@italic{display-read}-kirjaston avulla. Se on toteutettu
-@italic[@link["http://racket.koodiaapinen.fi/manuaali/2htdp_universe.html"]{2htdp/universe}]:n avulla ja tarjoaa helpon
-tavan pyytää käyttäjää antamaan vastauksia valmiin tekstieditorin avulla tai tekemään valintoja annetuista
+@italic[@link["http://racket.koodiaapinen.fi/manuaali/display_read.html"]{teachpacks/display-read}]-kirjaston avulla. Se on toteutettu
+@italic[@link["http://racket.koodiaapinen.fi/manuaali/2htdp_universe.html"]{2htdp/universe}]:n avulla ja tarjoaa
+helpon tavan pyytää käyttäjää antamaan vastauksia valmiin tekstieditorin avulla tai tekemään valintoja annetuista
 vaihtoehdoista nuolinäppäinten avulla.    
 
 Nämä tehtävät vaativat @italic{teachpacks/display-read}-kirjaston:
@@ -39,6 +39,8 @@ Nämä tehtävät vaativat @italic{teachpacks/display-read}-kirjaston:
 Se kuuluu @italic{teachpacks}-pakettiin, joka pitää ladata palvelimelta näiden
 @link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._paketti%29"]{ohjeiden} mukaisesti. Paketti
 tarvitsee asentaa vain ensimmäisellä kerralla.
+
+@margin-note{WeScheme:ssä ei tarvita paketin asennusta. Huomaa myös, että WeSchemessä kirjastolla on eri nimi.}
 
 @section[#:tag "racket_perusteet_tarina"]{Tarina}
 
@@ -70,7 +72,7 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen tai display-read-k
 
 Tunnistuspeli on tietokilpailupeli, jossa käyttäjälle esitetään kysymyksiä joko kuvien ja/tai tekstin muodossa. Ohjelma
 tarkistaa vastauksen oikeellisuuden ehtolauseen avulla ja kertoo käyttäjälle onko hänen antamansa vastaus oikein
-vain väärin.
+vai väärin.
 
 Voit hakea kuvat netistä ja lisätä ne koodiin valikosta: @italic{Insert->Images}. Kannattaa valita pienikokoisia
 kuvia tai pienentää ne esim. GIMP-ohjelmalla. 
@@ -79,9 +81,9 @@ Käytä  @racket[display-read]-funktiota vastauksen kysymiseen. Se avaa editori-
 vastauksensa (merkkijono). Teksti hyväksytään editorissa painamalla <enter>. Kun olet tutkinut vastauksen
 oikeellisuuden, ilmoita siitä käyttäjälle @racket[display-value]:n avulla.
 
-Voit parantaa peliäsi niin, että vastauksesksi kelpaavat myös sanan synonyymit sekä isoilla ja pienillä kirjaimilla
+Voit parantaa peliäsi niin, että vastaukseksi kelpaavat myös sanan synonyymit sekä isoilla ja pienillä kirjaimilla
 kirjoitetut vastaukset. Kirjoita synonyymien tarkistamiseksi oma funktionsa, joka testaa eri vastausvaihtoehdot
-(@racket[or]:in avulla). Voit myös lisätä pisteiden laskun ja loppupisteiden näyttämisen käyttäjälle. 
+(@racket[or]:in avulla). Voit myös lisätä pisteidenlaskun ja loppupisteiden näyttämisen käyttäjälle. 
 
 @image["kuvat/kysymys_omena.png" #:scale 0.5]
 
@@ -102,20 +104,20 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen tai display-read-k
 @section[#:tag "racket_perusteet_valintapeli"]{Valintapeli}
 
 Valintapeli on tietokilpailupeli, jossa käyttäjälle esitetään kysymyksiä joko kuvien ja/tai tekstin muodossa.
-Valitsee vastauksensa nuolinäppäinten avulla listasta valmiita vaihtoehtoja. Vaihtoehdot voivat olla joko,
+Pelaaja valitsee vastauksensa nuolinäppäinten avulla listasta vaihtoehtoja. Vaihtoehdot voivat olla joko
 lukuja, merkkijonoja tai kuvia. Ohjelma tarkistaa vastauksen oikeellisuuden ehtolauseen avulla ja kertoo
-käyttäjälle onko hänen antamansa vastaus oikein vain väärin.
+käyttäjälle onko hänen antamansa vastaus oikein vai väärin.
 
 Voit hakea kuvat netistä ja lisätä ne koodiin valikosta: @italic{Insert->Images}. Kannattaa valita pienikokoisia
 kuvia tai pienentää ne esim. GIMP-ohjelmalla. 
 
-Käytä  @racket[display-select]-funktiota vastauksen kysymiseen. Se avaa editori-ikkunan, jossa vastausvaihtoehdot
+Käytä  @racket[display-select]-funktiota vastauksen kysymiseen. Se avaa valintaikkunan, jossa vastausvaihtoehdot
 näkyvät kysymyksen alapuolella. Vaihtoehdot annetaan listana (@racket[list]). Valinta hyväksytään painamalla <enter>.
 Kun olet tutkinut vastauksen oikeellisuuden, ilmoita siitä käyttäjälle @racket[display-value]:n avulla. Koska
-vaihtoehdot voivat olla joko merkkijonoja, lukuja tai kuvia, muista käyttää oikeaa vertailuoperaattoria
-merkkijono (string=?), luku (=) ja kuva (image=?).
+vaihtoehdot voivat olla joko merkkijonoja, lukuja tai kuvia, muista käyttää oikeaa vertailuoperaattoria:
+merkkijonoille (string=?), luvuille (=) ja kuville (image=?).
 
-Voit myös lisätä pisteiden laskun ja loppupisteiden näyttämisen käyttäjälle. 
+Voit myös lisätä pisteidenlaskun ja loppupisteiden näyttämisen käyttäjälle. 
 
 @image["kuvat/kysymys_japani.png" #:scale 0.5]@image["kuvat/kysymys2_japani.png" #:scale 0.5]
 
@@ -136,13 +138,13 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen tai display-read-k
 
 @section[#:tag "racket_perusteet_laskuautomaatti"]{Laskuautomaatti}
 
-Laskuautomaatti kysyy käyttäjältä lukuja ja suorittaa niiden perusteella laskutehtävän ja näyttää vastuksen käyttäjälle.
+Laskuautomaatti kysyy käyttäjältä lukuja ja suorittaa niiden perusteella laskutehtävän ja näyttää vastauksen käyttäjälle.
 Jos käyttäjä ei syötä laskun kannalta järkeviä arvoja, annetaan virheilmoitus.
 
 Voit käyttää tässä jo aikaisemmin koodaamaasi laskufunktiota (pinta-ala, taksimatkalasku, kolmion kulmien laskeminen tms.)
 
 Käytä  @racket[display-read]-funktiota lukujen kysymiseen. Muista muuntaa saadut merkkijonot luvuiksi
-(@racket[string->number])-funktion avulla. Testaa lukujen järkevyys ennen niillä laskemista! Ilmoita lopputulos
+@racket[string->number]-funktion avulla. Testaa lukujen järkevyys ennen niillä laskemista! Ilmoita lopputulos
 käyttäjälle @racket[display-value]:n avulla. Saatat joutua miettimään myös pyöristämistä, sekä yksiköiden liittämistä
 vastaukseen.
 
@@ -161,7 +163,7 @@ muitakin, riippuen laskutehtävästäsi!):
 
 @tabular[#:style 'boxed #:sep @hspace[3]
          (list (list @racket[number?] @racket[integer?] @racket[string->number] @racket[<] @racket[>] @racket[<=])
-               (list @racket[=>] @racket[=] @racket[if] @racket[cond] @racket[and] @racket[or])
+               (list @racket[>=] @racket[=] @racket[if] @racket[cond] @racket[and] @racket[or])
                (list @racket[not] @racket[display-read] @racket[display-value] @racket[+] @racket[-] @racket[*])
                (list @racket[/] @racket[round] @racket[floor] @racket[ceiling]  @racket[string-append] @racket[number->string])
                (list @racket[above] @racket[beside] @racket[text] @racket[overlay/xy] @racket[exact->inexact] @racket[abs]))]

@@ -25,7 +25,7 @@
         (set! bsl (lambda () *bsl))
      *bsl))
 
-@title[#:tag "perusteet_sovelluksia_universen_avulla"]{Funktiot ja ehtolauseet: sovelluksia 2htdp/universe:n avulla}
+@title[#:tag "perusteet_sovelluksia_universen_avulla"]{Sovelluksia A (2htdp/universe)}
 
 Tähän asti olemme tehneet pieniä ohjelman osia, funktioita, joita on voinut kutsua vain DrRacket:in tai WeScheme:in sisällä.
 Nyt teemme ensimmäiset yksinkertaiset ohjelmat, jotka kommunikoivat käyttäjän kanssa graafisen käyttöliittymän avulla. Samalla
@@ -33,18 +33,20 @@ syvennämme osaamistamme funktioiden sekä ehto- ja valintalauseiden käytössä
 
 Näitä käyttäjän kanssa kommunikoiva ohjelmia kutsutaan @italic{interaktiivisiksi} ohjelmiksi. Interaktiivisen ohjelmalle
 käyttäjä voi antaa syötteitä näppäimistön tai hiiren avulla. Myös tietokoneen sisäinen kello voi näissä ohjelmissa antaa
-syötteitä, esim. peleissä ja animaatioissa tapahtuu asioita automaattisesti ja tämä saadaan aikaan kellon avulla.
+syötteitä, esim. kun peleissä ja animaatioissa tapahtuu asioita automaattisesti, se on saatu aikaan sisäisen kellon avulla.
 
-Interaktiiviset ohjelmat tarvitsevat toimiakseen moottorin, ja meillä sen nimi on @italic{big-bang}. @italic{big-bang} hoitaa tarvittavan
-viestiliikenteen käyttäjän toiminnasta sekä kellon tikityksestä meidän omille funktioillemme. Se hoitaa myös näytön
-päivittämisen tarvittaessa. @italic{big-bang} löytyy kirjastosta @italic{2htdp/universe}.
+Interaktiiviset ohjelmat tarvitsevat toimiakseen "moottorin", joka hoitaa tarvittavan
+viestiliikenteen käyttäjän toiminnasta sekä kellon tikityksestä meidän omille funktioillemme ja hoitaa myös näytön
+päivittämisen tarvittaessa. Tämän osion käyttämän "moottorin" nimi on @italic{big-bang}, ja se löytyy 
+@italic[@link["http://racket.koodiaapinen.fi/manuaali/2htdp_universe.html"]{2htdp/universe}]-kirjastosta.
 
-@italic{big-bang}:in avulla voit tehdä animaatioita, hiireen sekä näppäimistöön reagoivia ohjelmia. Näissä harjoituksissa
-sinulle annetaan valmis koodipohja, joissa tarvittava @italic{big-bang}-koodi on valmiina. Sinun ei tarvitse ymmärtää  
-tarkemmin miten @italic{big-bang} toimii, riittää että muokkaat kussakin ohjelmassa piirtofunktiota tekemään ehtolauseiden
-avulla jotain erilaista riippuen joko kellon tai käyttäjän toimista. Halutessasi voit toki tutustua käsikirjan avulla 
-@italic[@link["http://racket.koodiaapinen.fi/manuaali/2htdp_universe.html"]{2htdp/universe}]:n toimintaan myös
-pintaa syvemmältä.
+@italic{big-bang}:in avulla voit tehdä animaatioita sekä hiireen tai näppäimistöön reagoivia ohjelmia. Näissä
+harjoituksissa sinulle annetaan valmis koodipohja, joissa tarvittava @italic{big-bang}-koodi on valmiina. Sinun ei
+tarvitse tarkemmin tietää miten @italic{big-bang} toimii, riittää että muokkaat kussakin ohjelmassa piirtofunktiota
+tekemään ehto- tai valintalauseiden avulla jotain erilaista riippuen joko kellon tai käyttäjän toimista. Halutessasi
+voit toki tutustua Koodarin käsikirjan avulla
+@italic[@link["http://racket.koodiaapinen.fi/manuaali/universe_interaktiiviset_ohjelmat.html"]{big-bang}]:in toimintaan
+myös pintaa syvemmältä.
 
 Nämä tehtävät vaativat @italic{2htdp/universe}-kirjaston:
 @racketblock[(require 2htdp/universe)]
@@ -102,7 +104,7 @@ Piilokuva B tehtävässä ohjelma reagoi siihen missä kohtaa ruutua käyttäjä
 koordinaattien avulla, lisäksi saat käyttöösi tiedon siitä mikä hiiritapahtuma oli kyseessä.
 Hiiritapahtumiin voit tutustua @italic[@link["http://racket.koodiaapinen.fi/manuaali/universe_hiiri.html"]{käsikirjan}] avulla.
 Tutustu oheiseen esimerkkikoodiin ja muokkaa sitä ehto- tai valintalauseen avulla sellaiseksi, että hiirtä klikkaamalla
-paljastuu alla olevan esimerkin mukaisesti, jokin itse valitsemasi piilokuva. Kuvan saat tuotua valitsemalla valikosta
+paljastuu alla olevan esimerkin mukaisesti jokin itse valitsemasi piilokuva. Kuvan saat tuotua valitsemalla valikosta
 @italic{Insert->Image}.
 
 @margin-note{WeSchemessä kuva tuodaan @italic{Images}-napin avulla. Koodiin ei silloin ilmesty kuvaa kuten DrRacket:issä
