@@ -29,7 +29,10 @@
         (define q (make-posn "bye" 2))
         (define p (make-posn 2 -3))
         
-        (define a (list (list 'a 22) (list 'b 8) (list 'c 70)))
+       ; (define a (list (list 'a 22) (list 'b 8) (list 'c 70)))
+        (define a 5)
+        (define b "kissa")
+        (define c (circle 20 "solid" "red"))
         (define v (list 1 2 3 4 5 6 7 8 9 'A))
         (define w (list (list (list (list "bye") 3) #true) 42))
         (define z (list (list (list (list 'a 'b) 2 3) ) (list #false #true) "world"))
@@ -105,6 +108,26 @@ Seuraava askel evaluoidaan, kun käyttäjä painaa @italic{Step}-nappia.
 	
 DrRacketin sisäänrakennettu harjoittelukieli, jossa on vähemmän toimintoja, mikä mahdollistaa mm. selkeämmät virheilmoitukset.  
 
+@section[#:style 'unnumbered]{Boolean operaattorit} 
+@margin-note{Boolean operators}	
+
+Boolean operaattorit ovat funktioita, jotka ottavat sisäänsä totuusarvoja ja palauttavat totuusarvoja. Näitä ovat
+mm. @racket[and], @racket[or] ja @racket[not].
+
+@interaction[#:eval (bsl-eval)(and #T #F)(or #T #F)(not #F)]
+
+Boolean operattoreita käytetään usein yhdistelemään ehtoja
+@link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._ehtolause%29"]{ehtolauseissa} sekä
+@link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._valintalause%29"]{valintalauseissa}.
+
+Tässä yksi esimerkki @racket[and]:n käytöstä muuttujan (t) tyypin tarkistamiseen ennen vertailuoperaattorin
+käyttämistä:
+
+@racketblock[(cond [(and (number? t)(< t 0)) "negatiivinen"]
+                   [(and (number? t)(> t 0)) "positiivinen"]
+                   [(and (number? t)(= t 0)) "nolla"]
+                   [else "ei ole luku"])]
+
 @section[#:style 'unnumbered]{cons-solu} 
 @margin-note{cons cell}	
 
@@ -134,10 +157,13 @@ kuin nolla, @racket[if]-lausekkeen arvoksi saadaan @italic{tosihaara}-lausekkeen
 muuten @italic{epätosihaara}-lausekkeen arvo eli "pienempi". 
 
 @racketblock[(if (> a 0)
-
                  ”suurempi”
-
                  ”pienempi”)]
+
+Jos taas muuttujassa b on merkkijono, voit tutkia sitä tämän ehtolauseen avulla:
+@racketblock[(if (string=? b "kissa")
+                 "Miau!"
+                 "Hau!")]
 
 @section[#:style 'unnumbered]{evaluointi} 
 @margin-note{evaluation}	
@@ -403,13 +429,15 @@ Kutsutaan myös "muodolliseksi parametriksi" (formal parameter).
 @section[#:style 'unnumbered]{predikaatti} 
 @margin-note{predicate}	
 
-Funktio, joka palauttaa totuusarvon. 
+Funktio, joka palauttaa totuusarvon. Tällaisia ovat mm.
+@link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._vertailuoperaattorit%29"]{vertailuoperaattorit}
+sekä funktiot jotka testaavat muuttujien tyyppiä. Näiden funktioiden avulla voidaan varmistaa mm. että saadut
+argumentit ovat oikean tyyppisiä.
 
-Esim.  
+Predikaattien @racket[number?], @racket[string?] ja @racket[image?] avulla voidaan testata muuttujien a, b ja c
+tyyppejä:
 
-@racketblock[(string=? ”joo” ”juu”) 
-
-(= 1 1)] 
+@interaction[#:eval (bsl) (number? a) (string? b) (image? c)]
 
 @section[#:style 'unnumbered]{primitiivi} 
 @margin-note{primitive}	
@@ -509,3 +537,21 @@ Jos muuttujan @racket[a] arvo on @racket[5] kaksi ensimmäistä ehtoa eivät tot
                    [(> a 5) "suurempi"]
                    [(= a 5) "yhtäsuuri"]
                    [else "virhe"])]
+
+@section[#:style 'unnumbered]{vertailuoperaattorit} 
+@margin-note{comparison operators}
+
+Vertailuoperaattoreiksi voidaan kutsutaan kaikkia funktioita, joiden avulla voidaan verrata sen saamia argumentteja
+toisiinsa, ja vastata totuusarvolla tosi (@racket[#true]) tai epätosi (@racket[#false]). Lukujen keskinäistä
+suuruutta voidaan verrata @racket[<], @racket[>], @racket[<=], @racket[>=] ja @racket[=] operaattoreiden avulla.
+Voimme siis esimerkiksi testata onko muuttujan a arvo pienempi, suurempi tai yhtäsuuri kuin 5:
+
+@interaction[#:eval (bsl) (< a 5)(> a 5)(= a 5)]
+
+Voimme verrata toisiinsa myös muita kuin lukuja. Jos haluamme tietää ovatko kaiksi merkkijonoa samat, vertaamme niitä
+toisiinsa @racket[string=?]-funktion avulla. Kaksi kuvaa ovat samat, jos @racket[image=?]-funktio palauttaa
+@racket[#true].
+
+@interaction[#:eval (bsl) (string=? b "koira")(string=? b "kissa")]
+@interaction[#:eval (bsl) (image=? c (circle 30 "solid" "blue"))(image=? c (circle 20 "solid" "red"))]
+
