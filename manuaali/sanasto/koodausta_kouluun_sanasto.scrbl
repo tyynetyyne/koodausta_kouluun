@@ -108,8 +108,8 @@ Seuraava askel evaluoidaan, kun käyttäjä painaa @italic{Step}-nappia.
 	
 DrRacketin sisäänrakennettu harjoittelukieli, jossa on vähemmän toimintoja, mikä mahdollistaa mm. selkeämmät virheilmoitukset.  
 
-@section[#:style 'unnumbered]{Boolean operaattorit} 
-@margin-note{Boolean operators}	
+@section[#:style 'unnumbered]{Boolean operaattori} 
+@margin-note{Boolean operator}	
 
 Boolean operaattorit ovat funktioita, jotka ottavat sisäänsä totuusarvoja ja palauttavat totuusarvoja. Näitä ovat
 mm. @racket[and], @racket[or] ja @racket[not].
@@ -538,8 +538,8 @@ Jos muuttujan @racket[a] arvo on @racket[5] kaksi ensimmäistä ehtoa eivät tot
                    [(= a 5) "yhtäsuuri"]
                    [else "virhe"])]
 
-@section[#:style 'unnumbered]{vertailuoperaattorit} 
-@margin-note{comparison operators}
+@section[#:style 'unnumbered]{vertailuoperaattori} 
+@margin-note{comparison operator}
 
 Vertailuoperaattoreiksi voidaan kutsutaan kaikkia funktioita, joiden avulla voidaan verrata sen saamia argumentteja
 toisiinsa, ja vastata totuusarvolla tosi (@racket[#true]) tai epätosi (@racket[#false]). Lukujen keskinäistä
