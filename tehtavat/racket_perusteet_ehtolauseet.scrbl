@@ -33,7 +33,7 @@ päätellään sellaisten lausekkeiden avulla, jotka palauttavat
 Tällaisia funktioita kutsutaan 
 @link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._predikaatti%29"]{predikaateiksi}.
 Myös 
-@link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._vertailuoperaattorit%29"]{vertailuoperaattorit}
+@link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._vertailuoperaattori%29"]{vertailuoperaattorit}
 ovat predikaatteja, koska ne palauttavat totuusarvoja.
 
 Yksinkertaisin tapa saada koodihaarautumaan on
@@ -47,7 +47,7 @@ Jos haarautumisvaihtoehtoja halutaan enemmän kuin kaksi, kannattaa käyttää
 mikään varsinaisista ehdoista ei toteutunut.
 
 Ehtoja voidaan myös yhdistellä
-@link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._.Boolean_operaattorit%29"]{Boolean operaattoreilla} 
+@link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._.Boolean_operaattori%29"]{Boolean operaattoreilla} 
 joita ovat @racket[and], @racket[or] ja @racket[not].
  
 Voit harjoitella ehto- ja valintalauseita seuraavien tehtävien avulla.
@@ -155,7 +155,7 @@ Harjoittele ehtolausetta pyöristämissääntöjen avulla. Lataa harjoitustiedos
          (list (list @image[#:scale 0.3 "drracket.png"]
                      @italic{@link["http://tinyurl.com/ot4s55a"]{Pyöristäminen (DrRacket)}})
                (list @image[#:scale 0.22 "wescheme.png"]
-                     @italic{@link["http://www.wescheme.org/view?publicId=q1q7QfGaeW"]{Pyöristäminen (WeScheme)}}))]
+                     @italic{@link["http://www.wescheme.org/view?publicId=w32mnh7QSQ"]{Pyöristäminen (WeScheme)}}))]
 
 Tehtävätiedosto sisältää nämä laskutehtävät:
 
@@ -164,10 +164,15 @@ Tehtävätiedosto sisältää nämä laskutehtävät:
 @tabular[#:style 'boxed
          #:row-properties (list 'border)
          #:column-properties '(center left)       
-         (list (list "Tehtävä 1" "Tee funktio, joka pyöristää desimaaliluvun kokonaisluvuksi pyöristyssääntöjen mukaisesti.")
+         (list (list "Tehtävä 1" "Tee funktio, joka pyöristää desimaaliluvun kokonaisluvuksi
+\"pyöristä nollasta poispäin\" -algoritmin mukaisesti: \n
+Kun x on positiivinen, pyöristetään ylöspäin lauseke: (x + 0,5) ja
+kun x on negatiivinen, pyöristetään alaspäin lauseke: (x – 0,5)")
                (list "Tehtävä 2" "Tee funktio, joka pyöristää annettuun tarkkuuteen. Tarkkuus annetaan kokonaislukuna, joka kertoo
 montako desimaalia luvussa on. Käytä apunasi edellä tekemääsi pyöristä-funktiota."))]
-               
+
+@margin-note{Pyöristämiselle on monta erilaista algoritmia, koulun pyöristyssäännöt eivät ole ainoat käytössä olevat.}
+
 Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 
 @tabular[#:style 'boxed #:sep @hspace[3]
