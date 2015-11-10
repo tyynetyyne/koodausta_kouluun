@@ -147,7 +147,7 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 @tabular[#:style 'boxed #:sep @hspace[3]
          (list (list @racket[+] @racket[-] @racket[*] @racket[/] @racket[check-expect] @racket[if] @racket[cond]@racket[and] @racket[or] @racket[not] @racket[number?] @racket[integer?]))]
 
-@section[#:tag "racket_perusteet_pyöristäminen"]{Pyöristäminen}
+@section[#:tag "racket_perusteet_pyoristaminen"]{Pyöristäminen}
 
 Harjoittele ehtolausetta pyöristämissääntöjen avulla. Lataa harjoitustiedosto tästä:
 
@@ -155,7 +155,7 @@ Harjoittele ehtolausetta pyöristämissääntöjen avulla. Lataa harjoitustiedos
          (list (list @image[#:scale 0.3 "drracket.png"]
                      @italic{@link["http://tinyurl.com/ot4s55a"]{Pyöristäminen (DrRacket)}})
                (list @image[#:scale 0.22 "wescheme.png"]
-                     @italic{@link["http://www.wescheme.org/view?publicId=w32mnh7QSQ"]{Pyöristäminen (WeScheme)}}))]
+                     @italic{@link["http://www.wescheme.org/view?publicId=wPbaBamv4V"]{Pyöristäminen (WeScheme)}}))]
 
 Tehtävätiedosto sisältää nämä laskutehtävät:
 
@@ -164,10 +164,10 @@ Tehtävätiedosto sisältää nämä laskutehtävät:
 @tabular[#:style 'boxed
          #:row-properties (list 'border)
          #:column-properties '(center left)       
-         (list (list "Tehtävä 1" "Tee funktio, joka pyöristää desimaaliluvun kokonaisluvuksi
-\"pyöristä nollasta poispäin\" -algoritmin mukaisesti: \n
-Kun x on positiivinen, pyöristetään ylöspäin lauseke: (x + 0,5) ja
-kun x on negatiivinen, pyöristetään alaspäin lauseke: (x – 0,5)")
+         (list (list "Tehtävä 1" "Tee funktio, joka pyöristää desimaaliluvun lähimpään kokonaislukuun
+\"tie-breaking\"-sääntönä \"pyöristä nollasta poispäin\": \n
+Kun x on positiivinen, pyöristetään alaspäin lauseke: (x + 0,5) ja
+kun x on negatiivinen, pyöristetään ylöspäin lauseke: (x – 0,5)")
                (list "Tehtävä 2" "Tee funktio, joka pyöristää annettuun tarkkuuteen. Tarkkuus annetaan kokonaislukuna, joka kertoo
 montako desimaalia luvussa on. Käytä apunasi edellä tekemääsi pyöristä-funktiota."))]
 

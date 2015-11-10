@@ -9,8 +9,6 @@
 @(require fin-doc/pr-math)
 @setup-math
 
-@title[#:tag "racket_alkeet"]{Racket alkeet}
+@title[#:tag "racket_jatko"]{Racket jatko}
 
-@include-section{racket_alkeet_peruslaskut.scrbl}
-@include-section{racket_alkeet_peruskuvat.scrbl}
-@include-section{racket_alkeet_turtle.scrbl}
+@include-section{racket_jatko_silmukat.scrbl}

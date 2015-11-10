@@ -19,8 +19,6 @@ itse haluat. Kun perusteet ovat hallussa voitkin siirtyä Racket-jatkon oppitunn
 Tehtävät täydentyvät koko ajan, joten vieraile sivuilla ahkerasti, joka kerralla
 löydät uutta kivaa koodattavaa.
 
-
-
 @tabular[(list (list @local-table-of-contents[#:style 'unnumbered ]
                      @centered[@image["tehtavat.png" #:scale 0.3]]))]
 
@@ -29,5 +27,7 @@ löydät uutta kivaa koodattavaa.
 @include-section["racket_alkeet.scrbl"]
 
 @include-section["racket_perusteet.scrbl"]
+
+@include-section["racket_jatko.scrbl"]
 
 @index-section[]
