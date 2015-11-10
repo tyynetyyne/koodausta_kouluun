@@ -45,6 +45,11 @@ Racket BSL koodi rakentuu @bold{määrittelyistä}, @bold{lausekkeista},
 @local-table-of-contents[#:style 'immediate]
 
 @section[#:style 'unnumbered #:tag "maarittelyt"]{Määrittelyt}
+
+@defform[#:link-target? #f (define nimi lauseke)]{
+
+   Sitoo @racket[nimi] nimisen muuttujan arvoon, joka saadaan evaluoimalla @racket[lauseke]. Muuttujalla ei voi olla samaa nimeä kuin jollain toisella funktiolla tai muuttujalla,
+   eikä @racket[nimi] saa olla osana @racket[lauseke]:tta.}
    
 @defform[(define (nimi muuttuja muuttuja ...) lauseke)]{
 
@@ -53,14 +58,19 @@ Racket BSL koodi rakentuu @bold{määrittelyistä}, @bold{lausekkeista},
 
    Funktiolla ei voi olla samaa nimeä kuin jollain toisella funktiolla tai muuttujalla.
 
-Racket BSL @racket[nimi] tai @racket[muuttuja] eivät voi sisältää välilyöntiä eikä mitään seuraavista merkkeistä: @litchar{"} @litchar{,} @litchar{'} @litchar{`}
+   Racket BSL @racket[nimi] tai @racket[muuttuja] eivät voi sisältää välilyöntiä eikä mitään seuraavista merkkeistä: @litchar{"} @litchar{,} @litchar{'} @litchar{`}
 @litchar{(} @litchar{)} @litchar{[} @litchar{]} @litchar["{"] @litchar["}"] @litchar{|} @litchar{;}
 @litchar{#}}
 
-@defform[#:link-target? #f (define nimi lauseke)]{
+   @defform/none[(define nimi (lamdba (muuttuja muuttuja ...) lauseke))]{
 
-   Sitoo @racket[nimi] nimisen muuttujan arvoon, joka saadaan evaluoimalla @racket[lauseke]. Muuttujalla ei voi olla samaa nimeä kuin jollain toisella funktiolla tai muuttujalla,
-   eikä @racket[nimi] saa olla osana @racket[lauseke]:tta.}
+   Vaihtoehtoinen tapa määritellä funktio. Määrittelee @racket[nimi] nimisen funktion, jonka toteutus on @racket[lauseke].
+   Kun funktiota kutsutaan, kunkin argumenttin arvo sijoitetaan funktion lausekkeeseen @racket[muuttuja]:n tilalle. Funktio palauttaa saadun lausekkeen arvon.
+
+   Funktiolla ei voi olla samaa nimeä kuin jollain toisella funktiolla tai muuttujalla.
+
+   @defidform/inline[lambda] BSL kielessä tätä ei voi käyttää muualla kuin em. vaihtoehtoisessa tavassa määritellä funktio.
+   ISL kielessä tämän avulla voidaan lisäksi määritellä funktioita, ilman että niille annetaan nimeä.}
 
 @defform[(define-struct tietue (kenttä ...))]{
 
@@ -77,6 +87,21 @@ Racket BSL @racket[nimi] tai @racket[muuttuja] eivät voi sisältää välilyön
 
    Saatujen uusien funktioiden nimet eivät saa olla samoja kuin muiden funktioiden tai muuttujien nimet muuten @racket[define-struct] palauttaa virheen.
 }
+
+@margin-note{Jotta saat @racket[local]:in käyttöösi vaihda kieli DrRacket:issa: 
+ @italic{Language->Choose language->Teaching languages->Intermediate student.}
+  WeScheme:ssä se toimii automaattisesti.}
+
+@defform[(local [määrittely ...] lauseke)]{
+
+   Luo ryhmän määrittelyjä, jotka näkyvät vai @racket[local]-rakenteen sisällä.
+   @racket[määrittely] voi olla muuttujan, funktion tai tietueen määrittely.
+   @bold[@italic["Huom! Tämä vaatii käyttöön ISL-kielen."]]
+
+   
+   Jokainen @racket[local] rakenteen sisällä oleva @racket[määrittely]
+ evaluoidaan järjestyksessä ja lopuksi evaluoidaan @racket[lauseke], jonka arvo palautetaan lausekkeen arvona.
+Nämä määrittelyt piilottavat näkyvistä mahdolliset samannimiset globaalit muuttujat. }
 
 @section[#:style 'unnumbered #:tag "lausekkeet"]{Lausekkeet}
 
@@ -185,7 +210,7 @@ suosittelemme, että testaat ohjelmasi käyttämällä @racket[check-expect]:iä
 
   Jos @racket[poikkeama] ei ole luku, @racket[check-within] ilmoittaa virheestä.} 
 
-@section[ #:style 'unnumbered #:tag "kirjastovaatimukset"]{Kirjastovaatimukset}
+@section[ #:style 'unnumbered #:tag "kirjastovaatimukset"]{Kirjastot}
 
 @defform[(require merkkijono)]{
 

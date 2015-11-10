@@ -83,6 +83,12 @@
  @interaction[#:eval (bsl) x (remove "hei" x) z (remove "hei" z)]
 }
 
+ @defproc[(range [alku luku][loppu luku][askel luku]) cons?]{
+ Luo listan lukuja välillä @racket[alku] - @racket[loppu] niin, että askeleena käytetään @racket[askel]. 
+ @interaction[#:eval (bsl-eval) (range 0 10 2)
+              (range 10 0 -2)]
+                                                                                                                   }
+
 @defproc[(cons? [x ei-tyyppivaatimusta]) totuusarvo]{
  Tutkii, onko @racket[x] rakenteeltaan lista tai puu, eli koostuuko se ns. @italic{cons}-soluista, joissa on aina vasen ja oikea
  alkio. 

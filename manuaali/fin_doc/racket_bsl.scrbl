@@ -12,7 +12,7 @@
 
 @title[#:tag "racket_bsl" #:style 'toc]{Racket BSL - kieli}
 
-Tässä käsikirjassa esitelty ohjelmointikieli, Racket BSL (Beginning Student Language), on alunperin kehitelty käytettäväksi ohjelmoinnin opettamiseen @italic{@link["http://www.htdp.org/"]{How to Design
+Tässä käsikirjassa esitelty ohjelmointikieli, Racket BSL (@italic{Beginning Student Language}), on alunperin kehitelty käytettäväksi ohjelmoinnin opettamiseen @italic{@link["http://www.htdp.org/"]{How to Design
 Programs}} kirjan kanssa. Tähän suomenkieliseen käsikirjaan on otettu vain pieni osa alkuperäisistä toiminnoista, koska Koodausta kouluun materiaalin tehtävät eivät vaadi
 kaikkia toimintoja. Löydät kielen täydellisen kuvauksen osoitteesta:
 @url{http://docs.racket-lang.org/htdp-langs/beginner.html}
@@ -25,6 +25,9 @@ DrRacket:ssä Racket BSL on asetettava käyttöön @italic{Languages} - valikon 
 
 @italic{Huom!} Tässä käsikirjassa käytetään termejä @italic{Racket BSL} ja @italic{Racket-kieli} toistensa synonyymeinä. Huomaa kuitenkin, että
  vaikka Racket BSL muistuttaakin hyvin paljon varsinaista Racket-kieltä, nämä ovat kaksi eri ohjelmointikieltä.
+
+Käsikirjaan on otettu mukaan myös muutama toiminnallisuus ISL - kielestä (@italic{Intermediate Studen Language}), helpottamaan
+vaativampien harjoitusten koodaamista. Jos toiminto vaatii ISL kielen, se on ilmoitettu käsikirjassa selkeästi.
                                                                            
 @local-table-of-contents[#:style 'unnumbered]
 
@@ -35,6 +38,5 @@ DrRacket:ssä Racket BSL on asetettava käyttöön @italic{Languages} - valikon 
 @include-section{racket_bsl_merkkijonot.scrbl}
 @include-section{racket_bsl_listat.scrbl}
 @include-section{racket_bsl_posn.scrbl}
+@include-section{racket_isl_higher_order_funktiot.scrbl}
 @include-section{racket_bsl_muut.scrbl}
-
-
