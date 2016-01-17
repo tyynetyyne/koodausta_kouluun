@@ -38,10 +38,4 @@ Käsikirja sisältää osiot:
 @include-section["plot2D/plot2D.scrbl"]
 @include-section["sanasto/koodausta_kouluun_sanasto.scrbl"]
 
-
-@verbatim{-------------------------------------------------------------------------------}
-
-@bold{Tulossa ovat:}
-
-@itemlist[@item{Peruspeli}]
 @index-section[]

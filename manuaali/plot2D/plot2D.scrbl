@@ -19,11 +19,17 @@
  Katso asennusohjeet @link["sanasto.html#(part._paketti)"]{täältä}.
  @italic{Huom!} Tämä kirjasto vaatii käyttöönsä @italic{Intermediate Student Language}. Kirjasto puuttuu WeScheme:stä.}
 
-Tässä osassa esitellään Plot2D -kirjasto, jonka avulla voi piirtää kuvaajia (2D). Kirjaston avulla voit piirtää samaan kuvaan useamman kuvaajan
-nimetä akselit sekä antaa kuvalle otsikon.
-
+Tässä osassa esitellään Plot2D -kirjasto, jonka avulla voi piirtää 2D-kuvaajia sekä sijoittaa pisteitä koordinaatistoon.
+Kirjaston avulla voit piirtää samaan kuvaan useamman kuvaajan, nimetä akselit sekä antaa kuvalle otsikon.
+             
 @centered[@image[#:scale 0.8 "plot2D/paraabelisuora.png"]]
+
+@margin-note{plot2D-kirjasto käyttää laajempaa @link["http://docs.racket-lang.org/plot/"]{plot-kirjastoa}. Tutustu siihen, jos
+ plot2D-kirjaston toiminnot eivät riitä.}
+
 @centered[@image[#:scale 0.8 "plot2D/sincos.png"]]
+
+@centered[@image[#:scale 0.8 "plot2D/dots2.png"]]
 
 @local-table-of-contents[#:style 'unnumbered]
 
