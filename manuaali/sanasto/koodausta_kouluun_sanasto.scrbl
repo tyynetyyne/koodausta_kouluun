@@ -452,6 +452,12 @@ sqrt
 
 string-length]  
 
+@section[#:style 'unnumbered]{rekursio} 
+@margin-note{recursion}	
+
+Funktiota, joka kutsuu itse itseään kutsutaan rekursiiviseksi funktioksi. Rekursion avulla
+voidaan tehdä toistorakenne eli silmukka.
+
 @section[#:style 'unnumbered]{sieventäminen} 
 @margin-note{reduction}	
 
