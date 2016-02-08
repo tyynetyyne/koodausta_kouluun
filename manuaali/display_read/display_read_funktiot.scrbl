@@ -7,7 +7,7 @@
 @(require (for-label fin-doc/fi-image))
 @(require (for-label teachpacks/display-read))
 @(require scribble/core
-           scribble/html-properties)
+          scribble/html-properties)
 @(require scribble/eval)
 @(require scribble/pdf-render)
 
@@ -16,9 +16,9 @@
 @title[#:tag "display_read_funktiot"]{Display-Read-funktiot}
 
 @defproc[(display-read [info merkkijono/kuva/luku]) merkkijono]{
-
-Avaa animaatioikkunan, ja näyttää käyttäjälle annetun @racket[info]:n sekä editorikentän. Kun käyttäjä painaa <enter> palautetaan editorin 
-sisältö. Jos editori jätetään tyhjäksi palautuu tyhjä merkkijono @racket[""]. 
+                                                                
+ Avaa animaatioikkunan, ja näyttää käyttäjälle annetun @racket[info]:n sekä editorikentän. Kun käyttäjä painaa <enter> palautetaan editorin 
+ sisältö (merkkijono). Jos editori jätetään tyhjäksi palautuu tyhjä merkkijono @racket[""]. 
 }
 
 Esimerkkejä:
@@ -31,11 +31,23 @@ Esimerkkejä:
 
 @centered[@image[#:scale 0.7 "display_read/dr_ympyrakysymys.png"]]
 
-@defproc[(display-select [info merkkijono/kuva/luku]
-                         [valinnat (list-of merkkijono/kuva/luku)])
-         merkkijono/kuva/luku]{
+@defproc[(display-read-number [info merkkijono/kuva/luku]) luku/false]{
+                                                                       
+ Avaa animaatioikkunan, ja näyttää käyttäjälle annetun @racket[info]:n sekä editorikentän. Kun käyttäjä painaa <enter> palautetaan editorin 
+ sisältö (luku). Jos editori eri sisällä lukua (tai se on tyhjä) palautuu @racket[#false]. 
+}
 
-Avaa animaatioikkunan, ja näyttää käyttäjälle annetun @racket[info]:n sekä @racket[valinnat]-listan sisällön. @racket[valinnat]-listan ensimmäinen
+Esimerkkejä:
+
+@racketblock[(display-read-number "Mikä on ikäsi?")]
+
+@centered[@image[#:scale 0.7 "display_read/dr_ika.png"]]
+
+@defproc[(display-select [info merkkijono/kuva/luku]
+                         [valinnat lista<merkkijono/kuva/luku>])
+         merkkijono/kuva/luku]{
+                               
+ Avaa animaatioikkunan, ja näyttää käyttäjälle annetun @racket[info]:n sekä @racket[valinnat]-listan sisällön. @racket[valinnat]-listan ensimmäinen
  alkio on automaattisesti valittuna ja käyttäjä voi muokata valintaa nuoli-ylös ja nuoli-alas näppäimillä. Kun käyttäjä painaa <enter>
  palautetaan valinta. Valitun alkion tyyppi säilyy, eli jos annettu @racket[valinnat]-lista sisältää numeroita, @racket[display-select] palauttaa
  myös numeroita. Jos valinta epäonnistuu (esim. annettu lista sisältää jotain muuta kuin merkkijonoja/kuvia/lukuja), palautetaan
@@ -60,8 +72,8 @@ Esimerkki:
 @defproc[(display-value [info merkkijono/kuva/luku]
                         [arvo merkkijono/kuva/luku])
          merkkijono/kuva/luku]{
-
-Avaa animaatioikkunan, ja näyttää käyttäjälle annetun @racket[info]:n sekä @racket[arvo]:n. Kun käyttäjä painaa <enter>
+                               
+ Avaa animaatioikkunan, ja näyttää käyttäjälle annetun @racket[info]:n sekä @racket[arvo]:n. Kun käyttäjä painaa <enter>
  palautetaan @racket[arvo]. Jos arvoa ei voida esittää käyttäjälle (esim. se on jotain muuta kuin merkkijono/kuva/luku) näytetään
  vain @racket[info] mutta @racket[arvo] palautetaan normaalisti.}
 
@@ -69,6 +81,21 @@ Avaa animaatioikkunan, ja näyttää käyttäjälle annetun @racket[info]:n sek�
 
 @centered[@image[#:scale 0.7 "display_read/dr_pisteet.png"]]
 
-@racketblock[(display-value "Oikein!" #t)]
+@defproc[(display-info [info merkkijono/kuva/luku])
+         merkkijono/kuva/luku]{
+                               
+ Avaa animaatioikkunan, ja näyttää käyttäjälle annetun @racket[info]:n. Kun käyttäjä painaa <enter>
+ palautetaan @racket[info].}
+ 
+@racketblock[(display-info "Game over")]
 
-@centered[@image[#:scale 0.7 "display_read/dr_oikein.png"]]
+@centered[@image[#:scale 0.7 "display_read/dr_gameover.png"]]
+
+@defproc[(display-info-timer [info merkkijono/kuva/luku]
+                             [timer luku])
+         merkkijono/kuva/luku]{
+                               
+ Avaa animaatioikkunan, ja näyttää käyttäjälle annetun @racket[info]:n, ja sulkeutuu automaattisesti kun @racket[timer] on kulunut
+  (28 vastaa yhtä sekuntia) tai kun käyttäjä painaa <enter>. Palauttaan @racket[info]:n.}
+ 
+@racketblock[(display-info-timer "Game over" 100)]
