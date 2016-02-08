@@ -11,7 +11,7 @@
 
 @declare-exporting[fin-doc/fi-beginner]
 
-@title[#:tag "racket_bsl_luvut" #:style 'toc]{Luvut: kokonais-, rationaali- ja reaaliluvut}
+@title[#:tag "racket_bsl_luvut" #:style 'toc]{Luvut}
 
 @local-table-of-contents[#:style 'immediate-only ]
 

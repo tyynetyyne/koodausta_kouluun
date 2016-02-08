@@ -26,8 +26,9 @@ DrRacket:ssä Racket BSL on asetettava käyttöön @italic{Languages} - valikon 
 @italic{Huom!} Tässä käsikirjassa käytetään termejä @italic{Racket BSL} ja @italic{Racket-kieli} toistensa synonyymeinä. Huomaa kuitenkin, että
  vaikka Racket BSL muistuttaakin hyvin paljon varsinaista Racket-kieltä, nämä ovat kaksi eri ohjelmointikieltä.
 
-Käsikirjaan on otettu mukaan myös muutama toiminnallisuus ISL - kielestä (@italic{Intermediate Studen Language}), helpottamaan
-vaativampien harjoitusten koodaamista. Jos toiminto vaatii ISL kielen, se on ilmoitettu käsikirjassa selkeästi.
+Käsikirjaan on otettu mukaan myös muutama toiminnallisuus ISL - kielestä (@italic{Intermediate Studen Language}) ja
+ASL - kielistä (@italic{Intermediate Studen Language}), helpottamaan vaativampien harjoitusten koodaamista.
+Jos toiminto vaatii ISL tai ASL kielen, se on ilmoitettu käsikirjassa selkeästi.
                                                                            
 @local-table-of-contents[#:style 'unnumbered]
 

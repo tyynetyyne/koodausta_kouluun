@@ -88,20 +88,30 @@ Racket BSL koodi rakentuu @bold{määrittelyistä}, @bold{lausekkeista},
    Saatujen uusien funktioiden nimet eivät saa olla samoja kuin muiden funktioiden tai muuttujien nimet muuten @racket[define-struct] palauttaa virheen.
 }
 
-@margin-note{Jotta saat @racket[local]:in käyttöösi vaihda kieli DrRacket:issa: 
+@margin-note{Jotta saat käyttöönsi @racket[local], @racket[letrec] tai @racket[let]:n vaihda kieli DrRacket:issa: 
  @italic{Language->Choose language->Teaching languages->Intermediate student.}
-  WeScheme:ssä se toimii automaattisesti.}
+  WeScheme:ssä nämä toimivat automaattisesti.}
 
 @defform[(local [määrittely ...] lauseke)]{
 
    Luo ryhmän määrittelyjä, jotka näkyvät vai @racket[local]-rakenteen sisällä.
    @racket[määrittely] voi olla muuttujan, funktion tai tietueen määrittely.
-   @bold[@italic["Huom! Tämä vaatii käyttöön ISL-kielen."]]
+  
+Jokainen @racket[local] rakenteen sisällä oleva @racket[määrittely]
+evaluoidaan järjestyksessä ja lopuksi evaluoidaan @racket[lauseke], jonka arvo palautetaan lausekkeen arvona.
+Nämä määrittelyt piilottavat näkyvistä mahdolliset samannimiset globaalit muuttujat.
 
-   
-   Jokainen @racket[local] rakenteen sisällä oleva @racket[määrittely]
- evaluoidaan järjestyksessä ja lopuksi evaluoidaan @racket[lauseke], jonka arvo palautetaan lausekkeen arvona.
-Nämä määrittelyt piilottavat näkyvistä mahdolliset samannimiset globaalit muuttujat. }
+ @bold[@italic["Huom! Tämä vaatii käyttöön ISL-kielen."]]}
+
+@defform[(letrec ([nimi let-lauseke] ...) lauseke)]{
+
+Kuin @racket[local] mutta lyhyempi merkintätapa.
+ @bold[@italic["Huom! Tämä vaatii käyttöön ISL-kielen."]]}
+
+@defform[(let ([nimi let-lauseke] ...) lauseke)]{
+
+Kuin @racket[letrec] mutta @racket[nimi] ei saa esiintyä muissa @racket[let-lausekkeissa].
+ @bold[@italic["Huom! Tämä vaatii käyttöön ISL-kielen."]]}
 
 @section[#:style 'unnumbered #:tag "lausekkeet"]{Lausekkeet}
 
@@ -174,6 +184,15 @@ Näitä ei kirjoiteta sulkujen sisään.
 
     Jos jonkin lausekkeen arvo on jotain muuta kuin @racket[#true] tai 
     @racket[#false], @racket[or] ilmoittaa virheestä.}
+
+@margin-note{Jotta saat käyttöönsi @racket[begin]:in vaihda kieli DrRacket:issa: 
+ @italic{Language->Choose language->Teaching languages->Advanced student.}
+  WeScheme:ssä tämä toimii automaattisesti.}
+
+@defform[(begin lauseke lauseke ...)]{
+
+Evaluoi lausekkeen vasemmalta oikealle järjestyksessä ja palauttaa viimeisen lausekkeen arvon.
+@bold[@italic["Huom! Tämä vaatii käyttöön ASL-kielen."]]}
 
 @section[#:style 'unnumbered #:tag "testitapaukset"]{Testitapaukset}
 
