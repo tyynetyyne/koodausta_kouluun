@@ -11,9 +11,7 @@
 @(require scribble/eval)
 @(require scribble/pdf-render)
 
-@declare-exporting[teachpacks/racket-turtle]
-
-@title[#:tag "racket_turtl_erimerkkejä_rekursio"]{Racket Turtle esimerkkejä, joissa on käytetty rekursiota}
+@title[#:tag "racket_turtle_esimerkkeja_rekursio"]{Racket Turtle esimerkkejä, joissa on käytetty rekursiota}
 
 @section[#:tag "racket_turtle_spiraali"]{Kiertyvä spiraali vaihtuvalla kynän värillä}
 

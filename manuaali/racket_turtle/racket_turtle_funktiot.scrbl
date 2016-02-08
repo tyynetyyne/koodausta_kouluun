@@ -16,14 +16,14 @@
 @title[#:tag "racket_turtle_funktiot"]{Piirtofunktiot}
 
 
-@defproc[(draw [komentolista (list-of procedure)]) kuva]{
+@defproc[(draw [komentolista lista<funktio>]) kuva]{
 
 Suorittaa annetun @racket[komentolista]:n mukaiset komennot ja palauttaa näin saadun kuvan. Avaa animaatioikkunan,
 jossa Turtlen liikkeitä ja kuvan kehittymistä voi seurata.
 
 }
 
-@defproc[(draw-custom [komentolista (list-of procedure)]
+@defproc[(draw-custom [komentolista lista<funktio>]
                       [leveys positiivinen-reaaliluku]
                       [korkeus positiivinen-reaaliluku]
                       [nopeus positiivinen-reaaliluku]) kuva]{
@@ -35,14 +35,14 @@ Kuvan koko on normaalisti @racket[500] kertaa @racket[500] pikseliä.
 
 }
 
-@defproc[(draw-step-by-step [komentolista (list-of procedure)]) kuva]{
+@defproc[(draw-step-by-step [komentolista lista<funktio>]) kuva]{
 
 Kuin @racket[draw] mutta @racket[komentolista]:n mukaiset komennot suoritetaan vaihevaiheelta sitä mukaa kun
 käyttäjä painaa välilyöntiä. 
 
 }
 
-@defproc[(draw-step-by-step-custom [komentolista (list-of procedure)]
+@defproc[(draw-step-by-step-custom [komentolista lista<funktio>]
                                    [leveys positiivinen-reaaliluku]
                                    [korkeus positiivinen-reaaliluku]
                                    [nopeus positiivinen-reaaliluku]) kuva]{
@@ -52,7 +52,7 @@ käyttäjä painaa välilyöntiä.
 
 }
 
-@defproc[(draw-and-store [komentolista (list-of procedure)]) kuva]{
+@defproc[(draw-and-store [komentolista lista<funktio>]) kuva]{
 
 Kuin @racket[draw] mutta tallentaa animaation @italic{animoituna gif}:inä hakemistoon @bold{turtle_animations}. Hakemiston
 tulee sijaita samassa paikassa kuin @italic{.rkt} tiedosto. Jos hakemistoa ei löydy, tiedostoa ei luoda.
@@ -63,7 +63,7 @@ poistuu näkyvistä ja ruutuun palaa animaation lopputilan kuva.
 
 }
 
-@defproc[(draw-and-store-custom [komentolista (list-of procedure)]
+@defproc[(draw-and-store-custom [komentolista lista<funktio>]
                                 [leveys positiivinen-reaaliluku]
                                 [korkeus positiivinen-reaaliluku]
                                 [nopeus positiivinen-reaaliluku]) kuva]{
@@ -72,9 +72,3 @@ Kuin @racket[draw-custom] mutta tallentaa animaation @italic{animoituna gif}:in�
 
 @italic{Huom!} tämä ei toimi WeScheme ympäristössä.
 }
-
-
-
-
-
-

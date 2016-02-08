@@ -45,7 +45,7 @@
                                       
 }
 
-@defproc[(repeat [k luonnollinen-luku][komentolista (lista<funktio>)]) lista<funktio>]{
+@defproc[(repeat [k luonnollinen-luku][komentolista lista<funktio>]) lista<funktio>]{
                                                                                      
  Komento, jonka avulla Turtle toistaa annetun listan sisältämät komennot @racket[k] kertaa .
 }
@@ -77,7 +77,7 @@
 }
 
 @defproc*[([(change-color [väri image-color?]) funktio]
-           [(change-color [värilista (lista<image-color?>)]) funktio])]{
+           [(change-color [värilista lista<image-color?>]) funktio])]{
                                                                            
  Vaihtaa Turtlen kynän värin (kynän väri on aluksi sininen). Argumentti voi olla joko yksittäinen @racket[väri] tai
  lista, jossa on yksi tai useampi @racket[väri]. Värilista toimii niin, että kynän väri vaihtuu listan osoittamassa
@@ -131,7 +131,7 @@
 }
 
 @defproc*[([(stamper-on [leimasin kuva]) funktio]
-           [(stamper-on [leimasinlista (lista<kuva>)]) funktio])]{
+           [(stamper-on [leimasinlista lista<kuva>]) funktio])]{
  Asettaa leimasintoiminnon päälle. Kun leimasin on päällä Turtle piirtää jokaisen siirtymän jälkeen annetun @racket[leimasin]
  kuvan. Jos argumenttina on annettu @racket[leimasinlista] kuvat piirretään listan osoittamassa järjestyksessä. Kun lista
  loppuu, aloitetaan alusta. Leimasintoiminto ei vaikuta Turtlen kynään, eli jos se on alhaalla piirretään myös viiva.
