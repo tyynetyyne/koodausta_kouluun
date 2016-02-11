@@ -29,9 +29,9 @@ Koodaa Racket - Turtlelle ohjeita yksinkertaisten geometristen kuvioiden piirtä
 
 @tabular[#:sep @hspace[1]
          (list (list @image[#:scale 0.3 "drracket.png"]
-                     @italic{@link["http://tinyurl.com/pkd5buh"]{Racket Turtle - peruskuviot (DrRacket)}})
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/alkeet/turtle/racket_turtle_peruskuviot.rkt"]{Racket Turtle - peruskuviot (DrRacket)}})
                (list @image[#:scale 0.22 "wescheme.png"]
-                     @italic{@link["http://www.wescheme.org/view?publicId=zvNqPWoJnq"]{Racket Turtle - peruskuviot (WeScheme)}}))]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/racket_turtle_peruskuviot.html"]{Racket Turtle - peruskuviot (WeScheme)}}))]
 
 @margin-note{Jos käytät WeScheme:ä ja haluat tallentaa työsi, tarvitset Google-tunnukset.
  Kirjaudu ENSIN sisään @link["http://www.wescheme.org"]{WeScheme}:en, ja tule vasta
@@ -60,9 +60,9 @@ Koodaa Racket - Turtlelle ohjeita useamman neliön piirtämiseksi. Lataa tehtäv
 
 @tabular[#:sep @hspace[1]
          (list (list @image[#:scale 0.3 "drracket.png"]
-                     @italic{@link["http://tinyurl.com/nd896ge"]{Racket Turtle - neliöt (DrRacket)}})
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/alkeet/turtle/racket_turtle_neliot.rkt"]{Racket Turtle - neliöt (DrRacket)}})
                (list @image[#:scale 0.22 "wescheme.png"]
-                     @italic{@link["http://www.wescheme.org/view?publicId=mRoV8Vgj6w"]{Racket Turtle - neliöt (WeScheme)}}))]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/racket_turtle_neliot.html"]{Racket Turtle - neliöt (WeScheme)}}))]
 
 Tehtävätiedosto sisältää nämä piirtotehtävät:
 
@@ -86,9 +86,9 @@ Koodaa Racket - Turtlelle ohjeet ympyrän piirtämiseksi, ja tee sen avulla usea
 
 @tabular[#:sep @hspace[1]
          (list (list @image[#:scale 0.3 "drracket.png"]
-                     @italic{@link["http://tinyurl.com/ohrhyr8"]{Racket Turtle - ympyrät (DrRacket)}})
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/alkeet/turtle/racket_turtle_ympyrat.rkt"]{Racket Turtle - ympyrät (DrRacket)}})
                (list @image[#:scale 0.22 "wescheme.png"]
-                     @italic{@link["http://www.wescheme.org/view?publicId=itBT797BVP"]{Racket Turtle - ympyrät (WeScheme)}}))]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/racket_turtle_ympyrat.html"]{Racket Turtle - ympyrät (WeScheme)}}))]
 
 Tehtävätiedosto sisältää nämä piirtotehtävät:
 
@@ -112,9 +112,9 @@ Koodaa Racket - Turtlelle ohjeet kaaren koodaamiseksi, ja tee sen avulla kukka. 
 
 @tabular[#:sep @hspace[1]
          (list (list @image[#:scale 0.3 "drracket.png"]
-                     @italic{@link["http://tinyurl.com/nl2jpr4"]{Racket Turtle - kukka (DrRacket)}})
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/alkeet/turtle/racket_turtle_kukka.rkt"]{Racket Turtle - kukka (DrRacket)}})
                (list @image[#:scale 0.22 "wescheme.png"]
-                     @italic{@link["http://www.wescheme.org/view?publicId=kRc3dBPQvj"]{Racket Turtle - kukka (WeScheme)}}))]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/racket_turtle_kukka.html"]{Racket Turtle - kukka (WeScheme)}}))]
 
 Tehtävätiedosto sisältää nämä piirtotehtävät:
 
@@ -143,9 +143,9 @@ Koodaa Racket - Turtlelle ohjeet tähtirusetin piirtämiseksi leimasintoiminnon 
 
 @tabular[#:sep @hspace[1]
          (list (list @image[#:scale 0.3 "drracket.png"]
-                     @italic{@link["http://tinyurl.com/pol5leb"]{Racket Turtle - tähtirusetti (DrRacket)}})
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/alkeet/turtle/racket_turtle_tahtirusetti.rkt"]{Racket Turtle - tähtirusetti (DrRacket)}})
                (list @image[#:scale 0.22 "wescheme.png"]
-                     @italic{@link["http://www.wescheme.org/view?publicId=kFFpKUcoN6"]{Racket Turtle - tähtirusetti (WeScheme)}}))]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/racket_turtle_tahtirusetti.html"]{Racket Turtle - tähtirusetti (WeScheme)}}))]
 
 Tehtävätiedosto sisältää nämä piirtotehtävät:
 

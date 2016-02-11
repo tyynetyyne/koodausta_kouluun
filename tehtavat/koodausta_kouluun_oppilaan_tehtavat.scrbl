@@ -19,7 +19,7 @@ itse haluat. Kun perusteet ovat hallussa voitkin siirtyä Racket-jatkon oppitunn
 Tehtävät täydentyvät koko ajan, joten vieraile sivuilla ahkerasti, joka kerralla
 löydät uutta kivaa koodattavaa.
 
-@tabular[(list (list @local-table-of-contents[#:style 'unnumbered ]
+@tabular[(list (list @local-table-of-contents[#:style 'immediate-only]
                      @centered[@image["tehtavat.png" #:scale 0.3]]))]
 
 @; ------------------------------------------------------------------------

@@ -26,7 +26,7 @@
      *bsl))
 
 
-@title[#:tag "perusteet_sovelluksia_display_readin_avulla"]{Sovelluksia B (display-read)}
+@title[#:tag "perusteet_sovellukset_display_read"]{Sovelluksia B (display-read)}
 
 Funktioita, ehto- ja valintalauseita sekä käyttäjän kanssa kommunikointia voi harjoitella myös
 @italic[@link["http://racket.koodiaapinen.fi/manuaali/display_read.html"]{teachpacks/display-read}]-kirjaston avulla. Se on toteutettu

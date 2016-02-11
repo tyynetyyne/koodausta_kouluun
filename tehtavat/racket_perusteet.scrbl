@@ -9,7 +9,14 @@
 @(require fin-doc/pr-math)
 @setup-math
 
-@title[#:tag "racket_perusteet"]{Racket perusteet}
+@title[#:tag "racket_perusteet" #:style 'toc]{Racket perusteet}
+
+Tässä jaksossa opitaan algorimisen ajattelun peruspilarit: ehtolauseet, funktiot sekä silmukat.
+Pääset koodaamaan animaatioita sekä yksinkertaisia pelejä.
+
+@centered[@image["kuvat/piilokuvaA.png" #:scale 0.3]]
+
+@local-table-of-contents[#:style 'immediate-only ]
 
 @include-section{racket_perusteet_funktiot.scrbl}
 @include-section{racket_perusteet_ehtolauseet.scrbl}

@@ -40,9 +40,9 @@ Harjoittele peruslaskuja ja sisäkkäisiä funktiokutsuja seuraavien tehtävien 
 
 @tabular[#:sep @hspace[1]
          (list (list @image[#:scale 0.3 "drracket.png"]
-                     @italic{@link["http://tinyurl.com/nvuxjuc"]{Peruslaskut (DrRacket)}})
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/alkeet/peruslaskut/laskujarjestys.rkt"]{Peruslaskut (DrRacket)}})
                (list @image[#:scale 0.22 "wescheme.png"]
-                     @italic{@link["http://www.wescheme.org/view?publicId=282iMPmxjV"]{Peruslaskut (WeScheme)}}))]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/laskujarjestys.html"]{Peruslaskut (WeScheme)}}))]
 
 @margin-note{Jos käytät WeScheme:ä ja haluat tallentaa työsi, tarvitset Google-tunnukset.
  Kirjaudu ENSIN sisään @link["http://www.wescheme.org"]{WeScheme}:en, ja tule vasta
@@ -87,9 +87,9 @@ Lataa harjoitustiedosto tästä:
 
 @tabular[#:sep @hspace[1]
          (list (list @image[#:scale 0.3 "drracket.png"]
-                     @italic{@link["http://tinyurl.com/qaxumeb"]{Lausekkeita kuvista (DrRacket)}})
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/alkeet/peruslaskut/lausekkeita_kuvista.rkt"]{Lausekkeita kuvista (DrRacket)}})
                (list @image[#:scale 0.22 "wescheme.png"]
-                     @italic{@link["http://www.wescheme.org/view?publicId=T2pyQpMYvy"]{Lausekkeita kuvista (WeScheme)}}))]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/lausekkeita_kuvista.html"]{Lausekkeita kuvista (WeScheme)}}))]
 
 @margin-note{Jos käytät WeScheme:ä ja haluat tallentaa työsi, tarvitset Google-tunnukset.
  Kirjaudu ENSIN sisään @link["http://www.wescheme.org"]{WeScheme}:en, ja tule vasta
