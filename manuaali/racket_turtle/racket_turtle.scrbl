@@ -18,7 +18,7 @@
 @margin-note{Jotta Racket Turtle toimii DrRacket:ssa, sinun pitää asentaa @bold{teachpacks} paketti.
  Katso asennusohjeet @link["sanasto.html#(part._paketti)"]{täältä}.
  @italic{WeScheme}:ssä ei tarvitse asentaa pakettia mutta kirjastolla on eri nimi:
- @racket[(require wescheme/Engb0r37Kg)]}
+ @racket[(require wescheme/oJ1vcDo5qd)]}
 
 Tässä osassa esitellään Racket Turtle - kirjasto, jonka avulla voi piirtää turtle-grafiikkaa ja tehdä monipuolisia
 taideteoksia. Racket Turtle on helppo ohjelmoida tekemään kuvioita, ja se soveltuu aivan aloittelijoillekin. Sen avulla voidaan
