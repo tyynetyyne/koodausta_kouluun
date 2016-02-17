@@ -35,6 +35,8 @@
 
 @racketblock[(units->image "mm" 3 33 "red")]
 
+@centered[@image["math-utils/mm3.png"]]
+
 @defproc[(display-with-units [suure merkkijono]
                              [fontin-koko kokonaisluku-välillä-0-255]
                              [väri image-color?])
@@ -44,7 +46,7 @@
 
 @racketblock[(display-with-units "350 cm3" 30 "black")]
 
-@centered[@image["math-utils/mm3.png"]]
+@centered[@image["math-utils/suure1.png"]]
 
 @racketblock[(display-with-units "4.5 m2" 45 "red")]
 
