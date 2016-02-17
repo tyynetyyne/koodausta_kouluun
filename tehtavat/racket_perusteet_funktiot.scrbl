@@ -3,6 +3,7 @@
 @(require 2htdp/image)
 @(require (for-label fin-doc/fi-beginner))
 @(require (for-label fin-doc/fi-image))
+@(require (for-label teachpacks/plot2D))
 @(require scribble/core
           scribble/html-properties)
 @(require scribble/racket)
@@ -17,26 +18,21 @@ ja funktiot ovat juuri näitä tietokoneohjelman "perusosasia". Ne toimivat omin
 tietoa. Näitä osia yhdistelemällä saadaan aikaan monimutkaisempia ohjelmia. Jotta pystyt tekemään kokonaisia isoja ohjelmia, sinun pitää osata ensin
 tehdä pieniä ohjelmia eli funktioita.
 
-Funktion kirjoittamisessa tärkein vaihe on suunnittelu. Koska funktion suunnittelussa on monta päätöstä tehtävänä, se voi aluksi tuntua lähdes
-mahdottomalta. Siksi teemme sen pienissä askelissa seuraamalla menetelmää nimeltä @italic{funktion suunnitteluportaat}. Emme siis yritä hypätä
-katolle yhdellä (mahdottomalla) loikalla. Jos menetelmä ei ole sinulle tuttu, katso ensin @link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._funktion_suunnitteluportaat%29"]{esimerkki} Koodarin käsikirjasta. 
-
-@image["../manuaali/sanasto/funktion_suunnitteluportaat.png" #:scale 0.7]
-
 Voit tutustua funktioiden maailmaan valitsemalla joko laskuharjoituksia tai kuvienpiirtoharjoituksia.
+Tutustu ensin funktion määrittelemiseen @link["http://racket.koodiaapinen.fi/manuaali/maarittelyt.html"]{Koodarin käsikirjan} avulla.
 
 @section[#:tag "racket_perusteet_pinta-alafunktioita_A"]{Pinta-alatehtävät A}
 
-Harjoittele funktion kirjoittamista seuraavien tehtävien avulla. Lataa harjoitustiedosto tästä:
+Harjoittele funktion kirjoittamista ja testaamista seuraavien tehtävien avulla. Lataa harjoitustiedosto tästä:
 
 @tabular[#:sep @hspace[1]
          (list (list @image[#:scale 0.3 "drracket.png"]
-                     @italic{@link["http://tinyurl.com/pxgo2kz"]{Pinta-alatehtävät A (DrRacket)}})
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/perusteet/funktio/pinta-alafunktiot_A.rkt"]{Pinta-alatehtävät A (DrRacket)}})
                (list @image[#:scale 0.22 "wescheme.png"]
-                     @italic{@link["http://www.wescheme.org/view?publicId=jBDvKwe1bZ"]{Pinta-alatehtävät A (WeScheme)}}))]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/pinta-alafunktiot_A.html"]{Pinta-alatehtävät A (WeScheme)}}))]
 
 @margin-note{Jos käytät WeScheme:ä ja haluat tallentaa työsi, tarvitset Google-tunnukset.
- Kirjaudu ENSIN sisään @link["http://www.wescheme.org"]{WeScheme}:en, ja tule vasta
+ Kirjaudu ENSIN sisään @link["http://www.wescheme.org"]{WeScheme}:en, ja tule vasta sen 
  jälkeen avaamaan tehtävälinkki.}
 
 Tehtävätiedosto sisältää nämä laskutehtävät:
@@ -62,50 +58,120 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
          (list (list @racket[+] @racket[-] @racket[*]
                      @racket[/] @racket[sqr] @racket[check-expect]))]
 
-@section[#:tag "racket_perusteet_pinta-alafunktioita_B"]{Pinta-alatehtävät B}
+@margin-note[@link["http://www.slideshare.net/TiinaPartanen/racket-alkeet-3-oppitunti"]{Opettajan diat.}]
 
-Harjoittele funktion kirjoittamista seuraavien tehtävien avulla. Lataa harjoitustiedosto tästä:
+@section[#:tag "racket_perusteet_lampotilamuunnoksia"]{Lämpötilat}
+
+Harjoittele funktion kirjoittamista ja testaamista seuraavien tehtävien avulla. Lataa harjoitustiedosto tästä:
 
 @tabular[#:sep @hspace[1]
          (list (list @image[#:scale 0.3 "drracket.png"]
-                     @italic{@link["http://tinyurl.com/qxgzco9"]{Pinta-alatehtävät B (DrRacket)}})
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/perusteet/funktio/lampotilat.rkt"]{Lämpötilat (DrRacket)}})
                (list @image[#:scale 0.22 "wescheme.png"]
-                     @italic{@link["http://www.wescheme.org/view?publicId=J50mifXEnl"]{Pinta-alatehtävät B (WeScheme)}}))]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/lampotilat.html"]{Lämpötilat (WeScheme)}}))]
 
 @margin-note{Jos käytät WeScheme:ä ja haluat tallentaa työsi, tarvitset Google-tunnukset.
- Kirjaudu ENSIN sisään @link["http://www.wescheme.org"]{WeScheme}:en, ja tule vasta
+ Kirjaudu ENSIN sisään @link["http://www.wescheme.org"]{WeScheme}:en, ja tule vasta sen 
  jälkeen avaamaan tehtävälinkki.}
 
 Tehtävätiedosto sisältää nämä laskutehtävät:
 
-@bold{Pinta-alatehtävät B}
+@bold{Lämpötilat}
 
-Tee funktioita erilaisten pinta-alojen laskemiseen. Valitse muuttujille sopivat nimet/nimi.
-Täydennä funktion kuvauksen puuttuvat tiedot (...). Tee myös esimerkkejä/testejä funktiollesi (check-expect).
+Tee funktiot lämpötilojen muuntamiseksi asteikolta toiselle seuraavan taulukon mukaisesti.
+Testaa funktiosi interaktioikkunassa tai kirjoita sille check-expect - testit.
 
-@italic{Huom!} Tehtävässä tarvitset piin arvoa. Racket-kielessä se on vakio nimeltä @racket[pi].
+@image[#:scale 1.0 "kuvat/lampotilat.png"]
 
-@margin-note{Koska piin arvo on päättymätön desimaaliluku, tulokset ovat aina likiarvoja (epätarkkoja). DrRacket varoittaa epätarkoista arvoista 
- lisäämällä luvun eteen @litchar{#i}-merkinnän. Samasta syystä emme voi käyttää @racket[check-expect]-testiä vaan epätarkoille tuloksille
- tarkoitettua @racket[check-within]-testiä.}
+Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
+
+@tabular[#:style 'boxed #:sep @hspace[3]
+         (list (list @racket[+] @racket[-] @racket[*]
+                     @racket[/] @racket[string-append] @racket[number->string] @racket[check-expect]))]
+
+@section[#:tag "racket_perusteet_polynomit"]{Polynomit}
+
+Harjoittele funktion kirjoittamista ja sen kuvaajan piirtämistä seuraavien tehtävien avulla.
+Lataa harjoitustiedosto tästä:
+
+@tabular[#:sep @hspace[1]
+         (list (list @image[#:scale 0.3 "drracket.png"]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/perusteet/funktio/polynomit.rkt"]{Polynomit (DrRacket)}}))]
+
+Tehtävätiedosto sisältää nämä laskutehtävät:
+
+@bold{Polynomit}
+
+Kirjoita seuraavat polynomit funktion muotoon ja piirrä niille kuvaajat esimerkin mukaisesti.
+
+@image[#:scale 0.5 "kuvat/polynomit.png"]
+
+Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen tai plot2D-kirjaston funktioita:
+
+@tabular[#:style 'boxed #:sep @hspace[3]
+         (list (list @racket[+] @racket[-] @racket[*]
+                     @racket[/] @racket[plot2D] @racket[func] @racket[check-expect]))]
+
+@section[#:tag "racket_perusteet_varikirjaimet"]{Värillinen teksti}
+
+Harjoittele funktion kirjoittamista ja testaamista seuraavan tehtävan avulla. Lataa harjoitustiedosto tästä:
+
+@tabular[#:sep @hspace[1]
+         (list (list @image[#:scale 0.3 "drracket.png"]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/perusteet/funktio/varillinen_teksti.rkt"]{Värillinen teksti (DrRacket)}})
+               (list @image[#:scale 0.22 "wescheme.png"]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/varillinen_teksti.html"]{Värillinen teksti (WeScheme)}}))]
+
+@margin-note{Jos käytät WeScheme:ä ja haluat tallentaa työsi, tarvitset Google-tunnukset.
+ Kirjaudu ENSIN sisään @link["http://www.wescheme.org"]{WeScheme}:en, ja tule vasta sen 
+ jälkeen avaamaan tehtävälinkki.}
+
+Tehtävätiedosto sisältää seuraavan testävän:
+
+@bold{Värillinen teksti}
+
+Koodaa funktio, joka tekee eri värisiä kirjaimia eri värillisillä pohjilla. Kirjoita funktion avulla oma nimesi. Voit muuttaa värejä ja pohjan muotoa haluamaksesi.
+Testaa funktiosi interaktioikkunassa tai kirjoita sille check-expect - testit.
+
+@image[#:scale 1.0 "kuvat/varikirjaimet.png"]
+
+Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
+
+@tabular[#:style 'boxed #:sep @hspace[3]
+         (list (list @racket[beside] @racket[above] @racket[text] @racket[overlay] @racket[check-expect]))]
+
+@section[#:tag "racket_perusteet_sarmion_levityskuva"]{Särmiön levityskuvat}
+
+Harjoittele funktion kirjoittamista ja testaamista seuraavan tehtävan avulla. Lataa harjoitustiedosto tästä:
+
+@tabular[#:sep @hspace[1]
+         (list (list @image[#:scale 0.3 "drracket.png"]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/perusteet/funktio/sarmion_levityskuvat.rkt"]{Särmiön levityskuvat (DrRacket)}})
+               (list @image[#:scale 0.22 "wescheme.png"]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/sarmion_levityskuvat.html"]{Särmiön levityskuvat (WeScheme)}}))]
+
+@margin-note{Jos käytät WeScheme:ä ja haluat tallentaa työsi, tarvitset Google-tunnukset.
+ Kirjaudu ENSIN sisään @link["http://www.wescheme.org"]{WeScheme}:en, ja tule vasta sen 
+ jälkeen avaamaan tehtävälinkki.}
+
+Tehtävätiedosto sisältää seuraavat testävät:
+
+@bold{Särmiön levityskuvat}
 
 @tabular[#:style 'boxed 
          #:row-properties (list 'border)
          #:column-properties '(left center)
          
-         (list (list "Funktio ympyröiden pinta-alojen laskemiseen" @image["kuvat/ympyrat.png" #:scale 0.7])
-               (list "Funktio sektoreiden pinta-alojen laskemiseen" @image["kuvat/sektorit.png" #:scale 0.7])
-               (list "Funktio ympyrälieriöiden kokonaispinta-alojen laskemiseen" @image["kuvat/ympyralieriot.png" #:scale 0.7]))]
+         (list (list "Koodaa funktio, joka piirtää minkä tahansa kokoisen kuution levityskuvan (mallikuvat on saatu kutsumalla funktiota kaksi eri kertaa)."
+                     @image["kuvat/kuution_levitys.png" #:scale 1.0]                                         )
+               (list "Koodaa funktio, joka piirtää minkä tahansa kokoisen suorakulmaisen särmiön levityskuvan (mallikuvat on saatu kutsumalla funktiota kaksi eri kertaa)."
+                     @image["kuvat/sarmion_levitys.png" #:scale 0.9]                     
+                     ))]
 
-
-@margin-note[@link["http://www.slideshare.net/TiinaPartanen/racket-alkeet-3-oppitunti"]{Opettajan diat.}]
-
-Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita ja vakioita:
+Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 
 @tabular[#:style 'boxed #:sep @hspace[3]
-         (list (list @racket[+] @racket[-] @racket[*]
-                     @racket[/] @racket[sqr] @racket[check-within] @racket[pi]))]
-
+         (list (list @racket[beside] @racket[above] @racket[text] @racket[overlay] @racket[check-expect]))]
 
 @section[#:tag "racket_perusteet_kuvafunktioita"]{Kuvafunktioita}
 
@@ -116,70 +182,36 @@ Suunnittele ja koodaa funktiot, jotka tuottavat seuraavanlaisia kuvia:
 @tabular[#:style 'boxed 
          #:row-properties (list 'border)
          #:column-properties '(left center)
-         
-         (list (list "Koodaa nuolenkuvia tuottava funktio." @image["kuvat/nuolet.png" #:scale 0.6])
-               (list "Koodaa liikennevaloja tuottava funktio." @image["kuvat/liikennevalot.png" #:scale 0.9])
-               (list "Koodaa kuvan geometrisia kuvioita tuottava funktio. "  @image["kuvat/geometrinen_kuvioA.png" #:scale 0.9])
-               (list "Koodaa ufon laskutumisvaiheen kuvat tuottava funktio." @image["kuvat/ufot.png" #:scale 0.3])
-               (list "Koodaa kuvan geometrisiä kuvioita tuottava funktio." @image["kuvat/geometrinen_kuvioB.png" #:scale 0.7])
-               (list "Koodaa EU:n lippu." @image["kuvat/eu_lippu.png" #:scale 0.4])
-               )]
+          (list      (list "Koodaa funktio, joka tuottaa eri värisiä nuolia (mallikuvat on saatu kutsumalla funktiota kolme eri kertaa). "
+                           @image["kuvat/varinuolet.png" #:scale 0.4])
+                     (list "Koodaa funktio, joka sijoittaa auton kuvan ruudulle, kun sen sijainti muuttuu. Voit käyttää myös jotain muuta kuvaa (mallikuvat on saatu kutsumalla funktiota kolme eri kertaa)."
+                           @image["kuvat/autot.png" #:scale 0.5])
+                     (list "Koodaa funktio, jonka avulla saat tehtyä pinta-alan ja tilavuuden yksiköitä (mallikuvat on saatu kutsumalla funktiota kolme eri kertaa)."
+                           @image["kuvat/yksikot.png" #:scale 1]))]
 
 Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 
 @tabular[#:style 'boxed #:sep @hspace[3]
-         (list (list @racket[+] @racket[-] @racket[*]
+         (list (list @racket[+]
+                     @racket[-]
+                     @racket[*]
                      @racket[/] 
                      @racket[rectangle])
                (list
-                @racket[ellipse]
                 @racket[circle]
-                @racket[rhombus]
                 @racket[triangle]
-                @racket[star])
-               (list @racket[place-image]
-                     @racket[beside]
-                     @racket[above]
-                     @racket[overlay]
-                     @racket[overlay/xy])
-               (list @racket[rotate]
-                     @racket[flip-vertical]
-                     @racket[flip-horizontal]
-                     @racket[scale]
-                     @racket[check-expect]))]
-
-@section[#:tag "racket_perusteet_kuvafunktioita_ja_geometriaa"]{Geometrisia kuvafunktioita}
-
-Suunnittele ja koodaa funktiot, jotka tuottavat seuraavanlaisia geometriaan liittyviä kuvia:
-
-@bold{Geometrisia kuvafunktioita}
-
-@tabular[#:style 'boxed 
-         #:row-properties (list 'border)
-         #:column-properties '(left center)
-         
-         (list (list "Koodaa funktio, joka piirtää suorakulmaisten särmiöiden levityskuvia." @image["kuvat/suorakulmaiset_sarmiot_levitys.png" #:scale 0.8])
-               (list "Koodaa funktio, jonka avulla voit liittää suorakulmioon sen mitat." @image["kuvat/suorakulmion_mitat.png" #:scale 0.5])
-               (list "Koodaa funktio, joka tuottaa pinta-alan ja tilavuuden yksiköistä kuvia. "  @image["kuvat/yksikot.png" #:scale 0.9])
-               (list "Koodaa funktio, joka piirtää ympyrälieriön levityskuvia." @image["kuvat/ympyralierion_levitys.png" #:scale 0.7])
-               (list "Koodaa funktio, joka piirtää suorakulmaisten särmiöiden levityskuvia ja laskee niiden kokonaispinta-alat sekä
-liittää tulokset kuviin yksiköiden kera. Tämä tehtävä vaatii useammankin funktion koodaamista, joten tehtävä kannattaa jakaa useamman koodarin kesken.
-Voit myös käyttää aikaisempien tehtävien tuotoksia tässä tehtävässä!" @image["kuvat/pinta-alakuvat.png" #:scale 1]))]
-
-Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
-
-@tabular[#:style 'boxed #:sep @hspace[3]
-         (list (list @racket[+] @racket[-] @racket[*]
-                     @racket[/] 
-                     @racket[rectangle])
-               (list 
-                @racket[circle]
+                @racket[square]
+                @racket[image-width]
+                @racket[image-height])
+               (list
+                @racket[place-image]
                 @racket[beside]
                 @racket[above]
                 @racket[overlay]
                 @racket[overlay/xy])
-               (list         @racket[rotate]
-                             @racket[number->string]
-                             @racket[text]
-                             @racket[image-width]
-                             @racket[check-expect]))]
+               (list
+                @racket[text]
+                @racket[number->string]
+                @racket[scale]
+                @racket[rotate]
+                @racket[check-expect]))]

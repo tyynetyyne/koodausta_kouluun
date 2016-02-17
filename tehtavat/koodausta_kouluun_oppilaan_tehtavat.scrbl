@@ -13,8 +13,9 @@
 Näillä sivuilta löytyy Koodausta kouluun - materiaalin oppilaan tehtävät.
 
 Jos et ole koodannut Racket-kielellä aikaisemmin, aloita Racket-alkeet oppitunneista.
-Kun alkeet ovat hallussa, voit tehdä Racket-perusteet oppitunteja siinä järjestyksessä, kun
-itse haluat. Kun perusteet ovat hallussa voitkin siirtyä Racket-jatkon oppitunneille (tulossa myöhemmin). 
+Kun alkeet ovat hallussa, voit tehdä Racket-perusteet oppitunteja. Näitä kannattaa ensin käydä funktiot ja ehtolauseet,
+loput voit tehdä haluamassasi järjestyksessä.
+Kun perusteet ovat hallussa voitkin siirtyä Racket-jatkon oppitunneille. 
 
 Tehtävät täydentyvät koko ajan, joten vieraile sivuilla ahkerasti, joka kerralla
 löydät uutta kivaa koodattavaa.

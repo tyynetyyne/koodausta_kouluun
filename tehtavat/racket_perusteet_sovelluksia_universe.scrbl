@@ -61,9 +61,9 @@ liikuttamalla syntyy tällainen Suomen lipun kuva:
 
 @tabular[#:sep @hspace[1]
          (list (list @image[#:scale 0.3 "drracket.png"]
-                     @italic{@link["http://tinyurl.com/p7ysrsl"]{Piilokuva A (DrRacket)}})
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/perusteet/valintalause/piilokuva_A.rkt"]{Piilokuva A (DrRacket)}})
                (list @image[#:scale 0.22 "wescheme.png"]
-                     @italic{@link["http://www.wescheme.org/view?publicId=CehA07AzQE"]{Piilokuva A (WeScheme)}}))]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/piilokuva_A.html"]{Piilokuva A (WeScheme)}}))]
 
 @margin-note{Jos käytät WeScheme:ä ja haluat tallentaa työsi, tarvitset Google-tunnukset.
  Kirjaudu ENSIN sisään @link["http://www.wescheme.org"]{WeScheme}:en, ja tule vasta
@@ -72,7 +72,28 @@ liikuttamalla syntyy tällainen Suomen lipun kuva:
 Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 
 @tabular[#:style 'boxed #:sep @hspace[3]
-         (list (list @racket[<] @racket[>] @racket[<=] @racket[>=] @racket[=] @racket[check-expect] @racket[if] @racket[cond] @racket[and] @racket[or] @racket[not] @racket[place-image]))]
+         (list (list @racket[<] @racket[>] @racket[<=] @racket[>=] @racket[=] @racket[if] @racket[cond] @racket[and]
+                     @racket[or] @racket[not] @racket[place-image] @racket[check-expect]))]
+
+@section[#:tag "racket_perusteet_ufo_animaatio"]{Ufo-animaatio}
+
+Muokkaa valmista pohjaa ja kokeile saatko ufon laskeutumaan ruudun yläreunasta ruudun alareunaan ja pysähtymään siihen. Kokeile saatko ufon
+kulkemaan nopeammin, entäpä nousemaan ylöspäin tai kulkemaan sivusuunnassa? Entäpä rullaamaan ruudulla?
+
+@image["kuvat/ufot.png" #:scale 0.5]
+
+@tabular[#:sep @hspace[1]
+         (list (list @image[#:scale 0.3 "drracket.png"]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/perusteet/valintalause/ufo_laskeutuu.rkt"]{Ufo-animaatio (DrRacket)}})
+               (list @image[#:scale 0.22 "wescheme.png"]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/ufo_laskeutuu.html"]{Ufo-animaatio (WeScheme)}}))]
+
+Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
+
+@tabular[#:style 'boxed #:sep @hspace[3]
+         (list (list @racket[<] @racket[>] @racket[<=] @racket[>=] @racket[=] @racket[if] @racket[cond] @racket[and]
+                     @racket[or] @racket[not] @racket[check-expect]))]
+
 
 @section[#:tag "racket_perusteet_kuva_animaatio"]{Kuva-animaatio}
 
@@ -89,14 +110,15 @@ avulla aikamuuttuja (t) pysymään tietyllä alueella.
 
 @tabular[#:sep @hspace[1]
          (list (list @image[#:scale 0.3 "drracket.png"]
-                     @italic{@link["http://tinyurl.com/qj8kocs"]{Kuva-animaatio (DrRacket)}})
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/perusteet/valintalause/kuva-animaatio.rkt"]{Kuva-animaatio (DrRacket)}})
                (list @image[#:scale 0.22 "wescheme.png"]
-                     @italic{@link["http://www.wescheme.org/view?publicId=UVJRUJ2uCy"]{Kuva-animaatio (WeScheme)}}))]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/kuva-animaatio.html"]{Kuva-animaatio (WeScheme)}}))]
 
 Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 
 @tabular[#:style 'boxed #:sep @hspace[3]
-         (list (list @racket[<] @racket[>] @racket[<=] @racket[>=] @racket[=] @racket[check-expect] @racket[if] @racket[cond] @racket[and] @racket[or] @racket[not]))]
+         (list (list @racket[<] @racket[>] @racket[<=] @racket[>=] @racket[=] @racket[if]
+                     @racket[cond] @racket[and] @racket[or] @racket[not] @racket[check-expect]))]
 
 @section[#:tag "racket_perusteet_piilokuvaB"]{Piilokuva B}
 
@@ -114,15 +136,15 @@ paljastuu alla olevan esimerkin mukaisesti jokin itse valitsemasi piilokuva. Kuv
 
 @tabular[#:sep @hspace[1]
          (list (list @image[#:scale 0.3 "drracket.png"]
-                     @italic{@link["http://tinyurl.com/ox4ph7s"]{Piilokuva B (DrRacket)}})
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/perusteet/valintalause/piilokuva_B.rkt"]{Piilokuva B (DrRacket)}})
                (list @image[#:scale 0.22 "wescheme.png"]
-                     @italic{@link["http://www.wescheme.org/view?publicId=REtQKrquWs"]{Piilokuva B (WeScheme)}}))]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/piilokuva_B.html "]{Piilokuva B (WeScheme)}}))]
 
 Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 
 @tabular[#:style 'boxed #:sep @hspace[3]
-         (list (list @racket[<] @racket[>] @racket[<=] @racket[>=] @racket[=] @racket[check-expect] @racket[if])
-               (list @racket[cond] @racket[and] @racket[or] @racket[not] @racket[mouse=?] @racket[crop] @racket[overlay/xy]))]
+         (list (list @racket[<] @racket[>] @racket[<=] @racket[>=] @racket[=] @racket[if] @racket[cond])
+               (list @racket[and] @racket[or] @racket[not] @racket[mouse=?] @racket[crop] @racket[overlay/xy]@racket[check-expect]))]
 
 @section[#:tag "racket_perusteet_editori"]{Editori}
 
@@ -137,13 +159,13 @@ avulla.
 
 @tabular[#:sep @hspace[1]
          (list (list @image[#:scale 0.3 "drracket.png"]
-                     @italic{@link["http://tinyurl.com/ou97y3v"]{Editori (DrRacket)}})
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/perusteet/valintalause/editori.rkt"]{Editori (DrRacket)}})
                (list @image[#:scale 0.22 "wescheme.png"]
-                     @italic{@link["http://www.wescheme.org/view?publicId=BbpwhqEgAd"]{Editori (WeScheme)}}))]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/editori.html"]{Editori (WeScheme)}}))]
 
 Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 
 @tabular[#:style 'boxed #:sep @hspace[3]
-         (list (list @racket[<] @racket[>] @racket[<=] @racket[>=] @racket[=] @racket[check-expect])
+         (list (list @racket[<] @racket[>] @racket[<=] @racket[>=] @racket[=] @racket[string=?])
                (list @racket[if] @racket[cond] @racket[and] @racket[or] @racket[not] @racket[key=?])
-               (list @racket[string-length] @racket[substring] @racket[string-append] @racket[sub1] @racket[string=?] @racket[text]))]
+               (list @racket[string-length] @racket[substring] @racket[string-append] @racket[sub1]  @racket[text]@racket[check-expect]))]
