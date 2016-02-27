@@ -28,15 +28,15 @@
  Määrittelee piirrettävän funktion nimen @racket[funktion-nimi] sekä piirtovälin @racket[x0]-@racket[xn]. Halutessasi voit antaa
  myös funktion kuvaajaan väriin liitettävän @racket[selite]-tekstin. }
 
-@defproc*[([(dots [pisteet Lista<posn?>/Lista<cons?>/Lista<vector?>])
+@defproc*[([(dots [pisteet lista<posn?>/lista<cons?>/lista<vector?>])
              funktio]
-           [(dots [pisteet Lista<posn?>/Lista<cons?>/Lista<vector?>]
+           [(dots [pisteet lista<posn?>/lista<cons?>/lista<vector?>]
                   [x0 reaaliluku]
                   [xn reaaliluku]
                   [y0 reaaliluku]
                   [yn reaaliluku])
             funktio]
-           [(dots [pisteet Lista<posn?>/Lista<cons?>/Lista<vector?>]
+           [(dots [pisteet lista<posn?>/lista<cons?>/lista<vector?>]
                   [x0 reaaliluku]
                   [xn reaaliluku]
                   [y0 reaaliluku]
@@ -49,9 +49,9 @@
  x- ja y-koordinaatit sisältäviä listoja. Voit antaa pisteet myös @racket[vector]-muodossa mutta tarvitset
  silloin käyttöösi @italic{Advanced Student Language}:n.}
 
-@defproc*[([(plot2D [funktion-tai-pisteiden-kuvaus funktio/Lista<funktio>])
+@defproc*[([(plot2D [funktion-tai-pisteiden-kuvaus funktio/lista<funktio>])
             kuva]
-           [(plot2D [funktion-tai-pisteiden-kuvaus funktio/Lista<funktio>]
+           [(plot2D [funktion-tai-pisteiden-kuvaus funktio/lista<funktio>]
                     [x-teksti merkkijono]
                     [y-teksti merkkijono]
                     [otsikko merkkijono])
