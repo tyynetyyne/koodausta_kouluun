@@ -37,18 +37,36 @@
 
 @centered[@image["math-utils/mm3.png"]]
 
-@defproc[(display-with-units [suure merkkijono]
-                             [fontin-koko kokonaisluku-välillä-0-255]
-                             [väri image-color?])
+@defproc[(quantity->image [lukuarvo luku]
+                          [yksikkö merkkijono]
+                          [yksikön-eksponentti luku]
+                          [fontin-koko kokonaisluku-välillä-0-255]
+                          [väri image-color?])
+         kuva]{                                                  
+ Tuottaa kuvan, jossa @racket[lukuarvo] ja yksikkö eksponentteineen esitetään @racket[fontin-koko]:isina sekä @racket[väri]:sinä.
+ Yksikkö annetaan merkkijonona (esim. "m") ja @racket[yksikön-eksponentti] lukuna.
+ Jos @racket[yksikön-eksponentti] on 1, sitä ei merkitä näkyviin.}
+
+@racketblock[(quantity->image 350 "cm" 3 30 "black")]
+
+@centered[@image["math-utils/suure1.png"]]
+
+@racketblock[(quantity->image 4.5 "m" 2 45 "red")]
+
+@centered[@image["math-utils/suure2.png"]]
+
+@defproc[(quantity-str->image [suure merkkijono]
+                              [fontin-koko kokonaisluku-välillä-0-255]
+                              [väri image-color?])
          kuva]{                                                  
  Tuottaa kuvan, jossa @racket[suure]:een lukuarvo ja yksikkö esitetään @racket[fontin-koko]:isina sekä @racket[väri]:sinä.
  Suure annetaan merkkijonona, jossa suureen lukuarvo erotetaan välilyönnillä yksiköstä esim. 2 kuutiosenttimetriä ilmoitetaan "2 cm3".}
 
-@racketblock[(display-with-units "350 cm3" 30 "black")]
+@racketblock[(quantity-str->image "350 cm3" 30 "black")]
 
 @centered[@image["math-utils/suure1.png"]]
 
-@racketblock[(display-with-units "4.5 m2" 45 "red")]
+@racketblock[(quantity-str->image "4.5 m2" 45 "red")]
 
 @centered[@image["math-utils/suure2.png"]]
 
