@@ -88,8 +88,8 @@ Racket BSL koodi rakentuu @bold{määrittelyistä}, @bold{lausekkeista},
    Saatujen uusien funktioiden nimet eivät saa olla samoja kuin muiden funktioiden tai muuttujien nimet muuten @racket[define-struct] palauttaa virheen.
 }
 
-@margin-note{Jotta saat käyttöönsi @racket[local], @racket[letrec] tai @racket[let]:n vaihda kieli DrRacket:issa: 
- @italic{Language->Choose language->Teaching languages->Intermediate student.}
+@margin-note{Jotta saat käyttöönsi @racket[local], @racket[letrec], @racket[let] tai @racket[let*]:n vaihda kieli DrRacket:issa: 
+ @italic{Language->Choose language->Teaching languages->Intermediate/Advanced student.}
   WeScheme:ssä nämä toimivat automaattisesti.}
 
 @defform[(local [määrittely ...] lauseke)]{
@@ -101,17 +101,22 @@ Jokainen @racket[local] rakenteen sisällä oleva @racket[määrittely]
 evaluoidaan järjestyksessä ja lopuksi evaluoidaan @racket[lauseke], jonka arvo palautetaan lausekkeen arvona.
 Nämä määrittelyt piilottavat näkyvistä mahdolliset samannimiset globaalit muuttujat.
 
- @bold[@italic["Huom! Tämä vaatii käyttöön ISL-kielen."]]}
+ @bold[@italic["Huom! Tämä vaatii käyttöön ISL- tai ASL-kielen."]]}
 
 @defform[(letrec ([nimi let-lauseke] ...) lauseke)]{
 
 Kuin @racket[local] mutta lyhyempi merkintätapa.
- @bold[@italic["Huom! Tämä vaatii käyttöön ISL-kielen."]]}
+ @bold[@italic["Huom! Tämä vaatii käyttöön ISL- tai ASL-kielen."]]}
 
 @defform[(let ([nimi let-lauseke] ...) lauseke)]{
 
 Kuin @racket[letrec] mutta @racket[nimi] ei saa esiintyä muissa @racket[let-lausekkeissa].
- @bold[@italic["Huom! Tämä vaatii käyttöön ISL-kielen."]]}
+ @bold[@italic["Huom! Tämä vaatii käyttöön ISL- tai ASL-kielen."]]}
+
+@defform[(let* ([nimi let-lauseke] ...) lauseke)]{
+
+Kuin @racket[letrec] mutta @racket[nimi] saa esiintyä vain sen jälkeen tulevissa @racket[let-lausekkeissa].
+ @bold[@italic["Huom! Tämä vaatii käyttöön ISL- tai ASL-kielen."]]}
 
 @section[#:style 'unnumbered #:tag "lausekkeet"]{Lausekkeet}
 

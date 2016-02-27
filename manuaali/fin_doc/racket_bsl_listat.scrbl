@@ -34,22 +34,23 @@
         (define z (list (list (list (list 'a 'b) 2 3) ) (list #false #true) "world"))
         (define y (list (list (list 1 2 3) #false "world")))
         (define x (list 2 "hei" #true))
+         (define k '(0 1 2 3 4 5 6 7 8 9))
         (define z (list 2 "hei" #true "hei"))))
      (set! bsl (lambda () *bsl))
      *bsl))
 
-@defproc[(list [x ei-tyyppivaatimusta] ... ) cons?]{
+@defproc[(list [x ei-tyyppivaatimusta] ... ) list?]{
  Luo listan, joka sisältää sille annetut argumentit. Lista muodostuu ns. @list{cons}-soluista, joissa on aina vasen ja oikea
  alkio. Listan viimeisen cons-solun oikean puoleinen alkio on aina @racket['()].
  @interaction[#:eval (bsl-eval) (list 1 2 3)]
 }
 
-@defproc[(cons [x ei-tyyppivaatimusta][y cons?]) cons?]{
+@defproc[(cons [x ei-tyyppivaatimusta][y list?]) list?]{
  Yhdistää @racket[x]:n listaan @racket[y], joka voi olla myös tyhjä lista @racket[empty] eli @racket['()].
  @interaction[#:eval (bsl-eval) (cons 1 (list 2 3)) (cons "a" empty)]
 }
 
-@defproc[(append [x cons?][y cons?][z cons?]  ...) cons?]{
+@defproc[(append [x list?][y list?][z list?]  ...) list?]{
  Yhdistää monta listaa yhdeksi listaksi.  
  @interaction[#:eval (bsl) (append (list 1 2) (list 3 4))]
 }
@@ -63,31 +64,41 @@
  @interaction[#:eval (bsl) x (rest x)]
 }
 
-@defproc[(length (l cons?)) luonnollinen-luku]{
+@defproc[(length (l list?)) luonnollinen-luku]{
  Palauttaa listan alkioiden määrän.
  @interaction[#:eval (bsl) x (length x)]
 }
 
-@defproc[(list-ref [x cons?][i luonnollinen-luku]) ei-tyyppivaatimusta]{
+@defproc[(list-ref [x list?][i luonnollinen-luku]) ei-tyyppivaatimusta]{
  Palauttaa @racket[i]:n osoittaman alkion listasta @racket[x]. Listan indeksointi alkaa nollasta.
  @interaction[#:eval (bsl) v (list-ref v 9)(list-ref v 0)]
 }
 
-@defproc[(member? [x ei-tyyppivaatimusta][l cons?]) totuusarvo]{
+@defproc[(member? [x ei-tyyppivaatimusta][l list?]) totuusarvo]{
  Tutkii, onko @racket[x] mukana listassa (vertailu tehdään käyttämällä @racket[equal?]).
  @interaction[#:eval (bsl) x (member? "hei" x)]
 }
 
-@defproc[(remove [x ei-tyyppivaatimusta][l cons?]) cons?]{
+@defproc[(remove [x ei-tyyppivaatimusta][l list?]) list?]{
  Palauttaa listan, josta on poistettu ensimmäinen arvo, joka vastaa @racket[x]:ää (vertailussa käytetään @racket[equal?]).
  @interaction[#:eval (bsl) x (remove "hei" x) z (remove "hei" z)]
 }
 
- @defproc[(range [alku luku][loppu luku][askel luku]) cons?]{
+@defproc[(remove-all [x ei-tyyppivaatimusta][l list?]) list?]{
+ Palauttaa listan, josta on poistettu kaikki arvot, jotka vastaavat @racket[x]:ää (vertailussa käytetään @racket[equal?]).
+ @interaction[#:eval (bsl) z (remove-all "hei" z)]
+}
+
+@defproc[(reverse [l list?]) list?]{
+ Palauttaa käännetyn listan. 
+ @interaction[#:eval (bsl) k (reverse k) z (reverse z)]
+}
+
+@defproc[(range [alku luku][loppu luku][askel luku]) list?]{
  Luo listan lukuja välillä @racket[alku] - @racket[loppu] niin, että askeleena käytetään @racket[askel]. 
  @interaction[#:eval (bsl-eval) (range 0 10 2)
               (range 10 0 -2)]
-                                                                                                                   }
+}
 
 @defproc[(cons? [x ei-tyyppivaatimusta]) totuusarvo]{
  Tutkii, onko @racket[x] rakenteeltaan lista tai puu, eli koostuuko se ns. @italic{cons}-soluista, joissa on aina vasen ja oikea
@@ -95,12 +106,17 @@
  @interaction[#:eval (bsl-eval) (cons? (cons 1 '())) (cons? 42)]
 }
 
+@defproc[(list? [x ei-tyyppivaatimusta]) totuusarvo]{
+ Tutkii, onko @racket[x] rakenteeltaan lista, eli ketjutettuja cons-soluja, jossa ketjun viimeinen alkio on tyhjä lista @racket['()]. 
+ @interaction[#:eval (bsl-eval)(list? (list 1 2 3)) (list? (cons 1 '())) (list? 42)]
+}
+
 @defproc[(empty? [x ei-tyyppivaatimusta]) totuusarvo]{
  Tutkii, onko @racket[x] tyhjä lista @racket['()].
  @interaction[#:eval (bsl) (empty? empty) (empty? '()) (empty? (cons 2 '())) (empty? 42)]
 }
 
- @defthing[empty cons?]{
+@defthing[empty list?]{
  Vaihtoehtoinen tapa ilmaista @racket['()] eli tyhjä lista.}
 
- @interaction[#:eval (bsl) empty]
+@interaction[#:eval (bsl) empty]

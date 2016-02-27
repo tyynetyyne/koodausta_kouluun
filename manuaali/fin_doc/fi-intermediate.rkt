@@ -4,13 +4,14 @@
 (require "provide_helper.rkt")
     
 (provide map
+         apply
          filter
          andmap
          ormap
          foldl
          foldr
          build-list
-         local)
+         quicksort)
          
          
          

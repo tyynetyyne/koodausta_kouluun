@@ -58,6 +58,8 @@
          list
          append
          remove
+         remove-all
+         reverse
          first
          range
          rest
@@ -65,6 +67,7 @@
          list-ref
          member?
          cons?
+         list?
          empty?
          image?
          image=?
@@ -80,6 +83,7 @@
          local  ;; ISL 
          letrec ;; ISL 
          let    ;; ISL
+         let*   ;; ISL
          begin  ;; ASL
          )
          
