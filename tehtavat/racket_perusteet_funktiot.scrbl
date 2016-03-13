@@ -94,6 +94,11 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 Harjoittele funktion kirjoittamista ja sen kuvaajan piirtämistä seuraavien tehtävien avulla.
 Lataa harjoitustiedosto tästä:
 
+@margin-note{Jotta Plot2D toimii DrRacket:ssa, sinun pitää asentaa @bold{teachpacks} paketti.
+ Katso asennusohjeet @link["sanasto.html#(part._paketti)"]{täältä}.
+ @italic{Huom!} Tämä kirjasto vaatii käyttöönsä @italic{Intermediate Student Language:n tai Advanced Student Language:n}.
+ Kirjasto puuttuu WeScheme:stä.}
+
 @tabular[#:sep @hspace[1]
          (list (list @image[#:scale 0.3 "drracket.png"]
                      @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/perusteet/funktio/polynomit.rkt"]{Polynomit (DrRacket)}}))]
