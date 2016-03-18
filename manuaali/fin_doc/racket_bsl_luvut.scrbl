@@ -117,7 +117,8 @@
  @interaction[#:eval (bsl) (min 3 2 8 7 2 9 0)]
 }
 @defproc[(random [x luonnollinen-luku]) luonnollinen-luku]{
- Palauttaa @index["satunnaisluku"]{satunnaisluvun}, joka on annettua lukua @racket[x] pienempi, positiivinen kokonaisluku.
+ Palauttaa @index["satunnaisluku"]{satunnaisluvun}, joka on annettua lukua @racket[x] pienempi,
+ ei-negatiivinen kokonaisluku.
  @interaction[#:eval (bsl) (random 42)]
 }
 

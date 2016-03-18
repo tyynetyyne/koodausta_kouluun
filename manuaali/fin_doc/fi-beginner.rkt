@@ -80,6 +80,7 @@
          true
          false
          empty
+         lambda
          local  ;; ISL 
          letrec ;; ISL 
          let    ;; ISL
