@@ -23,5 +23,4 @@ Pääset koodaamaan animaatioita sekä yksinkertaisia pelejä.
 @include-section{racket_perusteet_ehtolauseet.scrbl}
 @include-section{racket_perusteet_valintalauseet.scrbl}
 @include-section{racket_perusteet_sovelluksia_universe.scrbl}
-@include-section{racket_perusteet_sovelluksia_display_read.scrbl}
 

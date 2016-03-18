@@ -25,7 +25,7 @@
         (set! bsl (lambda () *bsl))
      *bsl))
 
-@title[#:tag "perusteet_sovellukset_universe"]{Sovelluksia A (2htdp/universe)}
+@title[#:tag "perusteet_sovellukset_universe"]{Sovelluksia (2htdp/universe)}
 
 Tähän asti olemme tehneet pieniä ohjelman osia, funktioita, joita on voinut kutsua vain DrRacket:in tai WeScheme:in sisällä.
 Nyt teemme ensimmäiset yksinkertaiset ohjelmat, jotka kommunikoivat käyttäjän kanssa graafisen käyttöliittymän avulla. Samalla

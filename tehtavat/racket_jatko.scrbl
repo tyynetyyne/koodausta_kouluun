@@ -11,11 +11,13 @@
 
 @title[#:tag "racket_jatko" #:style 'toc]{Racket jatko}
 
-Tässä jaksossa käydään läpi edistyneempiä ohjelmointitekniikoita, kuten tietorakenteiden
-käsittelyä sekä Higher Order - funktioita.
+Tässä jaksossa käydään läpi edistyneempiä ohjelmointitekniikoita kuten rekursiiviset funktiot,
+listat sekä Higher Order - funktiot.
 
 @centered[@image["kuvat/tahtispiraali.png" #:scale 0.4]]
 
 @local-table-of-contents[#:style 'immediate-only]
 
-@include-section{racket_jatko_silmukat.scrbl}
+@include-section{racket_jatko_rekursio.scrbl}
+@include-section{racket_jatko_listat.scrbl}
+@include-section{racket_jatko_sovelluksia_display_read.scrbl}
