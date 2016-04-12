@@ -23,7 +23,7 @@ tarvitsee asentaa vain ensimmäisellä kerralla.
 Tutustu Racket Turtlen toimintaperiaatteeseen @link["http://racket.koodiaapinen.fi/manuaali/racket_turtlen_toiminta.html"]{Koodarin käsikirjan}
 avulla ja tee sitten seuraavat tehtävät.
 
-@section[#:tag "racket_turtle_peruskuviot"]{Peruskuviot}
+@section[#:tag "racket_turtle_peruskuviot"]{Turtle - peruskuviot}
 
 Koodaa Racket - Turtlelle ohjeita yksinkertaisten geometristen kuvioiden piirtämiseksi. Lataa tehtävätiedosto tästä:
 
@@ -54,7 +54,7 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket kielen sekä Racket Turtl
          (list (list @racket[list] @racket[forward] @racket[turn-left]
                      @racket[turn-right] @racket[draw] @racket[draw-step-by-step]))]
 
-@section[#:tag "racket_turtle_neliot"]{Racket Turtle - neliöt}
+@section[#:tag "racket_turtle_neliot"]{Turtle - neliöt}
 
 Koodaa Racket - Turtlelle ohjeita useamman neliön piirtämiseksi. Lataa tehtävätiedosto tästä:
 
@@ -66,7 +66,7 @@ Koodaa Racket - Turtlelle ohjeita useamman neliön piirtämiseksi. Lataa tehtäv
 
 Tehtävätiedosto sisältää nämä piirtotehtävät:
 
-@bold{Racket Turtle - neliöt}
+@bold{Turtle - neliöt}
 
 @tabular[#:style 'boxed 
          #:row-properties (list 'border)
@@ -80,7 +80,7 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket kielen sekä Racket Turtl
          (list (list @racket[list] @racket[forward] @racket[turn-left]
                      @racket[turn-right] @racket[repeat] @racket[change-color] @racket[draw] @racket[draw-step-by-step]))]
 
-@section[#:tag "racket_turtle_ympyrat"]{Racket Turtle - ympyrät}
+@section[#:tag "racket_turtle_ympyrat"]{Turtle - ympyrät}
 
 Koodaa Racket - Turtlelle ohjeet ympyrän piirtämiseksi, ja tee sen avulla useampia ympyröitä. Lataa tehtävätiedosto tästä:
 
@@ -92,7 +92,7 @@ Koodaa Racket - Turtlelle ohjeet ympyrän piirtämiseksi, ja tee sen avulla usea
 
 Tehtävätiedosto sisältää nämä piirtotehtävät:
 
-@bold{Racket Turtle - ympyrät}
+@bold{Turtle - ympyrät}
 
 @tabular[#:style 'boxed 
          #:row-properties (list 'border)
@@ -106,7 +106,7 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket kielen sekä Racket Turtl
          (list (list @racket[list] @racket[forward] @racket[turn-left]
                      @racket[turn-right] @racket[repeat] @racket[change-color] @racket[draw] @racket[draw-step-by-step]))]
 
-@section[#:tag "racket_turtle_kukka"]{Racket Turtle - kukka}
+@section[#:tag "racket_turtle_kukka"]{Turtle - kukka}
 
 Koodaa Racket - Turtlelle ohjeet kaaren koodaamiseksi, ja tee sen avulla kukka. Lataa tehtävätiedosto tästä:
 
@@ -118,7 +118,7 @@ Koodaa Racket - Turtlelle ohjeet kaaren koodaamiseksi, ja tee sen avulla kukka. 
 
 Tehtävätiedosto sisältää nämä piirtotehtävät:
 
-@bold{Racket Turtle - kukka}
+@bold{Turtle - kukka}
 
 @tabular[#:style 'boxed 
          #:row-properties (list 'border)
@@ -137,7 +137,7 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket kielen sekä Racket Turtl
                (list @racket[mirror-x-on] @racket[mirror-y-on] @racket[go-to] @racket[pen-up] @racket[pen-down]
                      @racket[draw]))]
 
-@section[#:tag "racket_turtle_tahtirusetti"]{Racket Turtle - tähtirusetti}
+@section[#:tag "racket_turtle_tahtirusetti"]{Turtle - tähtirusetti}
 
 Koodaa Racket - Turtlelle ohjeet tähtirusetin piirtämiseksi leimasintoiminnon avulla. Lataa tehtävätiedosto tästä:
 
@@ -149,7 +149,7 @@ Koodaa Racket - Turtlelle ohjeet tähtirusetin piirtämiseksi leimasintoiminnon 
 
 Tehtävätiedosto sisältää nämä piirtotehtävät:
 
-@bold{Racket Turtle - tähtirusetti}
+@bold{Turtle - tähtirusetti}
 
 @tabular[#:style 'boxed 
          #:row-properties (list 'border)

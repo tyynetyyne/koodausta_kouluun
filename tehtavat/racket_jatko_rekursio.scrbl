@@ -44,10 +44,7 @@ Harjoittele rekursiivisten funktioiden tekemistä näiden tehtävien avulla.
                      @image[#:scale 0.6 "kuvat/tikkataulu.png"])
                (list "Tee funktio, joka oheisen kuvan mukaisia ruudukoita. Vinkki: Tee ensin rivejä tuottava funktio."
                      @image[#:scale 0.5 "kuvat/ruudukko.png"])
-(list "Oheinen kuva on saatu aikaan laittamalla yksi ympyrä kuvan vasempaan reunaan ja pyörittämällä näin
-saatua \"epäkeskoa\" kuvaa rekursiivisen funktion avulla. Kokeile samaa ideaa muulaisilla kuvilla."
-                     @image[#:scale 0.5 "kuvat/epakesko.png"])
-(list "Tee funktio, joka tuottaa oheisen kuvan mukaisen sarjan palloja."
+               (list "Tee funktio, joka tuottaa oheisen kuvan mukaisen sarjan palloja."
                      @image[#:scale 0.6 "kuvat/pallorivi.png"]))]
 
 Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen tai 2htdp-image -kirjaston funktioita:
@@ -57,6 +54,26 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen tai 2htdp-image -k
                (list @racket[overlay/xy]@racket[place-image] @racket[rotate] @racket[empty-scene] @racket[*])
                (list @racket[/]@racket[+]@racket[-]@racket[add1]@racket[sub1])
                (list @racket[if]@racket[<]@racket[>]@racket[<=]@racket[>=]))]
+
+@section[#:tag "epakesko"]{Epäkesko}
+
+Oheinen kuva on saatu aikaan laittamalla yksi ympyrä kuvan vasempaan reunaan ja pyörittämällä näin
+saatua "epäkeskoa" kuvaa rekursiivisen funktion avulla ja kokoamalla kierrokset yhdeksi kuvaksi.
+Kokeile saatko tehtyä samanlaisen. Kokeile myös samaa ideaa muulaisilla kuvilla.
+
+@image[#:scale 0.5 "kuvat/epakesko.png"]
+
+@tabular[#:sep @hspace[1]
+         (list (list @image[#:scale 0.3 "drracket.png"]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/jatko/rekursio/epakesko.rkt"]{Epäkesko (DrRacket)}})
+               (list @image[#:scale 0.22 "wescheme.png"]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/epakesko.html"]{Epäkesko (WeScheme)}}))]
+
+Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen tai 2htdp-image -kirjaston funktioita:
+@tabular[#:style 'boxed #:sep @hspace[3]
+         (list (list @racket[circle] @racket[overlay] @racket[rotate] @racket[*]@racket[/])
+               (list @racket[+]@racket[-]@racket[add1]@racket[sub1] @racket[if])
+               (list @racket[<]@racket[>]@racket[<=]@racket[>=] @racket[check-expect]))]
 
 @section[#:tag "fraktaalit"]{Fraktaalit}
 

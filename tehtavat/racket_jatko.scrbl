@@ -21,3 +21,4 @@ listat sekä Higher Order - funktiot.
 @include-section{racket_jatko_rekursio.scrbl}
 @include-section{racket_jatko_listat.scrbl}
 @include-section{racket_jatko_sovelluksia_display_read.scrbl}
+@include-section{racket_jatko_turtle.scrbl}

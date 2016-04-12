@@ -35,37 +35,54 @@ myös helppo käsitellä rekursiivisilla funktioilla tai
 @italic[@link["http://racket.koodiaapinen.fi/manuaali/racket_isl_higher_order_funktiot.html"]{Higher Order - funktioilla}].
 Tutustu niihin Koodarin käsikirjan avulla.
 
-Harjoittele listojen käyttöä seuraavien tehtävien avulla.
+@section[#:tag "racket_jatko_rekursiiviset_listat"]{Listan "syöntiä" ja luontia rekursiivisesti}
 
-@section[#:tag "racket_jatko_turtle"]{Racket Turtle - jatko}
+Harjoittele listojen ja rekursion käyttöä seuraavien tehtävien avulla.
 
-Harjoittele listoja, rekursiivisia funktioita tai Higher Order - funktioita piirtämällä
-Turtlella silmukkakuvioita.
-
-@bold{Racket Turtle - silmukkakuviot}
+@bold{Listan "syöntiä" ja luontia rekursiivisesti}
 
 @tabular[#:style 'boxed 
          #:row-properties (list 'border)
-         #:column-properties '(left center)
+         #:column-properties '(left)
          
-         (list (list "Ohjaa Racket Turtle tekemään kuvan mukainen spiraali käyttämällä rekursiivista funktiota tai Higher Order - funktioita."
-                     @image[#:scale 0.6 "kuvat/turtle_spiraali.png"])
-               (list "Tee rekursiivisen funktion tai Higher Order - funktion avulla lista, joka sisältää kooltaan kasvavia satunnaisen värisiä tähtiä."
-                     @image[#:scale 0.5 "kuvat/tahtilista.png"])
-               (list "Liitä edellä tekemäsi tähtilista yhteen ensimmäisen kohdan spiraalin ohjeiden kanssa.
-Saatko aikaan jotain tämän tyylistä?"
-                     @image[#:scale 0.4 "kuvat/tahtispiraali.png"])
-               (list "Ohjaa Turtle kulkemaan satunnaiseen suuntaan satunnaisen pituisia matkoja."
-                     @image[#:scale 0.4 "kuvat/randomturtle.png"]))]
+         (list (list "Tee funktio, joka laskee listassa olevista luvuista keskiarvon.")
+               (list "Tee funktio, joka laskee listassa oleville hinnoille alennetun/korotetun hinnan, kun
+funktiolle annetaan haluttu muutosprosentti (esim. -10 tarkoittaa -10%, 20 tarkoittaa +20%).")
+               (list "Tee funktio, joka ottaa sisäänsä oppilaiden nimet listana, ja palauttaa listan
+jossa on arvottu uudet oppilasparit. Esim. alkuperäinen lista: (list \"Jenni\" \"Ulla\" \"Pasi\" \"Panu\" )
 
-Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen, 2htdp/image-kirjaston ja Racket Turtle -kirjaston funktioita:
+Uusi parit-lista:
+(list (list \"Jenni\" \"Pasi\")
+      (list \"Panu\" \"Ulla\"))"))]
+         
+Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 
 @tabular[#:style 'boxed #:sep @hspace[3]
-         (list (list @racket[star] @racket[make-color] @racket[random] @racket[map] @racket[foldl] @racket[foldr] @racket[range])
-               (list @racket[forward] @racket[turn-left] @racket[turn-right] @racket[stamper-on] @racket[pen-up] @racket[list] @racket[draw]))]
+         (list (list @racket[+] @racket[/] @racket[list-ref] @racket[length] @racket[string=?] @racket[random])
+               (list @racket[remove] @racket[cons] @racket[first] @racket[rest] @racket[empty?] @racket[let*]))]
 
+@section[#:tag "racket_jatko_listat_kuvat"]{Kuvatehtäviä listoilla}
 
-@section[#:tag "racket_jatko_laskut"]{Laskutoimituksia listoilla}
+Listaa voi käydä läpi myös niin, että se ei tyhjene vaan käytetty alkio siirretään listan loppuun, jolloin
+se tulee käyttöön jälleen omalla vuorollaan. Käytä tätä ideaa apunasi seuraavassa tehtävässä. 
+
+@bold{Kuvatehtäviä listoilla}
+
+@tabular[#:style 'boxed
+         #:row-properties (list 'border)
+         #:column-properties '(left center)       
+         (list (list "Tee funktio, joka tuottaa oheisen kuvion mukaisen \"Death Star\" -tähden.
+Vinkki: Värit kannattaa tallentaan listaan, joka annetaan parametrina rekursiiviselle funktiolle."
+      @image[#:scale 0.5 "kuvat/deathstar.png"]))]
+
+Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
+
+@tabular[#:style 'boxed #:sep @hspace[3]
+         (list (list @racket[overlay] @racket[star] @racket[random] @racket[first]@racket[rest])
+               (list @racket[append]@racket[list] @racket[+] @racket[-] @racket[if])
+               (list @racket[<]@racket[>]@racket[<=]@racket[>=]@racket[=]))]
+
+@section[#:tag "racket_jatko_laskut"]{Laskutoimituksia listoilla ja Higher Order - funktioilla}
 
 Harjoittele listojen kanssa laskemista seuraavien tehtävien avulla.
 
@@ -85,35 +102,3 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
          (list (list @racket[+] @racket[-] @racket[*] @racket[/] @racket[map] @racket[foldl] @racket[foldr] @racket[range])
                (list @racket[add1] @racket[sub1] @racket[max]@racket[filter]@racket[remove]@racket[cons] @racket[floor] @racket[first])
                (list @racket[rest] @racket[empty?] @racket[<]@racket[>]@racket[<=]@racket[>=]@racket[=]@racket[lambda]))]
-
-
-@section[#:tag "racket_jatko_listat_kuvat"]{Kuvatehtävät}
-
-Voit hyödyntää Higher Order -funktioita sekä listoja myös kuvien piirtämisessä. @racket[map]:in ja
-@racket[range]:n avulla saat tehtyä esim. erikokoisia kuvia sisältävän listan. Nämä saa samaan
-kuvaan @racket[foldl]:in avulla.
-
-Harjoittele Higher Order -funktioita sekä listojen käyttöä seuraavien harjoitusten avulla.
-
-@bold{Kuvatehtävät}
-
-@tabular[#:style 'boxed
-         #:row-properties (list 'border)
-         #:column-properties '(left center)       
-         (list (list "Tee funktio, joka tuottaa oheisen kuvan mukaisia ympyräkuvioita silmukan avulla."
-                     @image[#:scale 0.5 "kuvat/ympyrat_sisakkain.png"])
-               (list "Tee funktio, joka tuottaa kuvia, jossa on eri määriä satunnaisilla paikoilla satunnaisen kokoisia palloja,
-satunnaisen värisinä. Tässä mallikuvassa on 300 palloa."
-                     @image[#:scale 0.5 "kuvat/pallotaide.png"])
-(list "Tee funktio, joka tuottaa oheisen kuvion mukaisen tähden. Vinkki: Värit kannattaa tallentaan listaan,
-joka annetaan parametrina rekursiiviselle funktiolle."
-      @image[#:scale 0.5 "kuvat/deathstar.png"]))]
-
-Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
-
-@tabular[#:style 'boxed #:sep @hspace[3]
-         (list (list @racket[circle] @racket[map] @racket[foldl] @racket[foldr] @racket[range] @racket[overlay])
-               (list @racket[overlay/xy]@racket[place-image] @racket[star] @racket[make-color] @racket[empty-scene] @racket[random]))]
-
-
-

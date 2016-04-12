@@ -71,7 +71,19 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen tai display-read-k
 @tabular[#:style 'boxed #:sep @hspace[3]
          (list (list @racket[string-append] @racket[display-read] @racket[display-value]))]
 
-@section[#:tag "racket_perusteet_laskuautomaatti"]{Laskuautomaatti}
+@section[#:tag "racket_jatko_lahtolaskenta"]{Lähtölaskenta}
+
+Tee ohjelma, joka laskee kymmenestä nollaan (10, 9, 8, ..., 0) ja ilmoittaa laskurin arvon
+käyttäjälle display-read -kirjaston avulla (tutustu siihen @link["http://racket.koodiaapinen.fi/manuaali/display_read.html"]{Koodarin käsikirjan} avulla).
+
+@image["kuvat/laskurikuva.png" #:scale 0.5]
+
+Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen tai display-read-kirjaston funktioita:
+
+@tabular[#:style 'boxed #:sep @hspace[3]
+         (list (list @racket[sub1] @racket[if] @racket[display-info-timer]))]
+
+@section[#:tag "racket_jatko_laskuautomaatti"]{Laskuautomaatti}
 
 Laskuautomaatti kysyy käyttäjältä lukuja ja suorittaa niiden perusteella laskutehtävän ja näyttää vastauksen
 käyttäjälle. Jos käyttäjä ei syötä laskun kannalta järkeviä arvoja, annetaan virheilmoitus.
@@ -90,7 +102,7 @@ Avaa tästä tehtävätiedosto:
 
 @tabular[#:sep @hspace[1]
          (list (list @image[#:scale 0.3 "drracket.png"]
-                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/jatko/rekursio/laskuautomaatti.rkt"]{Laskuautomaatti (DrRacket)}})
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/jatko/rekursio/laskuautomaatti.rkt"]{Laskuautomaatti(DrRacket)}})
                (list @image[#:scale 0.22 "wescheme.png"]
                      @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/laskuautomaatti.html"]{Laskuautomaatti (WeScheme)}}))]
 
@@ -106,7 +118,47 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen, display-read tai 
                (list @racket[round-to-integer]  @racket[string-append]   @racket[add1]   @racket[sub1] @racket[let]  )
                (list @racket[quantity->image] @racket[overlay/xy]  @racket[above] @racket[beside] @racket[text]))]
 
-@section[#:tag "racket_perusteet_tunnistuspeli"]{Tunnistuspeli}
+@section[#:tag "racket_jatko_kertotaulupeli"]{Kertotaulupeli}
+
+Kertotaulupeli arpoo kaksi lukua väliltä 1-10 ja kysyy käyttäjältä mikä on niiden kertolaskun tulos.
+Jos vastaus on oikein, ohjelma kertoo siitä käyttäjälle ja lisää pisteitä. Voit rajoittaa peli kierrokset
+joko 10 pisteeseen tai 10 laskuun. 
+
+Käytä  @racket[display-read-number]-funktiota lukujen kysymiseen. Testaa lukujen järkevyys ennen niiden käyttämistä!
+Ilmoita lopputulos käyttäjälle @racket[display-value]:n tai @racket[display-info]:n avulla. Arvotut ja käyttäjän
+antamat luvut kannattanee tallentaa silmukkafunktion lokaaleihin muuttujiin (@racket[let]). Katso mallia
+rekursiivisesta funktiosta automaatilaskurin tehtävätiedostosta. Voit tehdä myös jakolaskupelin jne.
+
+Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen, display-read -kirjaston funktioita:
+
+@tabular[#:style 'boxed #:sep @hspace[3]
+         (list (list @racket[display-read-number] @racket[string->number] @racket[+]  @racket[-]  @racket[*]   )
+               (list @racket[display-value] @racket[number->string] @racket[random]  @racket[<] @racket[>]  )
+               (list @racket[check-expect] @racket[number?] @racket[<=] @racket[>=] @racket[=] )
+               (list @racket[integer?] @racket[if] @racket[cond] @racket[or] @racket[and]) 
+               (list @racket[string-append] @racket[not] @racket[add1] @racket[sub1] @racket[let]))]
+
+@section[#:tag "racket_jatko_arvaa_numero"]{Arvaa numero - peli}
+
+Tietokone arpoo numeron, ja pyytää käyttäjää arvaamaan mikä se on. Käyttäjälle kerrotaan miltä väliltä numero on,
+ja jokaisen arvauksen jälkeen annetaan vihje siitä onko arvaus liian pieni vai liian suuri. Kun oikea arvaus on löytynyt
+kerrotaan montako kierrosta arvaamiseen meni. 
+
+Käytä  @racket[display-read-number]-funktiota arvausten kysymiseen. Testaa saadun arvon järkevyys ennen sen
+käyttämistä! Ilmoita vihje käyttäjälle @racket[display-value]:n tai @racket[display-info]:n avulla.
+Käyttäjän arvaus kannattanee tallentaa silmukkafunktion lokaaliin muuttujaan (@racket[let]). Katso mallia
+rekursiivisesta funktiosta automaatilaskurin tehtävätiedostosta.
+
+Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen tai display-read -kirjaston funktioita:
+
+@tabular[#:style 'boxed #:sep @hspace[3]
+         (list (list @racket[display-read-number] @racket[string->number] @racket[+]  @racket[-]  @racket[*]   )
+               (list @racket[display-value] @racket[number->string] @racket[random]  @racket[<] @racket[>]  )
+               (list @racket[check-expect] @racket[number?] @racket[<=] @racket[>=] @racket[=] )
+               (list @racket[integer?] @racket[if] @racket[cond] @racket[or] @racket[and]) 
+               (list @racket[string-append] @racket[not] @racket[add1] @racket[sub1] @racket[let]))]
+
+@section[#:tag "racket_jatko_tunnistuspeli"]{Tunnistuspeli}
 
 Tunnistuspeli on tietokilpailupeli, jossa käyttäjälle esitetään kysymyksiä joko kuvien ja/tai tekstin muodossa. Ohjelma
 tarkistaa vastauksen oikeellisuuden ehtolauseen avulla ja kertoo käyttäjälle onko hänen antamansa vastaus oikein
@@ -144,7 +196,7 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen tai display-read-k
                (list @racket[display-read] @racket[text] @racket[+] @racket[add1] @racket[sub1])
                (list @racket[begin] @racket[list] @racket[first] @racket[rest] @racket[empty?]))]
 
-@section[#:tag "racket_perusteet_valintapeli"]{Valintapeli}
+@section[#:tag "racket_jatko_valintapeli"]{Valintapeli}
 
 Valintapeli on tietokilpailupeli, jossa käyttäjälle esitetään kysymyksiä joko kuvien ja/tai tekstin muodossa.
 Pelaaja valitsee vastauksensa nuolinäppäinten avulla listasta vaihtoehtoja. Vaihtoehdot voivat olla joko
