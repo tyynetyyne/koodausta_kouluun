@@ -207,6 +207,9 @@ Nämä muunnosfunktiot on määritelty math-kirjastossa, joten ota se käyttöö
  @interaction[#:eval (bsl) (round 0.5)]
 }
 
+@margin-note{Huom! WeScheme:n @racket[round] pyöristää puolivälissä olevat positiiviset luvut ylöspäin ja
+ negatiiviset luvut alaspäin (eli "nollasta poispäin").}
+
 @section[#:style 'unnumbered #:tag "predikaatit_lukuvuille"]{Predikaatit}  
 
 @defproc[(number? [n ei-tyyppivaatimusta]) totuusarvo]{
