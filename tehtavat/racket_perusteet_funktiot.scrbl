@@ -95,7 +95,7 @@ Harjoittele funktion kirjoittamista ja sen kuvaajan piirtämistä seuraavien teh
 Lataa harjoitustiedosto tästä:
 
 @margin-note{Jotta Plot2D toimii DrRacket:ssa, sinun pitää asentaa @bold{teachpacks} paketti.
- Katso asennusohjeet @link["sanasto.html#(part._paketti)"]{täältä}.
+ Katso asennusohjeet @link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._paketti%29"]{täältä}.
  @italic{Huom!} Tämä kirjasto vaatii käyttöönsä @italic{Intermediate Student Language:n tai Advanced Student Language:n}.
  Kirjasto puuttuu WeScheme:stä.}
 

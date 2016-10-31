@@ -169,3 +169,25 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
          (list (list @racket[<] @racket[>] @racket[<=] @racket[>=] @racket[=] @racket[string=?])
                (list @racket[if] @racket[cond] @racket[and] @racket[or] @racket[not] @racket[key=?])
                (list @racket[string-length] @racket[substring] @racket[string-append] @racket[sub1]  @racket[text]@racket[check-expect]))]
+
+@section[#:tag "racket_perusteet_myyrapeli"]{Myyrä - peli}
+
+Muokkaa valmista pohjaa ja tee loppuun Myyrä - peli. Myyrä - pelissä yritetään ottaa kiinni (klikata hiirellä) myyrää, joka siirtyy
+ruudulla paikasta toiseen satunnaisesti. Aluksi myyrä pitää saada siirtymään tasaisin väliajoin uuteen sijaintiin. Sitten pitää ohjelmoida funktiot,
+joiden perusteella voidaan päätellä osuiko hiiri myyrään. Lopuksi voit vaikeuttaa peliä nopeuttamalla myyrää ja pienentämällä sen kokoa.
+Saatat tarvita Pythagoraan lausetta tässä tehtävässä.
+
+@image["kuvat/myyrapeli1.png" #:scale 0.5]
+
+@tabular[#:sep @hspace[1]
+         (list (list @image[#:scale 0.3 "drracket.png"]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/perusteet/valintalause/myyra_peli.rkt"]{Myyrä-peli (DrRacket)}})
+               (list @image[#:scale 0.22 "wescheme.png"]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/myyra_peli.html"]{Myyrä-peli (WeScheme)}}))]
+
+Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen ja 2htdp-kirjaston funktioita:
+
+@tabular[#:style 'boxed #:sep @hspace[3]
+         (list (list @racket[<] @racket[>] @racket[<=] @racket[>=] @racket[=] @racket[+]  @racket[image-width] @racket[image-height])
+               (list @racket[-] @racket[random] @racket[*] @racket[/] @racket[sqr] @racket[sqrt]
+                     @racket[scale] @racket[check-expect]))]
