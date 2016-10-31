@@ -41,6 +41,9 @@
          zero?
          positive?
          negative?
+         real?
+         rational?
+         inexact?
          number->string
          current-seconds
          boolean?

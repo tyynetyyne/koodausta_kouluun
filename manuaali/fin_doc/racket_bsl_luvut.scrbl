@@ -217,10 +217,6 @@ Nämä muunnosfunktiot on määritelty math-kirjastossa, joten ota se käyttöö
  @interaction[#:eval (bsl) (number? "hello world") (number? 42)] 
 }
 
-@defproc[(integer? [x ei-tyyppivaatimusta]) totuusarvo]{
- Palauttaa @racket[#true], jos argumentti on kokonaisluku, muuten @racket[#false].
- @interaction[#:eval (bsl) (integer? (sqrt 2))]
-}
 @defproc[(zero? [x luku]) totuusarvo]{
  Palauttaa @racket[#true], jos argumentti on nolla, muuten @racket[#false].
  @interaction[#:eval (bsl) (zero? 0)(zero? 2)(zero? 0.0)]
@@ -240,6 +236,34 @@ Nämä muunnosfunktiot on määritelty math-kirjastossa, joten ota se käyttöö
 
 @defproc[(negative? [x luku]) totuusarvo]{
  Palauttaa @racket[#true], jos argumentti on pienempi kuin nolla.}
+
+@defproc[(integer? [x ei-tyyppivaatimusta]) totuusarvo]{
+ Palauttaa @racket[#true], jos argumentti on kokonaisluku, muuten @racket[#false].
+ @interaction[#:eval (bsl) (integer? (sqrt 2))]
+}
+
+@defproc[(rational? [x ei-tyyppivaatimusta]) totuusarvo]{
+  Palauttaa @racket[#true], jos argumentti on rationaaliluku, muuten @racket[#false]. 
+   @interaction[#:eval (bsl) 
+     (rational? 1)
+     (rational? -2.349)
+     (rational? #i1.23456789)
+     (rational? (sqrt -1))
+     (rational? pi)]
+ Kuten esimerkeistä voi huomata, opetuskielet tulkitsevat rationaaliluvuiksi enemmän lukuja kuin voisi olettaa.
+ Erityisesti @racket[pi] on rationaaliluku, koska se on vain rajallinen likiarvo matemaattisesta π:stä.
+ @racket[rational?] predikaattia kannattaakin käyttää lähinnä silloin kun haluaa testata onko kyseessä murtoluku.
+  }
+
+@defproc[(real? [x ei-tyyppivaatimusta]) totuusarvo]{
+ Palauttaa @racket[#true], jos argumentti on reaaliluku, muuten @racket[#false].
+ @interaction[#:eval (bsl) (real? 1-2i)]
+}
+
+@defproc[(inexact? [x numero]) totuusarvo]{
+ Palauttaa @racket[#true], jos argumentti on likiarvo, muuten @racket[#false].
+ @interaction[#:eval (bsl) (inexact? pi)(inexact? #i3.0)]
+}
 
 @section[#:style 'unnumbered #:tag "tyyppimuunnokset"]{Tyyppimuunnokset}
 
