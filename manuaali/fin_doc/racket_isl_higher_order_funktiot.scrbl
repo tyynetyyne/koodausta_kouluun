@@ -112,7 +112,7 @@ Nämä funktiot vaativat käyttöön @italic{Intermediate Student Language} tai 
  @codeblock{(andmap p (list x-1 ... x-n)) = (and (p x-1) ... (p x-n))}
  @codeblock{(andmap p (list x-1 ... x-n) (list y-1 ... y-n)) = (and (p x-1 y-1) ... (p x-n y-n))}
  @interaction[#:eval (isl)
-              (andmap odd? '(1 3 5 7 9))
+              (andmap odd? (list 1 3 5 7 9))
               (andmap positive? (list 2 3 -2 1 0))
               raja-arvo 
               (andmap (lambda (x) (< x raja-arvo)) (list 0 1 2))]
@@ -123,7 +123,7 @@ Nämä funktiot vaativat käyttöön @italic{Intermediate Student Language} tai 
  @codeblock{(ormap p (list x-1 ... x-n)) = (or (p x-1) ... (p x-n))}
  @codeblock{(ormap p (list x-1 ... x-n) (list y-1 ... y-n)) = (or (p x-1 y-1) ... (p x-n y-n))}
  @interaction[#:eval (isl)
-              (ormap odd? '(1 3 5 7 9))
+              (ormap odd? (list 1 3 5 7 9))
               raja-arvo
               (ormap positive? (list 2 3 -2 1 0))
               (ormap (lambda (x) (< x raja-arvo)) (list 6 7 8 1 5))]}
@@ -132,8 +132,15 @@ Nämä funktiot vaativat käyttöön @italic{Intermediate Student Language} tai 
  Järjestää @racket[l]:n alkiot vertailuoperaattorin @racket[vertailu] mukaisesti (käyttää quicksort
  algorithmia).
  @interaction[#:eval (isl)
-              (quicksort '(6 7 2 1 3 4 0 5 9 8) <)]
+              (quicksort (list 6 7 2 1 3 4 0 5 9 8) <)]
 }
+
+@defproc[(sort [l lista<X>] [vertailu (X X -> totuusarvo)]) lista<X>]{
+ Järjestää @racket[l]:n alkiot vertailuoperaattorin @racket[vertailu] mukaisesti.
+ @interaction[#:eval (isl)
+              (sort (list 6 7 2 1 3 4 0 5 9 8) <)]
+ }
+
 @defproc[(apply [f (X-1 ... X-N -> Y)] [l (lista X-1 ... X-N)]) Y]{
  Kutsuu funktiota listan @racket[l] argumenteilla.
  @codeblock{(apply f (list x-1 ... x-n)) = (f x-1 ... x-n)}
@@ -143,3 +150,15 @@ Nämä funktiot vaativat käyttöön @italic{Intermediate Student Language} tai 
               (apply + a-lista)
               ]
 }
+
+ @defproc[(argmin [f (X -> reaaliluku)] [l lista<X>]) X]{
+    Etsii listan (ensimmäisen) alkion, joka minimoi annetun funktion paluuarvon.
+    @interaction[#:eval (isl)
+		  (argmin second (list (list "Väinö" 98) (list "Erkki" 78) (list "Heikki" 93)))
+		  ]
+    }
+    @defproc[(argmax [f (X -> reaaliluku)] [l lista<X>]) X]{
+   Etsii listan (ensimmäisen) alkion, joka maksimoi annetun funktion paluuarvon.
+ @interaction[#:eval (isl)
+		  (argmax second (list (list "Väinö" 98) (list "Erkki" 78) (list "Heikki" 93)))
+]}

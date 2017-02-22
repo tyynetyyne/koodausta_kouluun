@@ -111,23 +111,139 @@ Luo @index["neljäkäs"]{neljäkkään} eli @italic{suunnikkaan}, jonka kaikki s
 }
 
 @defproc[(isosceles-triangle [kyljen-pituus positiivinen-reaaliluku] 
-                                [kantakulma reaaliluku]
+                                [huippukulma reaaliluku]
                                 [tyyli mode?]
                                 [väri image-color?])
             kuva]{
 
- Luo @index["tasakylkinen kolmio"]{tasakylkisen kolmion}, jonka @racket[kyljen-pituus] ja @racket[kantakulma] on annettu.                   
- Jos @racket[kantakulma] on pienempi kuin @racket[180], kolmio seisoo kannallaan, muuten se seisoo kärjellään.
+ Luo @index["tasakylkinen kolmio"]{tasakylkisen kolmion}, jonka @racket[kyljen-pituus] ja @racket[huippukulma] on annettu.                   
+ Jos @racket[huippukulma] on pienempi kuin @racket[180], kolmio seisoo kannallaan, muuten se seisoo kärjellään.
  
  @image-examples[(isosceles-triangle 110 45 "solid" "tomato")]
 }
 
+Jotta saat piirrettyä kolmion juuri tietyn pituisilla sivuilla tai tietyn suuruisilla kulmilla
+seuraava ryhmä funktioita voi olla avuksi:
+
+@itemlist[@item{@racket[triangle/sss], jos kaikki kolme kulmaa on tunnettu}
+          @item{@racket[triangle/ass], 
+                @racket[triangle/sas], tai
+                @racket[triangle/ssa], 
+                jos kaksi sivua ja niiden välinen kulma on tunnettu}
+          @item{@racket[triangle/aas], 
+                @racket[triangle/asa], tai
+                @racket[triangle/saa], 
+                jos kaksi kulmaa ja niiden yhteinen sivu on tunnettu.}]
+                     
+Kaikki nämä piirtävät kolmion, jonka asento on seuraava:
+
+@image["fin_doc/triangle-xxx.png"]
+
+@defproc[(triangle/sss [sivun-pituus-a positiivinen-reaaliluku] 
+                          [sivun-pituus-b positiivinen-reaaliluku] 
+                          [sivun-pituus-c positiivinen-reaaliluku] 
+                          [tyyli mode?]
+                          [väri image-color?])
+            kuva]{
+Piirtää kolmion, jossa kolmion sivun pituudet a, b ja c on annettu (@racket[sivun-pituus-a],
+ @racket[sivun-pituus-b], @racket[sivun-pituus-c]).
+  
+ @image-examples[(triangle/sss 40 60 80 "solid" "seagreen")
+                 (triangle/sss 80 40 60 "solid" "aquamarine")
+                 (triangle/sss 80 80 40 "solid" "lightseagreen")]
+}
+
+@defproc[(triangle/ass [kulma-a reaaliluku] 
+                          [sivun-pituus-b positiivinen-reaaliluku] 
+                          [sivun-pituus-c positiivinen-reaaliluku] 
+                          [tyyli mode?]
+                          [väri image-color?])
+            kuva]{
+Piirtää kolmion, jossa kulma A (@racket[kulma-a]) sekä sivun pituudet b (@racket[sivun-pituus-b])
+ja c (@racket[sivun-pituus-c]) on annettu (katso kuva).
+ 
+ @image-examples[(triangle/ass 10  60 100 "solid" "seagreen")
+                 (triangle/ass 90  60 100 "solid" "aquamarine")
+                 (triangle/ass 130 60 100 "solid" "lightseagreen")]
+}
+
+@defproc[(triangle/sas [sivun-pituus-a positiivinen-reaaliluku] 
+                          [kulma-b reaaliluku] 
+                          [sivun-pituus-c positiivinen-reaaliluku] 
+                          [tyyli mode?]
+                          [väri image-color?])
+            kuva]{
+
+Piirtää kolmion, jossa sivun pituus a (@racket[sivun-pituus-a]), kulma B (@racket[kulma-b]) sekä 
+ja sivun pituus c (@racket[sivun-pituus-c]) on annettu (katso kuva).
+ 
+ @image-examples[(triangle/sas 60  10 100 "solid" "seagreen")
+                 (triangle/sas 60  90 100 "solid" "aquamarine")
+                 (triangle/sas 60 130 100 "solid" "lightseagreen")]
+}
+
+@defproc[(triangle/ssa [sivun-pituus-a positiivinen-reaaliluku] 
+                          [sivun-pituus-b positiivinen-reaaliluku] 
+                          [kulma-c reaaliluku] 
+                          [tyyli mode?]
+                          [väri image-color?])
+            kuva]{
+Piirtää kolmion, jossa sivun pituudet a (@racket[sivun-pituus-a]) ja b (@racket[sivun-pituus-b]) sekä
+kulma C (@racket[kulma-c]) on annettu (katso kuva). 
+ 
+ @image-examples[(triangle/ssa 60 100  10 "solid" "seagreen")
+                 (triangle/ssa 60 100  90 "solid" "aquamarine")
+                 (triangle/ssa 60 100 130 "solid" "lightseagreen")]
+}
+@defproc[(triangle/aas [kulma-a reaaliluku] 
+                          [kulma-b reaaliluku] 
+                          [sivun-pituus-c positiivinen-reaaliluku] 
+                          [tyyli mode?]
+                          [väri image-color?])
+            kuva]{
+ 
+Piirtää kolmion, jossa kulmat A (@racket[kulma-a]) ja B (@racket[kulma-b]) sekä
+sivun pituus c (@racket[sivun-pituus-c]) on annettu (katso kuva). 
+ 
+ @image-examples[(triangle/aas  10 40 200 "solid" "seagreen")
+                 (triangle/aas  90 40 200 "solid" "aquamarine")
+                 (triangle/aas 130 40 40  "solid" "lightseagreen")]
+}
+
+@defproc[(triangle/asa [kulma-a reaaliluku] 
+                          [sivun-pituus-b positiivinen-reaaliluku] 
+                          [kulma-c reaaliluku] 
+                          [tyyli mode?]
+                          [väri image-color?])
+            kuva]{
+Piirtää kolmion, jossa kulma A (@racket[kulma-a]), sivun pituus b (@racket[sivun-pituus-b]) sekä kulma C
+(@racket[kulma-c]) on annettu (katso kuva). 
+ 
+ @image-examples[(triangle/asa  10 200 40 "solid" "seagreen")
+                 (triangle/asa  90 200 40 "solid" "aquamarine")
+                 (triangle/asa 130 40  40 "solid" "lightseagreen")]
+}
+
+@defproc[(triangle/saa [sivun-pituus-a positiivinen-reaaliluku] 
+                          [kulma-b reaaliluku] 
+                          [kulma-c reaaliluku] 
+                          [tyyli mode?]
+                          [väri image-color?])
+            kuva]{
+
+Piirtää kolmion, jossa sivun pituus a (@racket[sivun-pituus-a]), kulma B
+(@racket[kulma-b]) sekä kulma C (@racket[kulma-c])  on annettu (katso kuva). 
+ 
+ @image-examples[(triangle/saa 200  10 40 "solid" "seagreen")
+                 (triangle/saa 200  90 40 "solid" "aquamarine")
+                 (triangle/saa 40  130 40 "solid" "lightseagreen")]
+}
 
 @section[#:style 'unnumbered #:tag "monikulmiot"]{Monikulmiot}
 
 @defproc[(regular-polygon [sivun-pituus positiivinen-reaaliluku] 
                              [sivujen-määrä kokonaisluku-3-tai-suurempi]
-                             [tyyli mode?]
+                             [tyyli tyyli?]
                              [väri image-color?])
             kuva]{
                     

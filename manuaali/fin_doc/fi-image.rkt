@@ -8,6 +8,13 @@
          rectangle
          square
          triangle
+         triangle/sss
+         triangle/ass
+         triangle/sas
+         triangle/ssa
+         triangle/asa
+         triangle/aas
+         triangle/saa
          right-triangle
          isosceles-triangle
          regular-polygon

@@ -11,7 +11,10 @@
          foldl
          foldr
          build-list
-         quicksort)
+         quicksort
+         sort
+         argmax
+         argmin)
          
          
          

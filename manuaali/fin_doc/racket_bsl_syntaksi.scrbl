@@ -94,7 +94,7 @@ Racket BSL koodi rakentuu @bold{määrittelyistä}, @bold{lausekkeista},
 
 @defform[(local [määrittely ...] lauseke)]{
 
-   Luo ryhmän määrittelyjä, jotka näkyvät vai @racket[local]-rakenteen sisällä.
+   Luo ryhmän määrittelyjä, jotka näkyvät vain @racket[local]-rakenteen sisällä.
    @racket[määrittely] voi olla muuttujan, funktion tai tietueen määrittely.
   
 Jokainen @racket[local] rakenteen sisällä oleva @racket[määrittely]
@@ -204,9 +204,9 @@ Evaluoi lausekkeen vasemmalta oikealle järjestyksessä ja palauttaa viimeisen l
 Kun ajat ohjelmia DrRacket:ssä osa ohjelmakoodista maalautuu mustaksi. Tämä tarkoittaa sitä, että kyseistä osaa koodia ei ole vielä ajettu (testattu). Koska testaamaton koodi ei yleensä toimi halutulla tavalla, 
 suosittelemme, että testaat ohjelmasi käyttämällä @racket[check-expect]:iä tai @racket[check-within]:iä.  
 
-@defform[(check-expect lauseke odotusarvo)]{
+@defform[(check-expect lauseke odotettu-paluuarvo)]{
 
-   Tarkistaa, että @racket[lauseke] evaluoituu @racket[odotusarvo]:ksi.
+   Tarkistaa, että @racket[lauseke] evaluoituu @racket[odotettu-paluuarvo]:ksi.
                    
 @;%
 @;@(begin
@@ -224,7 +224,7 @@ suosittelemme, että testaat ohjelmasi käyttämällä @racket[check-expect]:iä
  miten funktiota kuuluu käyttää, ja miten se toimii. Jos @racket[lauseke] tai @racket[odotusarvo] tuottaa epätarkan arvon, testaamiseen tulee käyttää 
 @racket[check-within]-lauseketta. }
 
- @defform[(check-within lauseke odotusarvo poikkeama)]{
+ @defform[(check-within lauseke odotettu-paluuarvo poikkeama)]{
 
   Tarkistaa onko arvo, joka saadaan evaluoimalla @racket[lauseke] lähempänä @racket[odotusarvo]:a kuin sallittu @racket[poikkeama].
 
