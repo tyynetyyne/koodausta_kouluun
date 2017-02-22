@@ -221,12 +221,12 @@ suosittelemme, että testaat ohjelmasi käyttämällä @racket[check-expect]:iä
 @;))
 @;%
  @racket[check-expect]-lausekkeet sijoitetaan tyypillisesti ennen testattavaa funktiota. Niiden avulla kerrotaan
- miten funktiota kuuluu käyttää, ja miten se toimii. Jos @racket[lauseke] tai @racket[odotusarvo] tuottaa epätarkan arvon, testaamiseen tulee käyttää 
+ miten funktiota kuuluu käyttää, ja miten se toimii. Jos @racket[lauseke] tai @racket[odotettu-paluuarvo] tuottaa epätarkan arvon, testaamiseen tulee käyttää 
 @racket[check-within]-lauseketta. }
 
  @defform[(check-within lauseke odotettu-paluuarvo poikkeama)]{
 
-  Tarkistaa onko arvo, joka saadaan evaluoimalla @racket[lauseke] lähempänä @racket[odotusarvo]:a kuin sallittu @racket[poikkeama].
+  Tarkistaa onko arvo, joka saadaan evaluoimalla @racket[lauseke] lähempänä @racket[odotettu-paluuarvo]:a kuin sallittu @racket[poikkeama].
 
 @interaction[#:eval (bsl)
 
