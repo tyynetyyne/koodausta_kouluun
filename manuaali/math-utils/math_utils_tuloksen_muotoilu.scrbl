@@ -14,7 +14,7 @@
 
 @declare-exporting[teachpacks/math-utils]
 
-@title[#:tag "math_utils_funktiot"]{math-utils -funktiot}
+@title[#:tag "math_utils_tuloksen_muotoilu"]{Tuloksen muotoilu}
 
 @(begin
    (require scribble/manual scribble/eval fin-doc/sl-eval)
@@ -26,16 +26,19 @@
      (set! bsl (lambda () *bsl))
      *bsl))
 
-@defproc[(units->image [yksikkö merkkijono]
-                       [eksponentti kokonaisluku]
-                       [fontin-koko kokonaisluku-välillä-0-255]
-                       [väri image-color?])
-         kuva]{                                                  
- Tuottaa kuvan, jossa yksikkö ja sen eksponentti esitetään @racket[fontin-koko]:isina sekä @racket[väri]:sinä.}
+@defproc[(round-to-integer [x luku])
+         kokonaisluku]{                                                  
+ Pyöristää @racket[x]:n lähimpään kokonaislukuun niin, että puoliväliin jäävät positiiviset luvut (esim. 0.5) pyöristetään suurempaan
+ kokonaislukuun ja puoliväliin jäävät negatiiviset luvut (esim. -0.5) pyöristetään pienempään kokonaislukuun.}
 
-@racketblock[(units->image "mm" 3 33 "red")]
+ @interaction[#:eval (bsl) (round-to-integer 4.3)(round-to-integer 5.5)(round-to-integer -3.4)(round-to-integer -3.5)]   
 
-@centered[@image["math-utils/mm3.png"]]
+@defproc[(round-to-decimal [x luku]
+                           [desimaalit luonnollinen-luku])
+         luku]{                                                  
+ Pyöristää @racket[x]:n annetut @racket[desimaalit] tarkkuuteen. Käyttää pyöristämiseen @racket[round-to-integer]:iä.}
+
+ @interaction[#:eval (bsl) (round-to-decimal 4.344 2)(round-to-decimal 5.57 1)(round-to-decimal -3.45 1)(round-to-decimal -3.55 1)]   
 
 @defproc[(quantity->image [lukuarvo luku]
                           [yksikkö merkkijono]
@@ -70,16 +73,15 @@
 
 @centered[@image["math-utils/suure2.png"]]
 
-@defproc[(round-to-integer [x luku])
-         kokonaisluku]{                                                  
- Pyöristää @racket[x]:n lähimpään kokonaislukuun niin, että puoliväliin jäävät positiiviset luvut (esim. 0.5) pyöristetään suurempaan
- kokonaislukuun ja puoliväliin jäävät negatiiviset luvut (esim. -0.5) pyöristetään pienempään kokonaislukuun.}
+@defproc[(units->image [yksikkö merkkijono]
+                       [eksponentti kokonaisluku]
+                       [fontin-koko kokonaisluku-välillä-0-255]
+                       [väri image-color?])
+         kuva]{                                                  
+ Tuottaa kuvan, jossa yksikkö ja sen eksponentti esitetään @racket[fontin-koko]:isina sekä @racket[väri]:sinä.}
 
- @interaction[#:eval (bsl) (round-to-integer 4.3)(round-to-integer 5.5)(round-to-integer -3.4)(round-to-integer -3.5)]   
+@racketblock[(units->image "mm" 3 33 "red")]
 
-@defproc[(round-to-decimal [x luku]
-                           [desimaalit luonnollinen-luku])
-         luku]{                                                  
- Pyöristää @racket[x]:n annetut @racket[desimaalit] tarkkuuteen. Käyttää pyöristämiseen @racket[round-to-integer]:iä.}
+@centered[@image["math-utils/mm3.png"]]
 
- @interaction[#:eval (bsl) (round-to-decimal 4.344 2)(round-to-decimal 5.57 1)(round-to-decimal -3.45 1)(round-to-decimal -3.55 1)]   
+
