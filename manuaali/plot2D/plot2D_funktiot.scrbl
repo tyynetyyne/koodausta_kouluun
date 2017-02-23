@@ -84,8 +84,8 @@ Esimerkkejä:
 
 @racketblock[(define (f x)(* x x))
              (define (g x)(+ (* 6 x) 15))
-             (plot2D (list (func f -10 10 "paraapeli")
-                           (func g -5 10 "suora"))
+             (plot2D (list (func f -10 10 "y=x^2")
+                           (func g -5 10 "y=6x+15"))
                      "x-akseli" "y-akseli" "Tehtävä 1")]
 
 @centered[@image[#:scale 0.7 "plot2D/paraabelisuora.png"]]
