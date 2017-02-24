@@ -18,7 +18,7 @@
 @margin-note{Jotta math-utils toimii DrRacket:ssa, sinun pitää asentaa @bold{teachpacks} paketti.
  Katso asennusohjeet @link["sanasto.html#(part._paketti)"]{täältä}.
   @italic{WeScheme}:ssä ei tarvitse asentaa pakettia mutta kirjastolla on eri nimi:
- @racket[(require wescheme/UtlNKsykzN)]}
+ @racket[(require wescheme/f08DD6x94M)]}
 
 Tässä osassa esitellään math-utils -kirjasto, josta löytyy funktioita, jotka auttavat matematiikkaan liittyvissä ohjelmointitehtävissä esim. 
 tulosten pyöristämisessä sekä yksiköiden lisäämisessä tulokseen.
@@ -27,3 +27,4 @@ tulosten pyöristämisessä sekä yksiköiden lisäämisessä tulokseen.
 
 @include-section["math_utils_tuloksen_muotoilu.scrbl"]
 @include-section["math_utils_tilastomatematiikka.scrbl"]
+@include-section["math_utils_muunnokset.scrbl"]

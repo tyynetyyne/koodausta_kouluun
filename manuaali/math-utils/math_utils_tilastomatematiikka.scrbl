@@ -26,39 +26,52 @@
      (set! bsl (lambda () *bsl))
      *bsl))
 
-@defproc[(mean [luvut Lista<Luku>])
-         Luku]{                                                  
+@defproc[(mean [luvut lista<luku>])
+         luku]{                                                  
 Laske annetun listan @racket[luvut] sisältämien lukujen keskiarvon.}
 
-@racketblock[(mean (list 1 2 3 4 5 6 7 8))]
+@interaction[#:eval (bsl) (mean (list 1 2 3 4 5 6 7 8))]   
 
-@defproc[(mode [luvut Lista<Luku>])
-         Luku]{                                                  
-Etsii annetun listan @racket[luvut] sisältämien lukujen moodin eli tyyppiarvon.}
-
-@racketblock[(mode (list 1 2 1 3 2 3 4 1))]
-
-@defproc[(median [luvut Lista<Luku>])
-         Luku]{                                                  
+@defproc[(median [luvut lista<luku>])
+         luku]{                                                  
 Etsii annetun listan @racket[luvut] sisältämien lukujen mediaanin eli järjestetyn joukon keskimmäisen alkion arvon
  (pariton määrä alkioita) tai kahden keskimmäisen alkion arvojen keskiarvon (parillinen määrä alkioita).}
 
-@racketblock[(median (list 1 2 1 3 2 3 4 1))]
-@racketblock[(median (list 1 2 1 3 2 3 4))]
+@interaction[#:eval (bsl) (median (list 1 2 1 3 1 3 4 1 5))]   
+
+@interaction[#:eval (bsl) (median (list 1 2 1 3 1 3 4 1))]   
 
 @defproc[(frequency [alkio ei-tyyppi-vaatimusta]
-                    [lista Lista<ei-tyyppivaatimusta>])
-         Luku]{                                                  
-Palauttaa @racket[alkio]:n esiintymiskerrat annetussa listassa @racket[luvut].
+                    [data lista<ei-tyyppivaatimusta>])
+         luku]{                                                  
+Palauttaa @racket[alkio]:n esiintymiskerrat annetussa listassa @racket[data].
 
-@racketblock[(frequency 1 (list 1 2 1 3 2 3 4 1))]
-@racketblock[(frequency "Janne" (list "Mikko" "Janne" "Jaana" "Satu" "Janne" "Juuso"))]
+@interaction[#:eval (bsl) (frequency 1 (list 1 2 1 3 2 3 4 1))]   
+
+@interaction[#:eval (bsl) (frequency "Janne" (list "Mikko" "Janne" "Jaana" "Satu" "Janne" "Juuso"))]   
+
 }
-@defproc[(frequencies [lista Lista<ei-tyyppivaatimusta>])
-         Lista]{                                                  
+@defproc[(frequencies [data lista<ei-tyyppivaatimusta>])
+         lista]{                                                  
 Palauttaa listan, joka sisältää kaikki alkiot ja niiden esiintymiskerrat annetussa listassa ryhmiteltyinä pareiksi.
 Tämä lista on järjestetty pienenevän esiintymistiheyden mukaiseen järjestykseen.
 }
-@racketblock[(frequencies (list 1 2 1 3 2 3 4 1))]
-@racketblock[(frequencies (list "Janne" "Janne" "Jaana" "Satu" "Janne" "Satu"))]
+
+@interaction[#:eval (bsl) (frequencies (list 1 2 1 3 2 3 4 1))]   
+
+@interaction[#:eval (bsl) (frequencies (list "Janne" "Janne" "Jaana" "Satu" "Janne" "Satu"))]   
+
+@defproc[(mode [data lista<ei-tyyppivaatimusta>])
+         ei-tyyppivaatimusta]{                                                  
+Etsii annetun listan @racket[data] sisältämien alkioiden moodin eli tyyppiarvon (arvo jolla on suurin frekvenssi).
+ Jos tyyppiarvoja on useita, ne palautetaan listana. Jos kukin arvo esiintyy listassa vain kerran, palautetaan @racket[#false]. }
+
+@interaction[#:eval (bsl) (mode (list 1 2 1 3 2 3 4 1))]   
+
+@interaction[#:eval (bsl) (mode (list "Janne" "Janne" "Jaana" "Satu" "Janne" "Satu"))]
+
+@interaction[#:eval (bsl) (mode (list "Janne" "Janne" "Jaana" "Satu" "Satu"))]
+
+@interaction[#:eval (bsl) (mode (list "Janne" "Jaana" "Satu"))]
+
 
