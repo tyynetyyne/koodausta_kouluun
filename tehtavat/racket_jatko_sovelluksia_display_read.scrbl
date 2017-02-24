@@ -5,7 +5,6 @@
 @(require (for-label fin-doc/fi-image))
 @(require (for-label teachpacks/math-utils))
 @(require (for-label teachpacks/display-read))
-@(require (for-label (except-in math sqr)))
 @(require scribble/core
           scribble/html-properties)
 @(require scribble/racket)

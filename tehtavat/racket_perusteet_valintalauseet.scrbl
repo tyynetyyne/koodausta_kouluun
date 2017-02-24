@@ -3,7 +3,6 @@
 @(require 2htdp/image)
 @(require (for-label fin-doc/fi-beginner))
 @(require (for-label fin-doc/fi-image))
-@(require (for-label (except-in math sqr)))
 @(require scribble/core
           scribble/html-properties)
 @(require scribble/racket)
