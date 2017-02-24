@@ -5,6 +5,7 @@
 @(require 2htdp/image)
 @(require (for-label fin-doc/fi-beginner))
 @(require (for-label fin-doc/fi-image))
+@(require (for-label teachpacks/math-utils))
 @(require scribble/core
           scribble/html-properties)
 @(require scribble/eval)
@@ -149,10 +150,13 @@ sinun pitää muuntaa asteet radiaaneiksi @racket[degrees->radians]-funktiolla (
 Samoin radiaanit pitää muuttaa asteiksi @racket[radians->degrees]-funktiolla (@racket[asin], @racket[acos], @racket[atan]):
 @interaction[#:eval (bsl) (radians->degrees(asin 0.5))]
 
-Nämä muunnosfunktiot on määritelty math-kirjastossa, joten ota se käyttöön ensin:
-@racket[(require math)]
+Nämä muunnosfunktiot on määritelty teachpacks/math-utils-kirjastossa, joten ota se käyttöön ensin:
+@racket[(require teachpacks/math-utils)]
 
-@margin-note{Muunnosfunktiot saat käyttöösi WeScheme:ssä @racket[(require wescheme/sSdQeEG3nL)]. @italic{Huom!} Tämä ei ole koko math-kirjasto.}
+@margin-note{Jos teachpacks/math-utils:ia ei löydy tai se ei toimi oikein, asenna uusin teachpacks-paketti (update).
+Katso asennusohjeet @link["sanasto.html#(part._paketti)"]{täältä}.}
+
+@margin-note{Muunnosfunktiot saat käyttöösi WeScheme:ssä @racket[(require wescheme/f08DD6x94M)].}
 
 @defproc[(sin [x luku]) luku]{
  Laskee luvun @racket[x] @index["sini"]{sinin} arvon (@racket[x] annetaan radiaaneina).

@@ -68,3 +68,30 @@ Muuntaa merkkijonon luvuksi, palauttaa @racket[#false] jos se on mahdotonta.
  @interaction[#:eval (bsl) (string? "No, onko se?") (string? 42)]
 }
 
+  @defproc[(string-ci=?  [s merkkijono][t merkkijono][x merkkijono] ...) boolean?]{
+ Vertailee, ovatko annetut merkkijonot @racket[s], @racket[t], @racket[x] jne. samoja (merkki merkiltä, niin että
+ pienet ja isot kirjaimet tulkitaa samaksi kirjaimeksi).  
+ @interaction[#:eval (bsl) (string-ci=?  "heippa" "HeippA")]
+}
+  @defproc[(string-ci<?  [s merkkijono][t merkkijono][x merkkijono] ...) boolean?]{
+ Vertailee, ovatko annetut merkkijonot @racket[s], @racket[t], @racket[x] jne. järjestetty tiukasti aakkosjärjestykseen
+ (pienet ja isot kirjaimet tulkitaa samaksi kirjaimeksi).  
+ 
+ @interaction[#:eval (bsl) (string-ci<? "heippa" "MAAILMA" "yö")]
+}
+  @defproc[(string-ci>?  [s merkkijono][t merkkijono][x merkkijono] ...) boolean?]{
+ Vertailee, ovatko annetut merkkijonot @racket[s], @racket[t], @racket[x] jne. järjestetty tiukasti käänteiseen aakkosjärjestykseen
+ (pienet ja isot kirjaimet tulkitaa samaksi kirjaimeksi).  
+ @interaction[#:eval (bsl) (string-ci>?  "yö" "MAAILMA" "heippa")]
+}
+  @defproc[(string-ci<=? [s merkkijono][t merkkijono][x merkkijono] ...) boolean?]{
+ Vertailee, ovatko annetut merkkijonot @racket[s], @racket[t], @racket[x] jne. järjestetty aakkosjärjestykseen
+ (pienet ja isot kirjaimet tulkitaa samaksi kirjaimeksi).  
+ @interaction[#:eval (bsl) (string-ci<=? "heippa" "MAAILMA" "yö")]
+}
+  @defproc[(string-ci>=? [s merkkijono][t merkkijono][x merkkijono] ...) boolean?]{
+ Vertailee, ovatko annetut merkkijonot @racket[s], @racket[t], @racket[x] jne. järjestetty käänteiseen aakkosjärjestykseen
+ (pienet ja isot kirjaimet tulkitaa samaksi kirjaimeksi).  
+ @interaction[#:eval (bsl) (string-ci>?  "yö" "MAAILMA" "heippa")]
+}
+

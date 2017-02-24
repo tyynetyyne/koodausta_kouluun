@@ -61,6 +61,48 @@
 
   }
 
+@defproc[(beside/align [y-sijainti y-sijaintimäärite] [k1 kuva] [k2 kuva] [k3 kuva] ...) kuva]{
+ Luo kuvan sijoittamalla kaikki annetut kuvat vaakasuoraan vierekkäin, linjattuna @racket[y-sijainti] argumentin mukaan.
+  Linjauksessa voi käyttää seuraavia y-sijaintimääritteitä: @racket["top"], @racket["bottom"], @racket["middle"]
+ @racket["center"] ja @racket["baseline"]. 
+
+  @image-examples[(beside/align "bottom"
+                                (ellipse 20 70 "solid" "lightsteelblue")
+                                (ellipse 20 50 "solid" "mediumslateblue")
+                                (ellipse 20 30 "solid" "slateblue")
+                                (ellipse 20 10 "solid" "navy"))
+
+                  (beside/align "top"
+                                (ellipse 20 70 "solid" "mediumorchid")
+                                (ellipse 20 50 "solid" "darkorchid")
+                                (ellipse 20 30 "solid" "purple")
+                                (ellipse 20 10 "solid" "indigo"))
+
+                  (beside/align "baseline"
+                                (text "hei" 18 "black")
+                                (text "ppa" 24 "black"))]
+
+}
+
+@defproc[(above/align [x-sijainti x-sijantimäärite] [k1 kuva] [k2 kuva] [k3 kuva] ...) kuva]{
+  Luo kuvan sijoittamalla kaikki annetut kuvat pystysuoraan allekkain, linjattuna @racket[x-sijainti] argumentin mukaan.
+  Linjauksessa voi käyttää seuraavia x-sijaintimääritteitä: @racket["left"], @racket["right"], @racket["middle"]
+ ja @racket["center"]. 
+
+  @image-examples[(above/align "right"
+                               (ellipse 70 20 "solid" "gold")
+                               (ellipse 50 20 "solid" "goldenrod")
+                               (ellipse 30 20 "solid" "darkgoldenrod")
+                               (ellipse 10 20 "solid" "sienna"))
+
+                  (above/align "left"
+                               (ellipse 70 20 "solid" "yellowgreen")
+                               (ellipse 50 20 "solid" "olivedrab")
+                               (ellipse 30 20 "solid" "darkolivegreen")
+                               (ellipse 10 20 "solid" "darkgreen"))]
+
+}
+
 @defproc[(overlay/xy [k1 kuva] [x reaaliluku] [y reaaliluku] [k2 kuva]) kuva]{
 
   Luo kuvan asettamalla kuvan @racket[k1] kuvan @racket[k2] @index["kuvien asettelu vapaasti"]{päälle}.

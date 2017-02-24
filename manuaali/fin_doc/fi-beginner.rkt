@@ -57,6 +57,11 @@
          string->number
          exact->inexact
          string?
+         string-ci=?
+         string-ci<=?
+         string-ci>=?
+         string-ci<?
+         string-ci>?
          cons
          list
          append
