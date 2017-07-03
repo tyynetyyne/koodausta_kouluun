@@ -17,7 +17,7 @@
 
 @margin-note{Jotta Plot2D toimii DrRacket:ssa, sinun pitää asentaa @bold{teachpacks} paketti.
  Katso asennusohjeet @link["sanasto.html#(part._paketti)"]{täältä}.
- @italic{Huom!} Tämä kirjasto vaatii käyttöönsä @italic{Intermediate Student Language}. Kirjasto puuttuu WeScheme:stä.}
+ @italic{Huom!} Tämä kirjasto vaatii käyttöönsä @italic{Advanced Student Language}. Kirjasto puuttuu WeScheme:stä.}
 
 Tässä osassa esitellään Plot2D -kirjasto, jonka avulla voi piirtää 2D-kuvaajia sekä sijoittaa pisteitä koordinaatistoon.
 Kirjaston avulla voit piirtää samaan kuvaan useamman kuvaajan, nimetä akselit sekä antaa kuvalle otsikon.
