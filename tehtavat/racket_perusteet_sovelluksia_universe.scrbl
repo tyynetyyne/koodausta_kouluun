@@ -58,6 +58,8 @@ liikuttamalla syntyy tällainen Suomen lipun kuva:
 
 @image["kuvat/piilokuvaA.png" #:scale 0.5]
 
+@margin-note[@link["https://youtu.be/dvA30L3ZeQg"]{@image[#:scale 0.015 "kuvat/video.png"] Sovellukset A (piilokuva), kesto 4:58}]
+
 @tabular[#:sep @hspace[1]
          (list (list @image[#:scale 0.3 "drracket.png"]
                      @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/perusteet/valintalause/piilokuva_A.rkt"]{Piilokuva A (DrRacket)}})
@@ -73,6 +75,8 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 @tabular[#:style 'boxed #:sep @hspace[3]
          (list (list @racket[<] @racket[>] @racket[<=] @racket[>=] @racket[=] @racket[if] @racket[cond] @racket[and]
                      @racket[or] @racket[not] @racket[place-image] @racket[check-expect]))]
+
+@margin-note[@link["https://www.slideshare.net/TiinaPartanen/racket-perusteet-sovellukset-a"]{Opettajan diat.}]
 
 @section[#:tag "racket_perusteet_ufo_animaatio"]{Ufo-animaatio}
 
@@ -96,11 +100,15 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 
 @section[#:tag "racket_perusteet_kuva_animaatio"]{Kuva-animaatio}
 
+@margin-note[@link["https://youtu.be/Ur-oy0TOezo"]{@image[#:scale 0.015 "kuvat/video.png"] Sovellukset A (animaatio), kesto 5:11}]
+
 Kuva-animaatio tehtävässä ohjelma reagoi tietokoneen sisäisen kellon tikitykseen. Kello tikittää 28 kertaa sekunnissa, ja
 se tarkoittaa sitä, että esimerkkikoodin @racket[animate]-funktio kutsuu sinun tekemääsi @italic{oma-kuva} funktiota arvoilla:
 0, 1, 2, 3, 4, 5, 6, 7 jne. niin kauan kunnes suljet animaatioikkunan. Toisin sanoen aikamuuttuja (t) kasvaa koko ajan yhdellä.
 Tutustu oheiseen esimerkkikoodiin ja muokkaa sitä valintalauseen avulla sellaiseksi, että saat ympyrän suurenemaan
 ja pienenemään automaattisesti. Voit myös vaihtaa ympyrän tilalle jonkun muun kuvafunktion!
+
+@margin-note[@link["https://youtu.be/gxMe4siMB0g"]{@image[#:scale 0.015 "kuvat/video.png"] Koodin jakaminen WeSchemessä, kesto 1:38}]
 
 @italic{Vinkki:} Jos haluat animaation pyörivän ikuisesti samaa rataa tutustu @racket[modulo]:n toimintaan ja rajoita sen
 avulla aikamuuttuja (t) pysymään tietyllä alueella.

@@ -28,11 +28,16 @@
 
 @title[#:tag "jatko_sovellukset_display_read"]{Sovelluksia (display-read)}
 
+@margin-note[@link["https://youtu.be/-Oecr486bPg"]{@image[#:scale 0.015 "kuvat/video.png"] Lokaalit muuttujat, kesto 8:10}]
+
 Funktioita, ehto- ja valintalauseita, rekursiivisia funktioita, listojen käyttämistä sekä käyttäjän kanssa
 kommunikointia voi harjoitella myös @italic[@link["http://racket.koodiaapinen.fi/manuaali/display_read.html"]{teachpacks/display-read}]-kirjaston avulla.
 Se on toteutettu @italic[@link["http://racket.koodiaapinen.fi/manuaali/2htdp_universe.html"]{2htdp/universe}]:n avulla ja tarjoaa
 helpon tavan pyytää käyttäjää antamaan vastauksia valmiin tekstieditorin avulla tai tekemään valintoja annetuista
-vaihtoehdoista nuolinäppäinten avulla.    
+vaihtoehdoista nuolinäppäinten avulla. Tehtävissä on apua myös lokaaleista muuttujista, jotka määritellään let:in avulla,
+joten kannattaa opetella käyttämään myös niitä.    
+
+@margin-note[@link["https://youtu.be/yYeL0CTeQBM"]{@image[#:scale 0.015 "kuvat/video.png"] Display-read, kesto 11:10}]
 
 Nämä tehtävät vaativat @italic{teachpacks/display-read}-kirjaston:
 @racketblock[(require teachpacks/display-read)]
@@ -69,6 +74,8 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen tai display-read-k
 
 @tabular[#:style 'boxed #:sep @hspace[3]
          (list (list @racket[string-append] @racket[display-read] @racket[display-value]))]
+
+@margin-note[@link["https://www.slideshare.net/TiinaPartanen/racket-alkeet-5-oppitunti"]{Opettajan diat.}]
 
 @section[#:tag "racket_jatko_lahtolaskenta"]{Lähtölaskenta}
 
@@ -162,6 +169,8 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen tai display-read -
 Tunnistuspeli on tietokilpailupeli, jossa käyttäjälle esitetään kysymyksiä joko kuvien ja/tai tekstin muodossa. Ohjelma
 tarkistaa vastauksen oikeellisuuden ehtolauseen avulla ja kertoo käyttäjälle onko hänen antamansa vastaus oikein
 vai väärin.
+
+@margin-note[@link["https://youtu.be/iXJuAiZu5cg"]{@image[#:scale 0.015 "kuvat/video.png"] Tunnistuspeli, kesto 12:01}]
 
 Voit hakea kuvat netistä ja lisätä ne koodiin valikosta: @italic{Insert->Images}. Kannattaa valita pienikokoisia
 kuvia tai pienentää ne esim. GIMP-ohjelmalla. 

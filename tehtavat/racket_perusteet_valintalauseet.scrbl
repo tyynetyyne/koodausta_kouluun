@@ -30,10 +30,14 @@ Jos koodissa on useita haarautumisvaihtoehtoja (sisäkkäisiä if-lauseita), voi
 @racket[cond]-lausetta. Siinä voidaan antaa niin monta ehtoa kuin on tarpeen ja lopuksi @racket[else]-haara, joka palautetaan jos
 mikään varsinaisista ehdoista ei toteutunut.
 
+@margin-note[@link["https://youtu.be/7q5PqwFCb9Y"]{@image[#:scale 0.015 "kuvat/video.png"] Boolean operaattorit (and, or, not), kesto 2:42}]
+
 Joskus haaran suorittamiseksi pitää useamman ehdon toteutua tai kahdesta ehdosta vain toisen tarvitsee toiteutua.
 Yksittäisiä ehtoja voidaan yhdistellä monimutkaisemmiksi ehdoiksi  
 @link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._.Boolean_operaattori%29"]{Boolean operaattoreilla} 
 joita ovat @racket[and], @racket[or] ja @racket[not]. 
+
+@margin-note[@link["https://youtu.be/Adi3K9LyGFE"]{@image[#:scale 0.015 "kuvat/video.png"] Valintalause (cond), kesto 6:08}]
 
 Voit harjoitella valintalausetta sekä Boolean operaattoreita seuraavien tehtävien avulla.
 
@@ -74,6 +78,8 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 @tabular[#:style 'boxed #:sep @hspace[3]
          (list (list @racket[<] @racket[>] @racket[<=] @racket[>=] @racket[=] @racket[number?] @racket[integer?])
                (list @racket[and] @racket[or] @racket[not] @racket[rational?] @racket[even?]@racket[odd?] @racket[check-expect]))]
+
+@margin-note[@link["https://www.slideshare.net/TiinaPartanen/racket-alkeet-4-oppitunti-52813278"]{Opettajan diat.}]
 
 @section[#:tag "racket_perusteet_taksimatkalaskut"]{Taksimatkalaskut}
 
@@ -173,8 +179,6 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 @tabular[#:style 'boxed #:sep @hspace[3]
          (list (list @racket[+] @racket[-] @racket[*] @racket[/]  @racket[sqr] @racket[sqrt] @racket[if]
                      @racket[cond] @racket[and] @racket[or] @racket[not] @racket[check-expect] @racket[check-within]))]
-
-@margin-note[@link["http://www.slideshare.net/TiinaPartanen/racket-alkeet-4-oppitunti"]{Opettajan diat.}]
 
 @section[#:tag "racket_perusteet_liikennevalot"]{Liikennevalot}
 

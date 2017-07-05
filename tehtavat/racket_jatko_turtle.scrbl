@@ -52,10 +52,14 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen ja Racket Turtle -
          (list (list @racket[forward] @racket[turn-left] @racket[turn-right] @racket[list])
                (list @racket[mirror-x-on]@racket[mirror-y-on] @racket[repeat] @racket[draw]))]
 
+@margin-note[@link["https://www.slideshare.net/TiinaPartanen/racket-turtle"]{Opettajan diat.}]
+
 @section[#:tag "racket_jatko_turtle"]{Turtle - spiraalit}
 
 Harjoittele listoja, rekursiivisia funktioita tai Higher Order - funktioita piirtämällä
 Turtlella erilaisia spiraalikuvioita.
+
+@margin-note[@link["https://youtu.be/shvc7xtg3cw"]{@image[#:scale 0.015 "kuvat/video.png"] Racket Turtle jatko, kesto 7:12}]
 
 @bold{Turtle - spiraalikuviot}
 

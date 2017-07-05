@@ -28,17 +28,21 @@ Ota kirjasto käyttöön painamalla @italic{run}.
 Nyt voit tutustua interaktioikkunassa siihen miten peruskuvioita piirretään.
 Katso käsikirjasta ohjeet ja kokeile näitä:
 
+@margin-note[@link["https://youtu.be/W7Aof-hnzkw"]{@image[#:scale 0.015 "kuvat/video.png"] Peruskuviot, kesto 7:52}]
+
 @tabular[#:style 'boxed #:sep @hspace[3]
          (list (list @racket[circle] @racket[rectangle]
                      @racket[triangle] @racket[star] @racket[ellipse]))]
 
+
 Tallenna nyt kaksi em. kokeilemaasi kuviota määrittelyikkunaan. Tutustu sitten siihen miten kaksi tai useampi kuva yhdistetään
 yhdeksi kuvaksi. Kokeile yhdistää aikaisemmin tekemäsi kuvat nyt määrittellyikkunassa käyttäen näitä funktioita:
+
+@margin-note[@link["https://youtu.be/2EM6csmcBkE"]{@image[#:scale 0.015 "kuvat/video.png"] Kuvien yhdistely, kesto 7:17}]
 
 @tabular[#:style 'boxed #:sep @hspace[3]
          (list (list @racket[overlay] @racket[beside] @racket[above]
                      @racket[overlay/xy]))]
-
 
 @section[#:tag "racket_alkeet_peruskuviot_1"]{Yksinkertaiset kuvat}
 
@@ -67,6 +71,8 @@ ympyrän:
 
 @racketblock[(define RENGAS (circle 25 "solid" "black"))]
 
+@margin-note[@link["https://youtu.be/C5p7MaIQFoo"]{@image[#:scale 0.015 "kuvat/video.png"] Määrittelyt (define), kesto 5:54}]
+
 Nyt riittää, että koodiin kirjoittaa @racket[RENGAS], joka kerta kun haluaa mustan ympyrän. Esim. kaksi RENGASTA
 vierekkäin samassa kuvassa olisi:
 
@@ -76,6 +82,8 @@ Anna nyt määrittelyikkunassa aikaisemmin tekemillesi peruskuvioille muuttujani
 
 Kuvia voi myös skaalata pienemmiksi tai suuremmiksi, kiertää tietyn asteluvun verran, peilata vaaka- ja pystysuunnassa sekä leikata. Tutustu
 näihin kuvanmuokkausfunktioihin käsikirjan avulla. Käytä itse nimeämiäsi kuvioitasi ja testaa funktioita niillä.
+
+@margin-note[@link["https://youtu.be/gL5vw3xAx7g"]{@image[#:scale 0.015 "kuvat/video.png"] Kuvien muokkaus, kesto 9:18}]
 
 @tabular[#:style 'boxed #:sep @hspace[3]
          (list (list @racket[scale] @racket[rotate] @racket[flip-horizontal]

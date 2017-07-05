@@ -36,10 +36,15 @@ Myös
 @link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._vertailuoperaattori%29"]{vertailuoperaattorit}
 ovat predikaatteja, koska ne palauttavat totuusarvoja.
 
+@margin-note[@link["https://youtu.be/_SQ0DSQ0Vp8"]{@image[#:scale 0.015 "kuvat/video.png"] Totuusarvot, vertailuoperaattorit ja
+              predikaatit, kesto 5:01}]
+
 Yksinkertaisin tapa saada koodihaarautumaan on
 @link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._ehtolause%29"]{ehtolause} eli @racket[if]-lause.
 Se toimii niin, että jos asetettu ehto on tosi suoritetaan @italic{tosihaara}:n koodi. Jos ehto on epätosi, suoritetaan
 @italic{epätosihaara}:n koodi.
+
+@margin-note[@link["https://youtu.be/g0lYnpwsc7o"]{@image[#:scale 0.015 "kuvat/video.png"] Ehtolause (if), kesto 8:35}]
 
 Voit harjoitella ehtolauseen ja vertailuoperaattoreiden käyttöä seuraavien tehtävien avulla.
 
@@ -74,6 +79,8 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 @tabular[#:style 'boxed #:sep @hspace[3]
          (list (list @racket[+] @racket[-] @racket[*] @racket[/]  @racket[if] @racket[<] @racket[>] @racket[<=]
                      @racket[>=] @racket[=] @racket[check-expect]))]
+
+@margin-note[@link["https://www.slideshare.net/TiinaPartanen/racket-alkeet-4-oppitunti-52813278"]{Opettajan diat.}]
 
 @section[#:tag "racket_perusteet_robottisilma"]{Robottisilmä}
 
@@ -172,8 +179,6 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 
 @tabular[#:style 'boxed #:sep @hspace[3]
          (list (list @racket[+] @racket[-] @racket[*] @racket[/] @racket[if] @racket[integer?] @racket[floor] @racket[ceiling] @racket[check-expect]))]
-
-@margin-note[@link["http://www.slideshare.net/TiinaPartanen/racket-alkeet-4-oppitunti"]{Opettajan diat.}]
 
 @section[#:tag "racket_perusteet_loogiset_palat"]{Loogiset palat}
 

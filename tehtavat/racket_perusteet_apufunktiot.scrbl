@@ -12,14 +12,20 @@
 
 @title[#:tag "perusteet_apufunktiot"]{Apufunktiot ja funktion suunnitteluportaat}
 
+@margin-note[@link["https://youtu.be/GJShFsMybL0"]{@image[#:scale 0.015 "kuvat/video.png"] Funktion suunnitteluportaat (osa 1), kesto 7:22}]
+
 Isot ongelmat ovat vaikeampia ratkaista kuin pienet ongelmat. Sama pätee ohjelmoinnissa. Siksi kannattaa opetella ratkaisemaan ongelmat
 paloissa käyttämällä pienempiä apufunktioita isomman ja monimutkaisemman funktion toteuttamiseen.
 Hyvä nyrkkisääntö on se, että jokainen funktio tekee vain yhden asian. 
+
+@margin-note[@link["https://youtu.be/JWGYNNFy_6c"]{@image[#:scale 0.015 "kuvat/video.png"] Funktion suunnitteluportaat (osa 2), kesto 6:53}]
 
 Jokaisen funktion koodaamisessa tärkein vaihe on suunnittelu. Koska funktion suunnittelussa on monta päätöstä tehtävänä, se voi aluksi tuntua
 lähdes mahdottomalta. Siksi teemme sen pienissä askelissa seuraamalla menetelmää nimeltä @italic{funktion suunnitteluportaat}.
 Emme siis yritä hypätä katolle yhdellä (mahdottomalla) loikalla. Jos menetelmä ei ole sinulle tuttu,
 katso ensin @link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._funktion_suunnitteluportaat%29"]{esimerkki} Koodarin käsikirjasta. 
+
+@margin-note[@link["https://youtu.be/l45YMjAc5r0"]{@image[#:scale 0.015 "kuvat/video.png"] Funktion jakaminen osiin, kesto 10:49}]
 
 @image["../manuaali/sanasto/funktion_suunnitteluportaat.png" #:scale 0.7]
 
@@ -60,13 +66,13 @@ Täydennä funktion kuvauksen puuttuvat tiedot (...). Tee myös esimerkkejä/tes
                (list "Funktio sektoreiden pinta-alojen laskemiseen" @image["kuvat/sektorit.png" #:scale 0.7])
                (list "Funktio ympyrälieriöiden kokonaispinta-alojen laskemiseen" @image["kuvat/ympyralieriot.png" #:scale 0.7]))]
 
-@margin-note[@link["http://www.slideshare.net/TiinaPartanen/racket-alkeet-3-oppitunti"]{Opettajan diat.}]
-
 Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita ja vakioita:
 
 @tabular[#:style 'boxed #:sep @hspace[3]
          (list (list @racket[+] @racket[-] @racket[*]
                      @racket[/] @racket[sqr] @racket[check-within] @racket[pi]))]
+
+@margin-note[@link["http://www.slideshare.net/TiinaPartanen/racket-alkeet-3-oppitunti"]{Opettajan diat.}]
 
 @section[#:tag "racket_perusteet_kuva_ja_yhdistelmafunktioita"]{Kuva- ja yhdistelmäfunktioita}
 

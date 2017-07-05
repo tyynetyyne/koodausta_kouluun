@@ -14,14 +14,17 @@
 
 Jotta voit piirtää Racket Turtlella kuvia tarvitset @italic{teachpacks/racket-turtle}-kirjaston:
 @racketblock[(require teachpacks/racket-turtle)]
+
+@margin-note{WeScheme:ssä ei tarvita paketin asennusta. Huomaa myös, että WeSchemessä kirjastolla on eri nimi.}
+
 Se kuuluu @italic{teachpacks}-pakettiin, joka pitää ladata palvelimelta näiden
 @link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._paketti%29"]{ohjeiden} mukaisesti. Paketti
 tarvitsee asentaa vain ensimmäisellä kerralla.
 
-@margin-note{WeScheme:ssä ei tarvita paketin asennusta. Huomaa myös, että WeSchemessä kirjastolla on eri nimi.}
-
 Tutustu Racket Turtlen toimintaperiaatteeseen @link["http://racket.koodiaapinen.fi/manuaali/racket_turtlen_toiminta.html"]{Koodarin käsikirjan}
 avulla ja tee sitten seuraavat tehtävät.
+
+@margin-note[@link["https://youtu.be/L1jjdGe_j6k"]{@image[#:scale 0.015 "kuvat/video.png"] Turtle alkeet, kesto 16:28}]
 
 @section[#:tag "racket_turtle_peruskuviot"]{Turtle - peruskuviot}
 
@@ -53,6 +56,8 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket kielen sekä Racket Turtl
 @tabular[#:style 'boxed #:sep @hspace[3]
          (list (list @racket[list] @racket[forward] @racket[turn-left]
                      @racket[turn-right] @racket[draw] @racket[draw-step-by-step]))]
+
+@margin-note[@link["https://www.slideshare.net/TiinaPartanen/racket-turtle"]{Opettajan diat.}]
 
 @section[#:tag "racket_turtle_neliot"]{Turtle - neliöt}
 

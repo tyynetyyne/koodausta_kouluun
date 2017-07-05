@@ -18,6 +18,8 @@ jälkeen @italic{argumentteja} esim. @litchar{2} ja @litchar{3} ja sitten @litch
 
 @racketblock[(+ 2 3)]
 
+@margin-note[@link["https://youtu.be/oW4G0kly9Iw"]{@image[#:scale 0.015 "kuvat/video.png"] Lausekkeet ja evaluointi, kesto 5:56}]
+
 Kirjoita ylläoleva lauseke @italic[@link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._interaktioikkuna%29"]{interaktioikkunaan}] ja paina @italic{<enter>}.
 Kirjoita se sitten @italic[@link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._m__rittelyikkuna%29"]{määrittelyikkunaan}] ja paina @italic{run}. 
 

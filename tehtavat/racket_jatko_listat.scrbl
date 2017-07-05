@@ -27,12 +27,19 @@
 
 @title[#:tag "jatko_listat"]{Listat}
 
+@margin-note[@link["https://youtu.be/fDkCXReFpOk"]{@image[#:scale 0.015 "kuvat/video.png"] Listat, kesto 6:19}]
+
 Kun käsitellään isoa määrä tietoa, on kätevää tallentaa se tietorakenteeseen, jonka koko voi
 kasvaa ja pienentyä tarvittaessa. Lista on juuri tällainen tietorakenne. Listaan voi lisätä
-alkioita, siitä voi poistaa alkioita, listoja voi yhdistellä jne. Listamuotoista tietoa on
-myös helppo käsitellä rekursiivisilla funktioilla tai  
+alkioita, siitä voi poistaa alkioita, listoja voi yhdistellä jne.
+
+@margin-note[@link["https://youtu.be/kU0gT9uNIgY"]{@image[#:scale 0.015 "kuvat/video.png"] Listan käsittely rekursiivisesti (osa 1), kesto 5:53}]
+
+Listamuotoista tietoa on myös helppo käsitellä rekursiivisilla funktioilla tai  
 @italic[@link["http://racket.koodiaapinen.fi/manuaali/racket_isl_higher_order_funktiot.html"]{Higher Order - funktioilla}].
 Tutustu niihin Koodarin käsikirjan avulla.
+
+@margin-note[@link["https://youtu.be/ysYOO4w472c"]{@image[#:scale 0.015 "kuvat/video.png"] Listan käsittely rekursiivisesti (osa 2), kesto 7:38}]
 
 @section[#:tag "racket_jatko_rekursiiviset_listat"]{Listan "syöntiä" ja luontia rekursiivisesti}
 
@@ -60,6 +67,8 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
          (list (list @racket[+] @racket[/] @racket[list-ref] @racket[length] @racket[string=?] @racket[random])
                (list @racket[remove] @racket[cons] @racket[first] @racket[rest] @racket[empty?] @racket[let*]))]
 
+@margin-note[@link["https://www.slideshare.net/TiinaPartanen/racket-jatko-5a-oppitunti"]{Opettajan diat.}]
+
 @section[#:tag "racket_jatko_listat_kuvat"]{Kuvatehtäviä listoilla}
 
 Listaa voi käydä läpi myös niin, että se ei tyhjene vaan käytetty alkio siirretään listan loppuun, jolloin
@@ -84,6 +93,8 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 @section[#:tag "racket_jatko_laskut"]{Laskutoimituksia listoilla ja Higher Order - funktioilla}
 
 Harjoittele listojen kanssa laskemista seuraavien tehtävien avulla.
+
+@margin-note[@link["https://youtu.be/jFBZp1eVa3I"]{@image[#:scale 0.015 "kuvat/video.png"] Higher Order -funktiot (map, apply), kesto 9:30}]
 
 @bold{Laskutoimitukset listoilla}
 

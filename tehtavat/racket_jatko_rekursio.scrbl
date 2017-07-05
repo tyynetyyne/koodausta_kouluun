@@ -27,8 +27,12 @@
 
 @title[#:tag "jatko_rekursio"]{Rekursio}
 
+@margin-note[@link["https://youtu.be/et-l5eBAOaw"]{@image[#:scale 0.015 "kuvat/video.png"] Rekursio alkeistapauksella, kesto 11:44}]
+
 Tietokoneen voima on siinä, että se jaksaa toistaa samaa asiaa monta kertaa. Yksi tapa toteuttaa silmukoita on rekursiiviset funktiot.
 Ne ovat funktioita, jotka kutsuvat itse itseään. Jotta silmukasta päästään joskus ulos, tarvitaan ehtolausetta.
+
+@margin-note[@link["https://youtu.be/WHX9pTIM0oI"]{@image[#:scale 0.015 "kuvat/video.png"] Rekursio akkumulaattorilla, kesto 8:16}]
 
 Harjoittele rekursiivisten funktioiden tekemistä näiden tehtävien avulla.
 
@@ -53,6 +57,8 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen tai 2htdp-image -k
                (list @racket[overlay/xy]@racket[place-image] @racket[rotate] @racket[empty-scene] @racket[*])
                (list @racket[/]@racket[+]@racket[-]@racket[add1]@racket[sub1])
                (list @racket[if]@racket[<]@racket[>]@racket[<=]@racket[>=]))]
+
+@margin-note[@link["https://www.slideshare.net/TiinaPartanen/racket-alkeet-5-oppitunti"]{Opettajan diat.}]
 
 @section[#:tag "epakesko"]{Epäkesko}
 

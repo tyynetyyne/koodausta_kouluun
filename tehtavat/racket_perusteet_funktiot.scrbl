@@ -12,11 +12,15 @@
 
 @title[#:tag "perusteet_funktiot"]{Funktiot}
 
+@margin-note[@link["https://youtu.be/9zAuinXk63Y"]{@image[#:scale 0.015 "kuvat/video.png"] Funktiot (osa 1), kesto 10:36}]
+
 Tähän asti olet käyttänyt Racket-kielen valmiita funktioita kuten @racket[+] sekä @italic{2htdp/image}-kirjaston tarjoamia funktioita kuten
 @racket[circle]. Huomasit varmasti myös, että kuvat koostuvat useammasta pikkukuvasta. Myös tietokoneohjelmat koostuvat piennemmistä osista,
 ja funktiot ovat juuri näitä tietokoneohjelman "perusosasia". Ne toimivat omina pikku ohjelminaan, ottavat sisään tietoa ja antavat ulos muokattua
 tietoa. Näitä osia yhdistelemällä saadaan aikaan monimutkaisempia ohjelmia. Jotta pystyt tekemään kokonaisia isoja ohjelmia, sinun pitää osata ensin
 tehdä pieniä ohjelmia eli funktioita.
+
+@margin-note[@link["https://youtu.be/5EQYQ94S-UI"]{@image[#:scale 0.015 "kuvat/video.png"] Funktiot (osa 2), kesto 9:21}]
 
 Voit tutustua funktioiden maailmaan valitsemalla joko laskuharjoituksia tai kuvienpiirtoharjoituksia.
 Tutustu ensin funktion määrittelemiseen @link["http://racket.koodiaapinen.fi/manuaali/maarittelyt.html"]{Koodarin käsikirjan} avulla.
