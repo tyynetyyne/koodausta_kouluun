@@ -11,7 +11,7 @@
 @(require scribble/eval)
 @(require scribble/pdf-render)
 
-@title[#:tag "plot_2D" #:style 'toc]{Kuvaajien piirto (myös WeSchemessä) - Plot}
+@title[#:tag "plot" #:style 'toc]{Kuvaajien piirto - Plot}
 
 @defmodule[teachpacks/plot]
 

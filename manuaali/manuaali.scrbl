@@ -35,6 +35,7 @@ Käsikirja sisältää osiot:
 @include-section["racket_turtle/racket_turtle.scrbl"]
 @include-section["fin_doc/2htdp_universe.scrbl"]
 @include-section["display_read/display_read.scrbl"]
+@include-section["plot/plot.scrbl"]
 @include-section["plot2D/plot2D.scrbl"]
 @include-section["math-utils/math_utils.scrbl"]
 @include-section["sanasto/koodausta_kouluun_sanasto.scrbl"]

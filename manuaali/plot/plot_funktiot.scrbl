@@ -33,7 +33,7 @@
                  [yn reaaliluku]
                  [väri image-color?]
                  [tyyli mode?]
-                 [selite merkkijono]) funktio])]{
+                 [selite merkkijono]) funktio]{
                                                   
  Määrittelee piirrettävät pisteet listana @racket[pisteet]. Voit halutessasi säätää aluetta, jolle pisteet piirretään
  antamalla x:n rajat @racket[x0]-@racket[xn] sekä y:n rajat @racket[y0]-@racket[yn]. Functiolle annetaan myös
@@ -62,30 +62,29 @@ Piirrettävät pisteet voidaan antaa joko listana @racket[posn]-tietueita tai
 
 Esimerkkejä:
 
-@racketblock[(plot (function sin (- pi) pi "red" "sin") "x" "y" "tehtävä 1")]
+@racketblock[(plot (function sin (- pi) pi "red" "sin") "x" "y" "Tehtävä 1")]
 
 @centered[@image[#:scale 0.7 "plot/sin.png"]]
 
 @racketblock[(plot (list (function cos  (- pi) pi "red" "cos" )
-            (function sin (- pi) pi "blue" "sin" ))
-            "x" "y" "tehtävä 2")]
+                         (function sin (- pi) pi "blue" "sin" )) "x" "y" "tehtävä 2")]
 
 @centered[@image[#:scale 0.7 "plot/sincos.png"]]
 
 @racketblock[(define (y x)(* 2 x))
-             (plot2D (func y -10 10 "y=2x"))]
+             (plot (function y -10 10 "blue" "y=2x") "x" "y" "Suora y=2x")]
 
-@centered[@image[#:scale 0.7 "plot2D/2x.png"]]
+@centered[@image[#:scale 0.7 "plot/2x.png"]]
 
 @racketblock[(define (f x)(* x x))
              (define (g x)(+ (* 6 x) 15))
-             (plot (list (function f -10 10 "red" "y=x^2")
-                         (function g -5 10 "blue" "y=6x+15"))
+             (plot (list (function g -5 10 "red" "y=6x+15")
+                         (function f -10 10 "blue" "y=x^2"))
                      "x-akseli" "y-akseli" "Tehtävä 1")]
 
 @centered[@image[#:scale 0.7 "plot/paraabelisuora.png"]]
 
-@racketblock[(plot (points (list '(1 2) '(2 3) '(3 4)) 0 4 0 5 "blue" "") "x" "y" "points")] 
+@racketblock[(plot (points (list '(1 2) '(2 3) '(3 4)) 0 4 0 5 "blue" "outline" "") "x" "y" "Pisteet")] 
 
 @centered[@image[#:scale 0.7 "plot/dots3.png"]]
 
@@ -100,8 +99,8 @@ Esimerkkejä:
 @centered[@image[#:scale 0.7 "plot/dots.png"]]
 
 @racketblock[(define (f1 x)(* 2 x))
-             (plot2D (list (func f1 0 7 "y=2x")
-                           (dots (list '(1 2) '(2 4) '(3 5) '(4 7) '(5 11) '(6 12))))
-                     "x-akseli" "y-akseli" "Tehtävä 3")]
+             (plot (list (function f1 0 7 "y=2x")
+                         (points (list '(1 2) '(2 4) '(3 5) '(4 7) '(5 11) '(6 12)) 0 7 0 14 "blue" "outline" ""))
+                   "x-akseli" "y-akseli" "Tehtävä 3")]
 
 @centered[@image[#:scale 0.7 "plot/dots2.png"]]
