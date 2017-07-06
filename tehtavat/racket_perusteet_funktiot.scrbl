@@ -3,7 +3,7 @@
 @(require 2htdp/image)
 @(require (for-label fin-doc/fi-beginner))
 @(require (for-label fin-doc/fi-image))
-@(require (for-label teachpacks/plot2D))
+@(require (for-label teachpacks/plot))
 @(require scribble/core
           scribble/html-properties)
 @(require scribble/racket)
@@ -98,14 +98,16 @@ Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen funktioita:
 Harjoittele funktion kirjoittamista ja sen kuvaajan piirtämistä seuraavien tehtävien avulla.
 Lataa harjoitustiedosto tästä:
 
-@margin-note{Jotta Plot2D toimii DrRacket:ssa, sinun pitää asentaa @bold{teachpacks} paketti.
+@margin-note{Jotta Plot toimii DrRacket:ssa, sinun pitää asentaa @bold{teachpacks} paketti.
  Katso asennusohjeet @link["http://racket.koodiaapinen.fi/manuaali/sanasto.html#%28part._paketti%29"]{täältä}.
- @italic{Huom!} Tämä kirjasto vaatii käyttöönsä @italic{Intermediate Student Language:n tai Advanced Student Language:n}.
- Kirjasto puuttuu WeScheme:stä.}
+ @italic{Huom!} Tämä kirjasto vaatii käyttöönsä @italic{Advanced Student Language:n}.
+ WeScheme:ssä ei tarvita paketin asennusta mutta huomaa, että kirjastolla on eri nimi.}
 
 @tabular[#:sep @hspace[1]
          (list (list @image[#:scale 0.3 "drracket.png"]
-                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/perusteet/funktio/polynomit.rkt"]{Polynomit (DrRacket)}}))]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/perusteet/funktio/polynomit2.rkt"]{Polynomit (DrRacket)}})
+               (list @image[#:scale 0.22 "wescheme.png"]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/polynomit2.html"]{Polynomit (WeScheme)}}))]
 
 Tehtävätiedosto sisältää nämä laskutehtävät:
 
@@ -115,11 +117,11 @@ Kirjoita seuraavat polynomit funktion muotoon ja piirrä niille kuvaajat esimerk
 
 @image[#:scale 0.5 "kuvat/polynomit.png"]
 
-Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen tai plot2D-kirjaston funktioita:
+Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen tai plot-kirjaston funktioita:
 
 @tabular[#:style 'boxed #:sep @hspace[3]
          (list (list @racket[+] @racket[-] @racket[*]
-                     @racket[/] @racket[plot2D] @racket[func] @racket[check-expect]))]
+                     @racket[/] @racket[plot] @racket[function] @racket[check-expect]))]
 
 @section[#:tag "racket_perusteet_varikirjaimet"]{Värillinen teksti}
 
