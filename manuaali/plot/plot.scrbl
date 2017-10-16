@@ -11,7 +11,7 @@
 @(require scribble/eval)
 @(require scribble/pdf-render)
 
-@title[#:tag "plot" #:style 'toc]{Kuvaajien piirto - Plot}
+@title[#:tag "plot" #:style 'toc]{Kuvaajat yms. - Plot}
 
 @defmodule[teachpacks/plot]
 
@@ -19,17 +19,21 @@
  Katso asennusohjeet @link["sanasto.html#(part._paketti)"]{täältä}.
  @italic{Huom!} Tämä kirjasto vaatii käyttöönsä @italic{Advanced Student Language}.
  @italic{WeScheme}:ssä ei tarvitse asentaa teachpacts pakettia mutta kirjastolla on eri nimi:
- @racket[(require wescheme/JHv1z3atgU)]}
+ @racket[(require wescheme/2W8inC9p82)]}
 
-Tässä osassa esitellään plot -kirjasto, jonka avulla voi piirtää kuvaajia sekä sijoittaa pisteitä koordinaatistoon.
+Tässä osassa esitellään plot -kirjasto, jonka avulla voi piirtää kuvaajia, sijoittaa pisteitä, viivoja
+tai kuvia koordinaatistoon sekä piirtää pylväsdiagrammeja.
 Kirjaston avulla voit piirtää samaan kuvaan useamman kuvaajan, nimetä akselit sekä antaa kuvalle otsikon.
              
 @centered[@image[#:scale 0.8 "plot/paraabelisuora.png"]]
 
-@centered[@image[#:scale 0.8 "plot/sincos.png"]]
+@centered[@image[#:scale 0.7 "plot/dots2.png"]]
 
-@centered[@image[#:scale 0.8 "plot/dots2.png"]]
+@centered[@image[#:scale 0.7 "plot/geometry.png"]]
+
+@centered[@image[#:scale 0.7 "plot/bars.png"]]
 
 @local-table-of-contents[#:style 'unnumbered]
 
 @include-section["plot_funktiot.scrbl"]
+@include-section["plot_bars.scrbl"]
