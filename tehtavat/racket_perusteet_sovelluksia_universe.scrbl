@@ -192,9 +192,33 @@ Saatat tarvita Pythagoraan lausetta tässä tehtävässä.
                (list @image[#:scale 0.22 "wescheme.png"]
                      @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/myyra_peli.html"]{Myyrä-peli (WeScheme)}}))]
 
-Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen ja 2htdp-kirjaston funktioita:
+Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen ja 2htdp/image-kirjaston funktioita:
 
 @tabular[#:style 'boxed #:sep @hspace[3]
          (list (list @racket[<] @racket[>] @racket[<=] @racket[>=] @racket[=] @racket[+]  @racket[image-width] @racket[image-height])
                (list @racket[-] @racket[random] @racket[*] @racket[/] @racket[sqr] @racket[sqrt]
                      @racket[scale] @racket[check-expect]))]
+
+@section[#:tag "racket_perusteet_peruspeli"]{Peruspeli}
+
+Muokkaa valmista pohjaa ja tee loppuun Peruspeli. Pelissä pelaaja yrittää saada kiinni kerättäviä ja
+samalla vältellä vaaroja. Voit vaihtaa pelin taustakuvan, pelaajan, kerättävän ja vaaran kuvat. Seuraa
+tiedostossa olevia ohjeita ja ohjelmoi kerättävä ja vaara liikkumaan itsenäisesti vasemmalta oikealle tai
+oikealta vasemmalle. Ohjelmoi pelaaja liikkumaan ylös ja alas eli reagoimaan esim. nuolinäppäimiin. Jotta
+pelaaja saa pisteitä törmäykset on havaittava ja pisteet laskettava, kaikki tämä vaatii joitakin rivejä
+koodia.
+
+@image["kuvat/peruspeli.png" #:scale 0.5]
+
+@tabular[#:sep @hspace[1]
+         (list (list @image[#:scale 0.3 "drracket.png"]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/perusteet/valintalause/peruspeli.rkt"]{Peruspeli (DrRacket)}})
+               (list @image[#:scale 0.22 "wescheme.png"]
+                     @italic{@link["http://racket.koodiaapinen.fi/tehtavat/tiedostot/wescheme/peruspeli.html"]{Peruspeli (WeScheme)}}))]
+
+Tässä harjoituksessa saatat tarvita seuraavia Racket-kielen ja 2htdp/image-kirjaston funktioita:
+
+@tabular[#:style 'boxed #:sep @hspace[3]
+         (list (list @racket[<] @racket[>] @racket[<=] @racket[>=] @racket[=] @racket[bitmap/url] @racket[image-width])
+               (list @racket[image-height] @racket[+] @racket[-]  @racket[*] @racket[/] @racket[sqr] @racket[sqrt])
+               (list @racket[scale] @racket[key=?] @racket[cond] @racket[equal?] @racket[abs] @racket[text] @racket[check-expect]  ))]
