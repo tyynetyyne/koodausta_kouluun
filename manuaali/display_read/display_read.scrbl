@@ -18,7 +18,7 @@
 @margin-note{Jotta Display-Read toimii DrRacket:ssa, sinun pitää asentaa @bold{teachpacks} paketti.
  Katso asennusohjeet @link["sanasto.html#(part._paketti)"]{täältä}.
  @italic{WeScheme}:ssä ei tarvitse asentaa pakettia mutta kirjastolla on eri nimi:
- @racket[(require wescheme/1Q1f9pSrg8)]. Tämä WeScheme:n versio toimii nuolinäppäinten ja enterin osalta
+ @racket[(require wescheme/RWJy5EoNzk)]. Tämä WeScheme:n versio toimii nuolinäppäinten ja enterin osalta
 myös iPadin/iPhonen kosketusnäytöillä, ks. sivun alin kuva. Tekstieditori ei toimi mobiililaitteilla.}
 
 Tässä osassa esitellään Display-Read -kirjasto, jonka avulla voi pyytää käyttäjää antamaan merkkijonon tai luvu, tai valitsemaan lukuja,
